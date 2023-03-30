@@ -1,39 +1,33 @@
-# robot
+# 智慧养老机器人
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+### 材料清单
+1：jetson nano b01 4GB
 
-#### 软件架构
-软件架构说明
+2: 双目深度摄像头、激光雷达
+
+3：wifi通信模块（物联网通信模块）
+
+4：麦轮*4、小车底盘、电机等底层控制模块
+
+5：温湿度传感器，光照度传感器，二氧化碳传感器
+
+6：舵机控制
+
+7：语音交互模块
+
+### 预期功能
+1：机器人开机，启动自主导航功能(启动后禁止人为控制)。
+
+2：机器人自主检测室内光照度情况，语音播报光照度数值，并根据光照度数据，机器人自主对展厅内灯光与窗帘实现控制。
+
+3：机器人自主检测展厅内温湿度情况语音播报温湿度数值。检测到温湿度值过高时，机器人自主对卧室内空调/风扇实现控制。
+
+4：机器人自主检测室内二氧化碳情况，语音播报二氧化碳状况。检测到烟雾时，机器人自主对展厅内，电磁阀实现控制。
+
+5：使用ros系统并能完整的构建出室内地图并准确到达预定导航地点。
+
+6：机器人可实现语音讲解和语音对话功能。
+
+7：创新点：1.老人跌倒监测功能
 
 
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
