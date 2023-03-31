@@ -401,10 +401,10 @@ catkin_DIR:PATH=/opt/ros/noetic/share/catkin/cmake
 cpp_common_DIR:PATH=/opt/ros/noetic/share/cpp_common/cmake
 
 //Value Computed by CMake
-delta_lidar_BINARY_DIR:STATIC=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/lidar_ros_delta2a
+delta_lidar_BINARY_DIR:STATIC=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/lidar
 
 //Value Computed by CMake
-delta_lidar_SOURCE_DIR:STATIC=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/lidar_ros_delta2a
+delta_lidar_SOURCE_DIR:STATIC=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/lidar
 
 //The directory containing a CMake configuration file for gazebo_ros_pkgs.
 gazebo_ros_pkgs_DIR:PATH=gazebo_ros_pkgs_DIR-NOTFOUND
