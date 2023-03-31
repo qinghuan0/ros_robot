@@ -1,0 +1,2 @@
+lidar_ros_delta2a
+-DCATKIN_DEVEL_PREFIX=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel -DCMAKE_INSTALL_PREFIX=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install -G Unix Makefiles
