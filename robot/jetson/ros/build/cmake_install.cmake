@@ -133,7 +133,9 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/gtest/cmake_install.cmake")
   include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/lidar/cmake_install.cmake")
   include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/robot_ctrl/cmake_install.cmake")
+  include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/ros_astra_camera/cmake_install.cmake")
   include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/robot_driver/cmake_install.cmake")
+  include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/robot_navigation/cmake_install.cmake")
 
 endif()
 

@@ -7,4 +7,6 @@
 subdirs("gtest")
 subdirs("lidar")
 subdirs("robot_ctrl")
+subdirs("ros_astra_camera")
 subdirs("robot_driver")
+subdirs("robot_navigation")
