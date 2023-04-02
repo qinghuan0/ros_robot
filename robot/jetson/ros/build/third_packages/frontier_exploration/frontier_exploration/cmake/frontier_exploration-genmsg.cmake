@@ -24,27 +24,27 @@ add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg" NAME_WE)
 add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg" "geometry_msgs/Quaternion:actionlib_msgs/GoalID:frontier_exploration/ExploreTaskGoal:geometry_msgs/PolygonStamped:geometry_msgs/Pose:geometry_msgs/Point32:geometry_msgs/Polygon:geometry_msgs/Point:std_msgs/Header:frontier_exploration/ExploreTaskActionResult:frontier_exploration/ExploreTaskActionGoal:frontier_exploration/ExploreTaskResult:frontier_exploration/ExploreTaskFeedback:frontier_exploration/ExploreTaskActionFeedback:geometry_msgs/PointStamped:actionlib_msgs/GoalStatus:geometry_msgs/PoseStamped"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg" "actionlib_msgs/GoalID:geometry_msgs/Point:frontier_exploration/ExploreTaskResult:actionlib_msgs/GoalStatus:geometry_msgs/PoseStamped:frontier_exploration/ExploreTaskActionFeedback:frontier_exploration/ExploreTaskFeedback:std_msgs/Header:geometry_msgs/Point32:geometry_msgs/Pose:geometry_msgs/PointStamped:frontier_exploration/ExploreTaskActionGoal:geometry_msgs/Quaternion:frontier_exploration/ExploreTaskActionResult:geometry_msgs/Polygon:frontier_exploration/ExploreTaskGoal:geometry_msgs/PolygonStamped"
 )
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg" NAME_WE)
 add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg" "actionlib_msgs/GoalID:frontier_exploration/ExploreTaskGoal:geometry_msgs/PolygonStamped:geometry_msgs/Point32:geometry_msgs/Polygon:geometry_msgs/Point:std_msgs/Header:geometry_msgs/PointStamped"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg" "actionlib_msgs/GoalID:geometry_msgs/Point:std_msgs/Header:geometry_msgs/Point32:geometry_msgs/PointStamped:geometry_msgs/Polygon:frontier_exploration/ExploreTaskGoal:geometry_msgs/PolygonStamped"
 )
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg" NAME_WE)
 add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg" "frontier_exploration/ExploreTaskResult:std_msgs/Header:actionlib_msgs/GoalStatus:actionlib_msgs/GoalID"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg" "actionlib_msgs/GoalID:std_msgs/Header:frontier_exploration/ExploreTaskResult:actionlib_msgs/GoalStatus"
 )
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg" NAME_WE)
 add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg" "geometry_msgs/Quaternion:actionlib_msgs/GoalID:geometry_msgs/Pose:geometry_msgs/Point:std_msgs/Header:frontier_exploration/ExploreTaskFeedback:actionlib_msgs/GoalStatus:geometry_msgs/PoseStamped"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg" "actionlib_msgs/GoalID:geometry_msgs/Point:geometry_msgs/PoseStamped:actionlib_msgs/GoalStatus:frontier_exploration/ExploreTaskFeedback:std_msgs/Header:geometry_msgs/Pose:geometry_msgs/Quaternion"
 )
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg" NAME_WE)
 add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg" "geometry_msgs/PolygonStamped:geometry_msgs/Point32:geometry_msgs/Polygon:geometry_msgs/Point:std_msgs/Header:geometry_msgs/PointStamped"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg" "geometry_msgs/Point:std_msgs/Header:geometry_msgs/Point32:geometry_msgs/PointStamped:geometry_msgs/Polygon:geometry_msgs/PolygonStamped"
 )
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg" NAME_WE)
@@ -54,7 +54,7 @@ add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename
 
 get_filename_component(_filename "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg" NAME_WE)
 add_custom_target(_frontier_exploration_generate_messages_check_deps_${_filename}
-  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg" "geometry_msgs/Quaternion:geometry_msgs/Pose:geometry_msgs/Point:std_msgs/Header:geometry_msgs/PoseStamped"
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "frontier_exploration" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg" "geometry_msgs/Point:geometry_msgs/PoseStamped:std_msgs/Header:geometry_msgs/Pose:geometry_msgs/Quaternion"
 )
 
 #
@@ -72,31 +72,31 @@ _generate_msg_cpp(frontier_exploration
 _generate_msg_cpp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_cpp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_cpp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_cpp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_cpp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_cpp(frontier_exploration
@@ -108,7 +108,7 @@ _generate_msg_cpp(frontier_exploration
 _generate_msg_cpp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/frontier_exploration
 )
 
@@ -161,31 +161,31 @@ _generate_msg_eus(frontier_exploration
 _generate_msg_eus(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_eus(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_eus(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_eus(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_eus(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_eus(frontier_exploration
@@ -197,7 +197,7 @@ _generate_msg_eus(frontier_exploration
 _generate_msg_eus(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/frontier_exploration
 )
 
@@ -250,31 +250,31 @@ _generate_msg_lisp(frontier_exploration
 _generate_msg_lisp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_lisp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_lisp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_lisp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_lisp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_lisp(frontier_exploration
@@ -286,7 +286,7 @@ _generate_msg_lisp(frontier_exploration
 _generate_msg_lisp(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/frontier_exploration
 )
 
@@ -339,31 +339,31 @@ _generate_msg_nodejs(frontier_exploration
 _generate_msg_nodejs(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_nodejs(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_nodejs(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_nodejs(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_nodejs(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_nodejs(frontier_exploration
@@ -375,7 +375,7 @@ _generate_msg_nodejs(frontier_exploration
 _generate_msg_nodejs(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/frontier_exploration
 )
 
@@ -428,31 +428,31 @@ _generate_msg_py(frontier_exploration
 _generate_msg_py(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskAction.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_py(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_py(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionResult.msg"
   "${MSG_I_FLAGS}"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskResult.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_py(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskActionFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalID.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/actionlib_msgs/cmake/../msg/GoalStatus.msg;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_py(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskGoal.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point32.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PointStamped.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Polygon.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PolygonStamped.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontier_exploration
 )
 _generate_msg_py(frontier_exploration
@@ -464,7 +464,7 @@ _generate_msg_py(frontier_exploration
 _generate_msg_py(frontier_exploration
   "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/frontier_exploration/msg/ExploreTaskFeedback.msg"
   "${MSG_I_FLAGS}"
-  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg"
+  "/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Point.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/PoseStamped.msg;/opt/ros/noetic/share/std_msgs/cmake/../msg/Header.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Pose.msg;/opt/ros/noetic/share/geometry_msgs/cmake/../msg/Quaternion.msg"
   ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/frontier_exploration
 )
 

@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build
 include ros_astra_camera/CMakeFiles/_astra_camera_generate_messages_check_deps_GetDeviceInfo.dir/progress.make
 
 ros_astra_camera/CMakeFiles/_astra_camera_generate_messages_check_deps_GetDeviceInfo:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/ros_astra_camera && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py astra_camera /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/srv/GetDeviceInfo.srv astra_camera/DeviceInfo:std_msgs/Header
+	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/ros_astra_camera && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genmsg/cmake/../../../lib/genmsg/genmsg_check_deps.py astra_camera /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/srv/GetDeviceInfo.srv std_msgs/Header:astra_camera/DeviceInfo
 
 _astra_camera_generate_messages_check_deps_GetDeviceInfo: ros_astra_camera/CMakeFiles/_astra_camera_generate_messages_check_deps_GetDeviceInfo
 _astra_camera_generate_messages_check_deps_GetDeviceInfo: ros_astra_camera/CMakeFiles/_astra_camera_generate_messages_check_deps_GetDeviceInfo.dir/build.make

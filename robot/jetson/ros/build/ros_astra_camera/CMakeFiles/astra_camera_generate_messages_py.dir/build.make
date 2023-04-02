@@ -106,8 +106,8 @@ ros_astra_camera/CMakeFiles/astra_camera_generate_messages_py: /home/qinghuan/qh
 
 /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/astra_camera/srv/_GetDeviceInfo.py: /opt/ros/noetic/lib/genpy/gensrv_py.py
 /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/astra_camera/srv/_GetDeviceInfo.py: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/srv/GetDeviceInfo.srv
-/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/astra_camera/srv/_GetDeviceInfo.py: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/msg/DeviceInfo.msg
 /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/astra_camera/srv/_GetDeviceInfo.py: /opt/ros/noetic/share/std_msgs/msg/Header.msg
+/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/astra_camera/srv/_GetDeviceInfo.py: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/msg/DeviceInfo.msg
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating Python code from SRV astra_camera/GetDeviceInfo"
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/ros_astra_camera && ../catkin_generated/env_cached.sh /usr/bin/python3 /opt/ros/noetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/srv/GetDeviceInfo.srv -Iastra_camera:/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/msg -Istd_msgs:/opt/ros/noetic/share/std_msgs/cmake/../msg -Isensor_msgs:/opt/ros/noetic/share/sensor_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/noetic/share/geometry_msgs/cmake/../msg -p astra_camera -o /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/astra_camera/srv
 

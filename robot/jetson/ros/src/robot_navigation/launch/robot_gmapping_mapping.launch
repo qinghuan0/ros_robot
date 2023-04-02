@@ -12,6 +12,7 @@
 	
 	<!-- 启动GMapping建图算法包 -->
     <include file="$(find robot_navigation)/launch/include/gmapping_base.launch" />
+	<!-- <include file="$(find robot_navigation)/launch/slam_gmapping_pr2.launch" /> -->
 
 	<!-- 启动APP相关接口服务 -->	
 	<!-- <include file="$(find rosbridge_server)/launch/rosbridge_websocket.launch"/> -->
@@ -19,6 +20,6 @@
 	<node name="robot_pose_publisher" pkg="robot_pose_publisher" type="robot_pose_publisher"/>
     <arg name="debug" default="false"/>
 	<!-- World canvas server 是语义地图的存储管理器,是用来地图的存储 -->
-    <!-- <node pkg="world_canvas_server" type="map_manager.py" name="map_manager" /> -->
+    <node pkg="world_canvas_server" type="map_manager.py" name="map_manager" />
 
 </launch>

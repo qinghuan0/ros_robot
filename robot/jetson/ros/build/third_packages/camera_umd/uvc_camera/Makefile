@@ -80,28 +80,6 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
-
-# Special rule for the target test
-test/fast: test
-
-.PHONY : test/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
-
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -113,15 +91,16 @@ edit_cache/fast: edit_cache
 
 .PHONY : edit_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target test
+test/fast: test
 
-.PHONY : list_install_components/fast
+.PHONY : test/fast
 
 # Special rule for the target install
 install: preinstall
@@ -134,6 +113,27 @@ install/fast: preinstall/fast
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
 	/usr/bin/cmake -P cmake_install.cmake
 .PHONY : install/fast
+
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+
+.PHONY : list_install_components/fast
+
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -168,49 +168,19 @@ depend:
 .PHONY : depend
 
 # Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule:
+	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
+.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
 
 # Convenience name for target.
-nodelet_generate_messages_cpp: third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/rule
+uvc_stereo_node: third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
 
-.PHONY : nodelet_generate_messages_cpp
+.PHONY : uvc_stereo_node
 
 # fast build rule for target.
-nodelet_generate_messages_cpp/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_cpp.dir/build
-.PHONY : nodelet_generate_messages_cpp/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_nodejs: third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/rule
-
-.PHONY : nodelet_generate_messages_nodejs
-
-# fast build rule for target.
-nodelet_generate_messages_nodejs/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_nodejs.dir/build
-.PHONY : nodelet_generate_messages_nodejs/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_py: third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/rule
-
-.PHONY : bond_generate_messages_py
-
-# fast build rule for target.
-bond_generate_messages_py/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_py.dir/build
-.PHONY : bond_generate_messages_py/fast
+uvc_stereo_node/fast:
+	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build
+.PHONY : uvc_stereo_node/fast
 
 # Convenience name for target.
 third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/rule:
@@ -228,66 +198,6 @@ uvc_camera_node/fast:
 .PHONY : uvc_camera_node/fast
 
 # Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_eus: third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/rule
-
-.PHONY : nodelet_generate_messages_eus
-
-# fast build rule for target.
-nodelet_generate_messages_eus/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_eus.dir/build
-.PHONY : nodelet_generate_messages_eus/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_nodejs: third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/rule
-
-.PHONY : bond_generate_messages_nodejs
-
-# fast build rule for target.
-bond_generate_messages_nodejs/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_nodejs.dir/build
-.PHONY : bond_generate_messages_nodejs/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
-
-# Convenience name for target.
-uvc_stereo_node: third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/rule
-
-.PHONY : uvc_stereo_node
-
-# fast build rule for target.
-uvc_stereo_node/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build
-.PHONY : uvc_stereo_node/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_lisp: third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/rule
-
-.PHONY : nodelet_generate_messages_lisp
-
-# fast build rule for target.
-nodelet_generate_messages_lisp/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_lisp.dir/build
-.PHONY : nodelet_generate_messages_lisp/fast
-
-# Convenience name for target.
 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/rule:
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/rule
 .PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/rule
@@ -301,66 +211,6 @@ nodelet_uvc_camera: third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_
 nodelet_uvc_camera/fast:
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build
 .PHONY : nodelet_uvc_camera/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_eus: third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/rule
-
-.PHONY : bond_generate_messages_eus
-
-# fast build rule for target.
-bond_generate_messages_eus/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_eus.dir/build
-.PHONY : bond_generate_messages_eus/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_cpp: third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/rule
-
-.PHONY : bond_generate_messages_cpp
-
-# fast build rule for target.
-bond_generate_messages_cpp/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_cpp.dir/build
-.PHONY : bond_generate_messages_cpp/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule
-
-# Convenience name for target.
-nodelet_generate_messages_py: third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/rule
-
-.PHONY : nodelet_generate_messages_py
-
-# fast build rule for target.
-nodelet_generate_messages_py/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_generate_messages_py.dir/build
-.PHONY : nodelet_generate_messages_py/fast
-
-# Convenience name for target.
-third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f CMakeFiles/Makefile2 third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule
-.PHONY : third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-# Convenience name for target.
-bond_generate_messages_lisp: third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/rule
-
-.PHONY : bond_generate_messages_lisp
-
-# fast build rule for target.
-bond_generate_messages_lisp/fast:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/bond_generate_messages_lisp.dir/build
-.PHONY : bond_generate_messages_lisp/fast
 
 src/camera.o: src/camera.cpp.o
 
@@ -509,8 +359,8 @@ src/uvc_cam.o: src/uvc_cam.cpp.o
 
 # target to build an object file
 src/uvc_cam.cpp.o:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/src/uvc_cam.cpp.o
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/src/uvc_cam.cpp.o
+	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/src/uvc_cam.cpp.o
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/src/uvc_cam.cpp.o
 .PHONY : src/uvc_cam.cpp.o
 
@@ -520,8 +370,8 @@ src/uvc_cam.i: src/uvc_cam.cpp.i
 
 # target to preprocess a source file
 src/uvc_cam.cpp.i:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/src/uvc_cam.cpp.i
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/src/uvc_cam.cpp.i
+	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/src/uvc_cam.cpp.i
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/src/uvc_cam.cpp.i
 .PHONY : src/uvc_cam.cpp.i
 
@@ -531,8 +381,8 @@ src/uvc_cam.s: src/uvc_cam.cpp.s
 
 # target to generate assembly for a file
 src/uvc_cam.cpp.s:
-	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/src/uvc_cam.cpp.s
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_stereo_node.dir/src/uvc_cam.cpp.s
+	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/uvc_camera_node.dir/src/uvc_cam.cpp.s
 	cd /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build && $(MAKE) -f third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/build.make third_packages/camera_umd/uvc_camera/CMakeFiles/nodelet_uvc_camera.dir/src/uvc_cam.cpp.s
 .PHONY : src/uvc_cam.cpp.s
 
@@ -544,24 +394,14 @@ help:
 	@echo "... depend"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... test"
-	@echo "... nodelet_generate_messages_cpp"
-	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... nodelet_generate_messages_nodejs"
-	@echo "... bond_generate_messages_py"
-	@echo "... uvc_camera_node"
-	@echo "... nodelet_generate_messages_eus"
-	@echo "... list_install_components"
-	@echo "... bond_generate_messages_nodejs"
+	@echo "... test"
 	@echo "... uvc_stereo_node"
-	@echo "... nodelet_generate_messages_lisp"
-	@echo "... nodelet_uvc_camera"
+	@echo "... uvc_camera_node"
 	@echo "... install"
-	@echo "... bond_generate_messages_eus"
-	@echo "... bond_generate_messages_cpp"
-	@echo "... nodelet_generate_messages_py"
-	@echo "... bond_generate_messages_lisp"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... nodelet_uvc_camera"
 	@echo "... src/camera.o"
 	@echo "... src/camera.i"
 	@echo "... src/camera.s"
