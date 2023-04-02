@@ -307,7 +307,7 @@ class AnnotationsServer:
         '''
         response = SaveAnnotationsDataResponse()
 
-        print request.annotations
+        print (request.annotations)
         for annotation, data in zip(request.annotations, request.data):
             
             # Compose metadata: mandatory fields
