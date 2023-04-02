@@ -2,7 +2,8 @@
 <launch>
     <!--向参数服务器设置相关参数-->>
     <param name="use_sim_time" value="false"/>
-    <param name="robot_description" textfile="$(find robot_driver)/urdf/robot_mecx.urdf"/>
+    <!-- <param name="robot_description" textfile="$(find robot_driver)/urdf/robot_mecx.urdf"/> -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find robot_navigation)/urdf/car.urdf.xacro"/>
 
     <!--启动底层驱动包，建立与控制层的通信-->>
      <node name="robot_driver" pkg="robot_driver" type="robot_driver" output="screen" respawn="true">
