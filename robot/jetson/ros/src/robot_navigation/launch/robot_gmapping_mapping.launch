@@ -21,5 +21,6 @@
     <arg name="debug" default="false"/>
 	<!-- World canvas server 是语义地图的存储管理器,是用来地图的存储 -->
     <!-- <node pkg="world_canvas_server" type="map_manager.py" name="map_manager" /> -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_navigation)/config/rviz/rviz_config.rviz" />
 
 </launch>

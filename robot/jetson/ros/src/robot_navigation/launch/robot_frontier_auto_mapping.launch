@@ -25,6 +25,9 @@
 	<node name="robot_pose_publisher" pkg="robot_pose_publisher" type="robot_pose_publisher"/>
     <arg name="debug" default="false"/>
 	<!-- World canvas server 是语义地图的存储管理器,是用来地图的存储 -->
-    <node pkg="world_canvas_server" type="map_manager.py" name="map_manager" />
+    <!-- <node pkg="world_canvas_server" type="map_manager.py" name="map_manager" /> -->
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find robot_navigation)/config/rviz/rviz_config.rviz" />
+
+	<node pkg="tf" type="static_transform_publisher" name="base_footprint_broadcaster" args="0 0 0 0 0 0  /base_footprint /map 100" />
 
 </launch>
