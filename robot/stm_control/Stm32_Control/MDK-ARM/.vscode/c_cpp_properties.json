@@ -10,7 +10,8 @@
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\CMSIS\\Include",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\MDK-ARM",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Src",
-                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\STM32F1xx_HAL_Driver\\Src"
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\STM32F1xx_HAL_Driver\\Src",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Debug"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

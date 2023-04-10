@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "debug_uart.h": "c",
+        "debug.h": "c",
+        "motor_drive.h": "c",
+        "communication_serial.h": "c"
+    }
+}

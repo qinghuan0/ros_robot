@@ -110,6 +110,7 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_TIM8_Init();
   MX_ADC2_Init();
   MX_I2C1_Init();
   MX_TIM2_Init();
@@ -117,13 +118,21 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM5_Init();
   MX_TIM6_Init();
-  MX_TIM8_Init();
+
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
 
-  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5,GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11 | GPIO_PIN_12,GPIO_PIN_SET);
+  HAL_TIM_Base_Start(&htim8);
+  HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3 | TIM_CHANNEL_4);
+
+  Enable_UART_Receive();
+
+  char count_str[20];
+  char a =1;
 
   /* USER CODE END 2 */
 
@@ -132,6 +141,15 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+    uint16_t count = __HAL_TIM_GET_COUNTER(&htim2);
+
+    sprintf(count_str, "%d" ,count);
+
+    // HAL_UART_Transmit(&huart1,(uint8_t *)count_str,strlen(count_str),HAL_MAX_DELAY);
+    HAL_UART_Transmit(&huart1,(uint8_t *)a,strlen(count_str),HAL_MAX_DELAY);
+
+
+    HAL_Delay(100);
 
     /* USER CODE BEGIN 3 */
   }
