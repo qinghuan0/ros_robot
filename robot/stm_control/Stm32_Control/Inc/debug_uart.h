@@ -18,5 +18,6 @@
 void Enable_UART_Receive(void);
 // void test_motor(uint8_t mode,MOTOR_NUM motor,DIRECT_MOTOR dic,uint32_t cycle);
 void test_inverse(uint32_t x_speed,uint32_t y_speed,uint32_t yaw);
+void UART1_Send(const char *str) ;
 
 #endif

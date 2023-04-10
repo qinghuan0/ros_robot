@@ -1,7 +1,7 @@
 Dependencies for Project 'Stm32_Control', Target 'Stm32_Control': (DO NOT MODIFY !)
 CompilerVersion: 5050106::V5.05 update 1 (build 106)::ARMCC
 F (startup_stm32f103xe.s)(0x64326C83)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1" --pd "_RTE_ SETA 1"--list startup_stm32f103xe.lst --xref -o stm32_control\startup_stm32f103xe.o --depend stm32_control\startup_stm32f103xe.d)
-F (../Src/main.c)(0x64338EAA)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\main.o --omf_browse stm32_control\main.crf --depend stm32_control\main.d)
+F (../Src/main.c)(0x6433A266)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\main.o --omf_browse stm32_control\main.crf --depend stm32_control\main.d)
 I (../Inc/main.h)(0x64326C81)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x64326C80)
@@ -656,8 +656,8 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (..\Devices\Debug\debug_uart.c)(0x643380CE)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\debug_uart.o --omf_browse stm32_control\debug_uart.crf --depend stm32_control\debug_uart.d)
-I (../Inc/debug_uart.h)(0x643382F3)
+F (..\Devices\Debug\debug_uart.c)(0x64339E21)(--c99 -c --cpu Cortex-M3 -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\debug_uart.o --omf_browse stm32_control\debug_uart.crf --depend stm32_control\debug_uart.d)
+I (../Inc/debug_uart.h)(0x64339E2E)
 I (../Inc/main.h)(0x64326C81)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x64326C80)

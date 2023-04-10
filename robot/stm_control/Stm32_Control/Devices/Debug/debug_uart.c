@@ -10,6 +10,11 @@ extern UART_HandleTypeDef huart1;
 extern UART_HandleTypeDef huart2;
 //extern UART_HandleTypeDef huart3;
 
+void UART1_Send(const char *str) 
+{
+	HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
+}
+
 void Enable_UART_Receive(void)
 {
 	//使能串口1的中断，当串口接收到数据个数为UART1_RECEIVE_NUM时，数据存放在uartRxBuffer，会触发uartRxBuffer回调函数
