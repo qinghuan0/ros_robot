@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc; ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy; ../Drivers/CMSIS/Device/ST/STM32F1xx/Include; ../Drivers/CMSIS/Include</IncludePath>
+              <IncludePath>../Inc;         ../Drivers/STM32F1xx_HAL_Driver/Inc;         ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;         ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;         ../Drivers/CMSIS/Include</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -518,6 +518,26 @@
               <FileName>debug_uart.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\Devices\Debug\debug_uart.c</FilePath>
+            </File>
+            <File>
+              <FileName>Kinematics.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Kinematics\Kinematics.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor_drive.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Motor\motor_drive.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor_encode.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\Motor_Encode\motor_encode.c</FilePath>
+            </File>
+            <File>
+              <FileName>motor_pid.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\PID\motor_pid.c</FilePath>
             </File>
           </Files>
         </Group>

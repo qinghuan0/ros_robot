@@ -22,7 +22,13 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <stdio.h>
+#include "debug.h"
+#include "motor_drive.h"
+#include "debug_uart.h"
+#include "motor_encode.h"
+#include "motor_pid.h"
+#include "Kinematics.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -32,6 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define ENCODER_MID_VALUE 30000
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -57,6 +64,15 @@ UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
 
+int16_t encoder_delta[4] = {0};//编码器变化的�??		 --用于速度的计�??
+int16_t encoder_sum[4]   = {0};//编码器变化的累加�??--用于里程计的计算
+
+int16_t motor_pwm[4] 	   = {0};
+int16_t robot_odom[6] = {0}; //里程计数据，绝对值和变化�??,x y yaw dx dy dyaw
+
+int16_t robot_target_speed[3] = {0};//机器人目标�?�度(x,y,yaw)，该值是由ROS上层通过串口传�?�过�??
+int16_t encoder_delta_target[4] = {0}; //编码器目标变化�?�，由上面的robot_target_speed[]根据逆解算得到的四轮转�?�的编码器�??
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -73,13 +89,50 @@ static void MX_TIM8_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USART1_UART_Init(void);
-
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void Robot_Move_Ctrl(void)
+{
+		 //每隔�??定时间得到编码器的变化�??
+		encoder_delta[0] = Get_Encode_Motor_A()-ENCODER_MID_VALUE;  		//A-左前
+		encoder_delta[1] = Get_Encode_Motor_B()  -ENCODER_MID_VALUE;  	//B-左后
+		encoder_delta[2] = -(Get_Encode_Motor_C()-ENCODER_MID_VALUE); 	//C-右后
+		encoder_delta[3] = -(Get_Encode_Motor_D()  -ENCODER_MID_VALUE); //D-右前
+	//printf("encoder_delta(%d,%d,%d,%d)\r\n",encoder_delta[0],encoder_delta[1],encoder_delta[2],encoder_delta[3]);
+		//置位--编码器计数从0~65536的范围因为有正转和反转，�??以取了一�??30000�??始计�??
+		Set_Encode_Count_A(ENCODER_MID_VALUE);
+		Set_Encode_Count_B(ENCODER_MID_VALUE);
+		Set_Encode_Count_C(ENCODER_MID_VALUE);
+		Set_Encode_Count_D(ENCODER_MID_VALUE);
+		//编码器变化的累加�??--用于里程计的计算
+		encoder_sum[0] += encoder_delta[0];
+		encoder_sum[1] += encoder_delta[1];
+		encoder_sum[2] += encoder_delta[2];
+		encoder_sum[3] += encoder_delta[3];
+		//运动学解�??
+		Kinematics_Forward(encoder_sum,robot_odom);//正解:得到里程计和小车轴心速度
+		Kinematics_Inverse(robot_target_speed, encoder_delta_target);//逆解：由串口数据得到编码器的目标�??
+		//PID的控�??
+		motor_pwm[0] = PID_MotorVelocityCtlA(encoder_delta_target[0], encoder_delta[0]);
+		motor_pwm[1] = PID_MotorVelocityCtlB(encoder_delta_target[1], encoder_delta[1]);
+		motor_pwm[2] = PID_MotorVelocityCtlC(encoder_delta_target[2], encoder_delta[2]);
+		motor_pwm[3] = PID_MotorVelocityCtlD(encoder_delta_target[3], encoder_delta[3]);
+		
+//		DEBUG("target(%d,%d,%d,%d), encoder_delta(%d,%d,%d,%d),motor_pwm(%d,%d,%d,%d)\r\n",
+//						encoder_delta_target[0],encoder_delta_target[1],encoder_delta_target[2],encoder_delta_target[3],
+//						encoder_delta[0],encoder_delta[0],encoder_delta[0],encoder_delta[0],
+//						motor_pwm[0],motor_pwm[1],motor_pwm[2],motor_pwm[3]);
+
+		//根据PID的输出控制电�??
+		Motor_A_SetSpeed(motor_pwm[0]);
+		Motor_B_SetSpeed(motor_pwm[1]);
+		Motor_C_SetSpeed(motor_pwm[2]);
+		Motor_D_SetSpeed(motor_pwm[3]);
+}
 
 /* USER CODE END 0 */
 
@@ -111,7 +164,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_TIM8_Init();
   MX_ADC2_Init();
   MX_I2C1_Init();
   MX_TIM2_Init();
@@ -119,20 +171,53 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM5_Init();
   MX_TIM6_Init();
-
+  MX_TIM8_Init();
+  HAL_Delay(1000);
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_USART1_UART_Init();
-  /* USER CODE BEGIN 2 */
 
-  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0 | GPIO_PIN_1 | GPIO_PIN_2 | GPIO_PIN_3 | GPIO_PIN_4 | GPIO_PIN_5,GPIO_PIN_SET);
-  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11 | GPIO_PIN_12,GPIO_PIN_SET);
   HAL_TIM_Base_Start(&htim8);
   HAL_TIM_Base_Start(&htim2);
   HAL_TIM_Base_Start(&htim3);
   HAL_TIM_Base_Start(&htim4);
   HAL_TIM_Base_Start(&htim5);
-  HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1 | TIM_CHANNEL_2 | TIM_CHANNEL_3 | TIM_CHANNEL_4);
+
+  // /* USER CODE BEGIN 2 */
+
+  Motor_Init();
+
+  /*左车头右车尾视角，轮子顺时针转动为正*/
+
+  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,1);//左前电机反转
+  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,0);//左前电机正转
+
+  // HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11,0);//右前电机正转
+  // HAL_GPIO_WritePin(GPIOA,GPIO_PIN_11,1);//右前电机反转
+
+  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_2,1);//右后电机不转
+  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_2,0);//右后电机正转
+
+  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,1);//左后电机不转
+  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_0,0);//左后电机正转
+
+  // Stop_Motor(1);
+  // Start_Encode();  
+  // Set_Encode_Count_A(ENCODER_MID_VALUE);
+	// Set_Encode_Count_B(ENCODER_MID_VALUE);
+	// Set_Encode_Count_C(ENCODER_MID_VALUE);
+	// Set_Encode_Count_D(ENCODER_MID_VALUE);
+  // Start_Motor(MOTOR_A,FORWART);
+  // Start_Motor(MOTOR_B,FORWART);
+  // Start_Motor(MOTOR_C,FORWART);
+  // Start_Motor(MOTOR_D,FORWART);
+  // HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
+  // HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
+  // HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
+  // HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);
+
+  LED_ON();
+  
 
   char count_str[20];
   char a =1;
@@ -144,17 +229,12 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    // UART1_Send("Hello, world!\r\n");
 
     uint16_t count = __HAL_TIM_GET_COUNTER(&htim4);
 
     sprintf(count_str, "%d" ,count);
 
     UART1_Send(count_str);
-
-    // // HAL_UART_Transmit(&huart1,(uint8_t *)count_str,strlen(count_str),HAL_MAX_DELAY);
-    // HAL_UART_Transmit(&huart1,(uint8_t *)a,strlen(count_str),HAL_MAX_DELAY);
-
 
     HAL_Delay(100);
 
@@ -568,7 +648,7 @@ static void MX_TIM8_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
+  sConfigOC.Pulse = 5000;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -739,7 +819,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PA11 PA12 */
-  GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12;
+  GPIO_InitStruct.Pin = GPIO_PIN_11|GPIO_PIN_12|GPIO_PIN_8;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;

@@ -11,7 +11,11 @@
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\MDK-ARM",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Src",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\STM32F1xx_HAL_Driver\\Src",
-                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Debug"
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Debug",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Kinematics",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor_Encode",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\PID"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
