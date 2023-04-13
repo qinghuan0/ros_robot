@@ -13,10 +13,10 @@
 * MotorA~D:车头左轮开始，逆时针编码
 ##
 
-* PC6：左前轮PWM；PC9：左后轮PWM； PC7：右前轮PWM；PC8：右后轮PWM   
+* PC6：左前轮PWM；PC7：右前轮PWM；PC8、PA8：左后轮PWM ；PC9、PA11：右后轮PWM  
 ##
 
-* PC4:左前正反转；PC2 PC3：左后正反转；PA11：右前正反转；PC0 PC1：右后正反转  
+* PC4:左前正反转；PA11：右前正反转；PC8、PA8：左后正反转；PC9、PA11：右后正反转  
 ##
 
 * PB3 PA15：左前编码器；PB4 PB5：左后编码器；PB6 PB7：右前编码器；PA0 PA1：右后编码器

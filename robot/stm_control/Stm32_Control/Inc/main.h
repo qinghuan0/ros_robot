@@ -63,8 +63,6 @@ void Error_Handler(void);
 /* USER CODE BEGIN Private defines */
 
 //LED 
-#define LED_ON() 		 HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8,0)
-#define LED_OFF()    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_8,1)
 
 /* USER CODE END Private defines */
 

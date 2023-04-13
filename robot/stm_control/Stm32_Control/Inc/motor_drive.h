@@ -21,10 +21,11 @@ typedef enum
 	MOTOR_D,
 	ALL
 }MOTOR_NUM;
+
 #define MOTOR_A_PWM_CHANNEL TIM_CHANNEL_1
-#define MOTOR_B_PWM_CHANNEL TIM_CHANNEL_4
+#define MOTOR_B_PWM_CHANNEL TIM_CHANNEL_2
 #define MOTOR_C_PWM_CHANNEL TIM_CHANNEL_3
-#define MOTOR_D_PWM_CHANNEL TIM_CHANNEL_2
+#define MOTOR_D_PWM_CHANNEL TIM_CHANNEL_4
 
 void Set_Motor_PWM(TIM_HandleTypeDef *htimx, uint32_t Channelx);
 void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic);

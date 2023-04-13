@@ -2,16 +2,21 @@
 
 DEBUG_SET_LEVEL(DEBUG_LEVEL_ERR);
 extern TIM_HandleTypeDef htim8;
+extern TIM_HandleTypeDef htim1;
 //TIM_CHANNEL_1 ~TIM_CHANNEL_4
 //设置PWM的占空比
 void Motor_Init()
-{
-	// Stop_Motor(ALL);
+{	
+	Stop_Motor(ALL);
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
-	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);
-	
+	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);//左后电机正
+	HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);//右后电机正
+
+	// Set_PWM_Compare(&htim8,TIM_CHANNEL_1,5000); //A
+	// Set_PWM_Compare(&htim8,TIM_CHANNEL_2,5000); //B
+	// Set_PWM_Compare(&htim8,TIM_CHANNEL_4,5000); //C
+	// Set_PWM_Compare(&htim8,TIM_CHANNEL_3,5000); //D
 }
 void Set_PWM_Compare(TIM_HandleTypeDef *htimx,uint32_t channel_num,uint32_t duty)
 {
@@ -30,57 +35,52 @@ void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic)
 {
 	switch(motor_num)
 		{
-		case MOTOR_A:/*PC4 PC5*/
-				DEBUG("MOTOR_A DIC = %d\r\n",dic);
+		case MOTOR_A:
+				// DEBUG("MOTOR_A DIC = %d\r\n",dic);
 				if(dic == FORWART)
-				{
-					
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4,1);
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5,0);
+				{	
+					// HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,1);//左前电机反转
 				}else if(dic == REVERSE)
 				{
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4,0);
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5,1);
+					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,0);//左前电机正转
 				}
 				break;
 		case MOTOR_B:
 				DEBUG("MOTOR_B DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{
-					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,1);
-					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12,1);
+					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_12,1);//右前电机反转
 				}else if(dic == REVERSE)
 				{
-					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,1);
-					HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12,0);
+					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_12,0);//右前电机正转
 				}
 			break;
 		case MOTOR_C:
 				DEBUG("MOTOR_C DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0,0);
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1,1);
+					Set_PWM_Compare(&htim8,TIM_CHANNEL_4,0);//右后电机反转
+					HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
 				}else if(dic == REVERSE)
 				{
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0,1);
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1,0);
+					Set_PWM_Compare(&htim1,TIM_CHANNEL_4,0);//右后电机正转
+					HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);
 				}
 			break;
 		case MOTOR_D:
 				DEBUG("MOTOR_D DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2,0);
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3,1);
+					Set_PWM_Compare(&htim8,TIM_CHANNEL_3,0);//左后电机反转
+					HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
 				}else if(dic == REVERSE)
 				{
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2,1);
-					HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3,0);
+					Set_PWM_Compare(&htim1,TIM_CHANNEL_1,0);//左后电机正转
+					HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
 				}
 			break;
-		default:
-			ERR("Start_Motor:Not match Motor\r\n");
+		// default:
+		// 	ERR("Start_Motor:Not match Motor\r\n");
 				
 	}
 }
@@ -90,33 +90,29 @@ void Stop_Motor(MOTOR_NUM motor_num)
 		switch(motor_num)
 		{
 		case MOTOR_A:
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5,0);
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_1,0); 
 			break;
 		case MOTOR_B:
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,0);
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12,0);
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_2,0); 
 			break;
 		case MOTOR_C:
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1,0);
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_4,0);
+			Set_PWM_Compare(&htim1,TIM_CHANNEL_4,0);
 			break;
 		case MOTOR_D:
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3,0);
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_3,0);
+			Set_PWM_Compare(&htim1,TIM_CHANNEL_1,0);
 			break;
 		case ALL:
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_4,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_5,0);
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_11,0);
-			HAL_GPIO_WritePin(GPIOA, GPIO_PIN_12,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_0,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_1,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_2,0);
-			HAL_GPIO_WritePin(GPIOC, GPIO_PIN_3,0);
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_1,0); 
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_2,0); 
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_4,0);
+			Set_PWM_Compare(&htim1,TIM_CHANNEL_4,0);
+			Set_PWM_Compare(&htim8,TIM_CHANNEL_3,0);
+			Set_PWM_Compare(&htim1,TIM_CHANNEL_1,0);
 			break;
-		default:
-			ERR("Stop_Motor:Not match Motor");
+		// default:
+		// 	ERR("Stop_Motor:Not match Motor"); //这句有问题，别开
 		}
 }
 
