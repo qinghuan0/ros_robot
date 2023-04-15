@@ -29,4 +29,4 @@
 --strict --scatter "Stm32_Control\Stm32_Control.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list "Stm32_Control.map" -o Stm32_Control\Stm32_Control.axf
+--list "C:\Users\¶÷\Documents\Stm32_Control.map" -o Stm32_Control\Stm32_Control.axf

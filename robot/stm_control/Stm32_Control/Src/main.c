@@ -29,6 +29,7 @@
 #include "motor_encode.h"
 #include "motor_pid.h"
 #include "Kinematics.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -39,6 +40,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define ENCODER_MID_VALUE 30000
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -81,6 +83,7 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_ADC2_Init(void);
 static void MX_I2C1_Init(void);
+static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_TIM3_Init(void);
 static void MX_TIM4_Init(void);
@@ -90,7 +93,7 @@ static void MX_TIM8_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 static void MX_USART1_UART_Init(void);
-static void MX_TIM1_Init(void);
+void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic);
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -168,6 +171,7 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC2_Init();
   MX_I2C1_Init();
+  MX_TIM1_Init();
   MX_TIM2_Init();
   MX_TIM3_Init();
   MX_TIM4_Init();
@@ -177,7 +181,6 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_USART1_UART_Init();
-  MX_TIM1_Init();
   /* USER CODE BEGIN 2 */
 
   Motor_Init();
@@ -209,6 +212,11 @@ int main(void)
 	// Set_Encode_Count_C(ENCODER_MID_VALUE);
 	// Set_Encode_Count_D(ENCODER_MID_VALUE);
   
+  // Set_PWM_Compare(&htim8,TIM_CHANNEL_1,5000);
+  // Set_PWM_Compare(&htim8,TIM_CHANNEL_2,5000);
+  // Set_PWM_Compare(&htim8,TIM_CHANNEL_3,5000);
+  // Set_PWM_Compare(&htim8,TIM_CHANNEL_4,5000);
+
   // Start_Motor(MOTOR_A,FORWART);
   // Start_Motor(MOTOR_A,REVERSE);
 
@@ -220,6 +228,16 @@ int main(void)
 
   // Start_Motor(MOTOR_D,FORWART);
   // Start_Motor(MOTOR_D,REVERSE);
+
+  MOTOR_A_Control(RUN,REVERSE,5000);
+  MOTOR_B_Control(RUN,REVERSE,5000);
+  MOTOR_C_Control(RUN,REVERSE,5000);
+  MOTOR_D_Control(RUN,REVERSE,5000);
+
+  // Motor_A_SetSpeed(5000);
+  // Motor_B_SetSpeed(5000);
+  // Motor_C_SetSpeed(5000);
+  // Motor_D_SetSpeed(5000);
 
   char count_str[20];
   char a =1;
@@ -408,7 +426,7 @@ static void MX_TIM1_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 5000;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
@@ -721,7 +739,7 @@ static void MX_TIM8_Init(void)
     Error_Handler();
   }
   sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 5000;
+  sConfigOC.Pulse = 0;
   sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
   sConfigOC.OCNPolarity = TIM_OCNPOLARITY_HIGH;
   sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
