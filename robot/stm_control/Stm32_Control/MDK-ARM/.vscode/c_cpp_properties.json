@@ -15,7 +15,8 @@
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Kinematics",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor_Encode",
-                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\PID"
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\PID",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Communication"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

@@ -35,5 +35,7 @@ stm32_control\debug_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_ua
 stm32_control\debug_uart.o: ../Inc/stm32f1xx_it.h
 stm32_control\debug_uart.o: ../Inc/debug.h
 stm32_control\debug_uart.o: D:\kill 5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32_control\debug_uart.o: ../Inc/motor_drive.h
 stm32_control\debug_uart.o: ../Inc/Communication_Serial.h
 stm32_control\debug_uart.o: ../Inc/Kinematics.h
+stm32_control\debug_uart.o: ../Inc/motor_encode.h

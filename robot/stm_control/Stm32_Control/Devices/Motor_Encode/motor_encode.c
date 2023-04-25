@@ -9,12 +9,12 @@ void Start_Encode(void)
 {
 	int ret = 0;
 	ret += HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);//Motor A
-	ret += HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);//Motor B
-	ret += HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//Motor C
+	ret += HAL_TIM_Encoder_Start(&htim5, TIM_CHANNEL_ALL);//Motor C
+	ret += HAL_TIM_Encoder_Start(&htim4, TIM_CHANNEL_ALL);//Motor B
 	ret += HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);//Motor D
 	if(HAL_OK != ret)
 	{
-		ERR("HAL_TIM_Encoder_Start error!\r\n");
+		// ERR("HAL_TIM_Encoder_Start error!\r\n");
 	}
 	
 }
@@ -33,23 +33,23 @@ void Set_Encode_Count_A(int encode)
 int Get_Encode_Motor_B(void)
 {
 	int GetData;
-	GetData = __HAL_TIM_GET_COUNTER(&htim5);
+	GetData = __HAL_TIM_GET_COUNTER(&htim4);
 	return GetData;
 }
 void Set_Encode_Count_B(int encode)
 {
-	__HAL_TIM_SET_COUNTER(&htim5,encode);
+	__HAL_TIM_SET_COUNTER(&htim4,encode);
 }	
 
 int Get_Encode_Motor_C(void)
 {
 	int GetData;
-	GetData = __HAL_TIM_GET_COUNTER(&htim4);
+	GetData = __HAL_TIM_GET_COUNTER(&htim5);
 	return GetData;
 }
 void Set_Encode_Count_C(int encode)
 {
-	__HAL_TIM_SET_COUNTER(&htim4,encode);
+	__HAL_TIM_SET_COUNTER(&htim5,encode);
 }	
 
 int Get_Encode_Motor_D(void)

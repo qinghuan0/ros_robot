@@ -34,7 +34,7 @@ void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic)
 	switch(motor_num)
 		{
 		case MOTOR_A:
-				// DEBUG("MOTOR_A DIC = %d\r\n",dic);
+				DEBUG("MOTOR_A DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{	
 					Set_PWM_Compare(&htim8,TIM_CHANNEL_1,5000);
@@ -46,7 +46,7 @@ void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic)
 				}
 				break;
 		case MOTOR_B:
-				// DEBUG("MOTOR_B DIC = %d\r\n",dic);
+				DEBUG("MOTOR_B DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{
 					Set_PWM_Compare(&htim8,TIM_CHANNEL_2,5000);
@@ -58,7 +58,7 @@ void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic)
 				}
 				break;
 		case MOTOR_C:
-				// DEBUG("MOTOR_C DIC = %d\r\n",dic);
+				DEBUG("MOTOR_C DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{
 					Set_PWM_Compare(&htim8,TIM_CHANNEL_4,0);//右后电机反转
@@ -70,7 +70,7 @@ void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic)
 				}
 				break;
 		case MOTOR_D:
-				// DEBUG("MOTOR_D DIC = %d\r\n",dic);
+				DEBUG("MOTOR_D DIC = %d\r\n",dic);
 				if(dic == FORWART)
 				{
           			Set_PWM_Compare(&htim1,TIM_CHANNEL_1,5000);
@@ -81,8 +81,8 @@ void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic)
 					Set_PWM_Compare(&htim1,TIM_CHANNEL_1,0);//左后电机正转			
 				}
 				break;
-		// default:
-		// 	ERR("Start_Motor:Not match Motor\r\n");
+		default:
+			ERR("Start_Motor:Not match Motor\r\n");
 	}
 }
 
@@ -114,8 +114,8 @@ void Stop_Motor(MOTOR_NUM motor_num)
 			Set_PWM_Compare(&htim8,TIM_CHANNEL_3,0);
 			Set_PWM_Compare(&htim1,TIM_CHANNEL_1,0);
 			break;
-		// default:
-		// 	ERR("Stop_Motor:Not match Motor"); //这句有问题，别开
+		default:
+			ERR("Stop_Motor:Not match Motor"); 
 		}
 }
 
@@ -199,7 +199,7 @@ void MOTOR_D_Control(MOTOR_STATUS status,DIRECT_MOTOR dic,uint32_t duty)
 void Motor_A_SetSpeed(int16_t count)
 {
 	int16_t pwm_count = count;
-	// DEBUG("Motor_A_SetSpeed Targed pwm count =%d\r\n",pwm_count);
+	DEBUG("Motor_A_SetSpeed Targed pwm count =%d\r\n",pwm_count);
 	if(count > 0)
 	{
 		 MOTOR_A_Control(RUN,FORWART,pwm_count);

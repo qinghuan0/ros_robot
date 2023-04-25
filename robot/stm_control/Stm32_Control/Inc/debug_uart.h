@@ -3,7 +3,7 @@
 #include "main.h"
 #include "stm32f1xx_it.h"
 #include "debug.h"
-// #include "motor_drive.h"
+#include "motor_drive.h"
 #include "Communication_Serial.h"
 //#define UART_DEBUG_MOTOR_STATUS
 
@@ -19,5 +19,7 @@ void Enable_UART_Receive(void);
 // void test_motor(uint8_t mode,MOTOR_NUM motor,DIRECT_MOTOR dic,uint32_t cycle);
 void test_inverse(uint32_t x_speed,uint32_t y_speed,uint32_t yaw);
 void UART1_Send(const char *str) ;
+void UART2_Send(const char *str) ;
+void uart_debug(void);
 
 #endif

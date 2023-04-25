@@ -29,6 +29,7 @@
 #include "motor_encode.h"
 #include "motor_pid.h"
 #include "Kinematics.h"
+#include "Communication_Serial.h"
 
 /* USER CODE END Includes */
 
@@ -39,6 +40,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+DEBUG_SET_LEVEL(DEBUG_LEVEL_DEBUG);
 #define ENCODER_MID_VALUE 30000
 
 /* USER CODE END PD */
@@ -66,15 +68,26 @@ UART_HandleTypeDef huart2;
 UART_HandleTypeDef huart3;
 
 /* USER CODE BEGIN PV */
+extern uint8_t uartRxBuffer[20];
+extern uint16_t Target_Speed_A;//串口输入,用于测试PID
+extern uint16_t Target_Speed_B;
+extern uint16_t Target_Speed_C;
+extern uint16_t Target_Speed_D;
+extern int16_t motor_kp;  //PID-P
+extern int16_t motor_ki;    //PID-I
+extern int16_t motor_kd;  //PID-D
 
-int16_t encoder_delta[4] = {0};//编码器变化的�?????		 --用于速度的计�?????
-int16_t encoder_sum[4]   = {0};//编码器变化的累加�?????--用于里程计的计算
+int16_t encoder_delta[4] = {0};//编码器变化的值     --用于速度的计算
+int16_t encoder_sum[4]   = {0};//编码器变化的累加值 --用于里程计的计算
 
 int16_t motor_pwm[4] 	   = {0};
-int16_t robot_odom[6] = {0}; //里程计数据，绝对值和变化�?????,x y yaw dx dy dyaw
+int16_t robot_odom[6] = {0}; //里程计数据，绝对值和变化值，x y yaw dx dy dyaw
 
-int16_t robot_target_speed[3] = {0};//机器人目标�?�度(x,y,yaw)，该值是由ROS上层通过串口传�?�过�?????
-int16_t encoder_delta_target[4] = {0}; //编码器目标变化�?�，由上面的robot_target_speed[]根据逆解算得到的四轮转�?�的编码器�??
+int16_t robot_target_speed[3] = {0};//机器人目标速度(x,y,yaw)，该值是由ROS上层通过串口传递过来
+int16_t encoder_delta_target[4] = {0}; //编码器目标变化值，由上面的robot_target_speed[]根据逆解算得到的四轮转速的编码器值
+
+int16_t mpu_data[10]; //用于存储IMU数据(陀螺仪,加速度,姿态角)---最后一个位置没有使用
+int16_t robot_params[2]={1000,1000};
 
 /* USER CODE END PV */
 
@@ -90,53 +103,61 @@ static void MX_TIM4_Init(void);
 static void MX_TIM5_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_TIM8_Init(void);
+static void MX_USART1_UART_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
-static void MX_USART1_UART_Init(void);
-void Start_Motor(MOTOR_NUM motor_num,DIRECT_MOTOR dic);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+
+/*Use for uart printf*/
+int fputc(int ch,FILE *f){
+	uint8_t temp[1] = {ch};
+	HAL_UART_Transmit(&huart1,temp,1,2);
+	return 1;
+}
+
 void Robot_Move_Ctrl(void)
 {
-		 //每隔�?????定时间得到编码器的变化�??
+		 //每隔一定时间得到编码器的变化值
 		encoder_delta[0] = Get_Encode_Motor_A()-ENCODER_MID_VALUE;  		//A-左前
-		encoder_delta[1] = Get_Encode_Motor_B()  -ENCODER_MID_VALUE;  	//B-左后
+		encoder_delta[1] = Get_Encode_Motor_B()  -ENCODER_MID_VALUE;  	//B-右前
 		encoder_delta[2] = -(Get_Encode_Motor_C()-ENCODER_MID_VALUE); 	//C-右后
-		encoder_delta[3] = -(Get_Encode_Motor_D()  -ENCODER_MID_VALUE); //D-右前
+		encoder_delta[3] = -(Get_Encode_Motor_D()  -ENCODER_MID_VALUE); //D-左后
 	//printf("encoder_delta(%d,%d,%d,%d)\r\n",encoder_delta[0],encoder_delta[1],encoder_delta[2],encoder_delta[3]);
-		//置位--编码器计数从0~65536的范围因为有正转和反转，�?????以取了一�?????30000�?????始计�?????
+		//置位--编码器计数从0~65536的范围因为有正转和反转，所以取了一半30000开始计数
 		Set_Encode_Count_A(ENCODER_MID_VALUE);
 		Set_Encode_Count_B(ENCODER_MID_VALUE);
 		Set_Encode_Count_C(ENCODER_MID_VALUE);
 		Set_Encode_Count_D(ENCODER_MID_VALUE);
-		//编码器变化的累加�?????--用于里程计的计算
+		//编码器变化的累加值--用于里程计的计算
 		encoder_sum[0] += encoder_delta[0];
 		encoder_sum[1] += encoder_delta[1];
 		encoder_sum[2] += encoder_delta[2];
 		encoder_sum[3] += encoder_delta[3];
-		//运动学解�?????
+		//运动学解析
 		Kinematics_Forward(encoder_sum,robot_odom);//正解:得到里程计和小车轴心速度
-		Kinematics_Inverse(robot_target_speed, encoder_delta_target);//逆解：由串口数据得到编码器的目标�?????
-		//PID的控�?????
+		Kinematics_Inverse(robot_target_speed, encoder_delta_target);//逆解：由串口数据得到编码器的目标值
+		//PID的控制
 		motor_pwm[0] = PID_MotorVelocityCtlA(encoder_delta_target[0], encoder_delta[0]);
 		motor_pwm[1] = PID_MotorVelocityCtlB(encoder_delta_target[1], encoder_delta[1]);
 		motor_pwm[2] = PID_MotorVelocityCtlC(encoder_delta_target[2], encoder_delta[2]);
 		motor_pwm[3] = PID_MotorVelocityCtlD(encoder_delta_target[3], encoder_delta[3]);
 		
-//		DEBUG("target(%d,%d,%d,%d), encoder_delta(%d,%d,%d,%d),motor_pwm(%d,%d,%d,%d)\r\n",
-//						encoder_delta_target[0],encoder_delta_target[1],encoder_delta_target[2],encoder_delta_target[3],
-//						encoder_delta[0],encoder_delta[0],encoder_delta[0],encoder_delta[0],
-//						motor_pwm[0],motor_pwm[1],motor_pwm[2],motor_pwm[3]);
+		DEBUG("target(%d,%d,%d,%d), encoder_delta(%d,%d,%d,%d),motor_pwm(%d,%d,%d,%d)\r\n",
+						encoder_delta_target[0],encoder_delta_target[1],encoder_delta_target[2],encoder_delta_target[3],
+						encoder_delta[0],encoder_delta[0],encoder_delta[0],encoder_delta[0],
+						motor_pwm[0],motor_pwm[1],motor_pwm[2],motor_pwm[3]);
 
-		//根据PID的输出控制电�?????
-		Motor_A_SetSpeed(motor_pwm[0]);
-		Motor_B_SetSpeed(motor_pwm[1]);
-		Motor_C_SetSpeed(motor_pwm[2]);
-		Motor_D_SetSpeed(motor_pwm[3]);
+		// PID的控制
+		// Motor_A_SetSpeed(motor_pwm[0]);
+		// Motor_B_SetSpeed(motor_pwm[1]);
+		// Motor_C_SetSpeed(motor_pwm[2]);
+		// Motor_D_SetSpeed(motor_pwm[3]);
 }
 
 /* USER CODE END 0 */
@@ -181,66 +202,35 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_USART1_UART_Init();
-  /* USER CODE BEGIN 2 */
 
+  Enable_UART_Receive();
+
+  /* USER CODE BEGIN 2 */
   Motor_Init();
 
-  /*左车头右车尾视角，轮子顺时针转动为正*/
+  MOTOR_A_Control(RUN,FORWART,2000);
+  MOTOR_B_Control(RUN,FORWART,2000);
+  MOTOR_C_Control(RUN,FORWART,2000);
+  MOTOR_D_Control(RUN,FORWART,2000);
 
-  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,1);//左前电机反转
-  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,0);//左前电机正转
-
-  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_12,0);//右前电机正转
-  // HAL_GPIO_WritePin(GPIOC,GPIO_PIN_12,1);//右前电机反转
-
-  // Set_PWM_Compare(&htim8,TIM_CHANNEL_4,0);//右后电机反转
-  // HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_4);
-
-  // Set_PWM_Compare(&htim1,TIM_CHANNEL_4,0);//右后电机正转
-  // HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_4);
-
-  // Set_PWM_Compare(&htim8,TIM_CHANNEL_3,0);//左后电机反转
-  // HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
-
-  // Set_PWM_Compare(&htim1,TIM_CHANNEL_1,0);//左后电机正转
-  // HAL_TIM_PWM_Start(&htim8,TIM_CHANNEL_3);
-
-  // Stop_Motor(MOTOR_D);
-  // Start_Encode();  
-  // Set_Encode_Count_A(ENCODER_MID_VALUE);
-	// Set_Encode_Count_B(ENCODER_MID_VALUE);
-	// Set_Encode_Count_C(ENCODER_MID_VALUE);
-	// Set_Encode_Count_D(ENCODER_MID_VALUE);
+  Start_Encode();
+  Set_Encode_Count_A(ENCODER_MID_VALUE);
+	Set_Encode_Count_B(ENCODER_MID_VALUE);
+	Set_Encode_Count_C(ENCODER_MID_VALUE);
+	Set_Encode_Count_D(ENCODER_MID_VALUE);
   
-  // Set_PWM_Compare(&htim8,TIM_CHANNEL_1,5000);
-  // Set_PWM_Compare(&htim8,TIM_CHANNEL_2,5000);
-  // Set_PWM_Compare(&htim8,TIM_CHANNEL_3,5000);
-  // Set_PWM_Compare(&htim8,TIM_CHANNEL_4,5000);
+  Robot_Move_Ctrl();
 
-  // Start_Motor(MOTOR_A,FORWART);
-  // Start_Motor(MOTOR_A,REVERSE);
 
-  // Start_Motor(MOTOR_B,FORWART);
-  // Start_Motor(MOTOR_B,REVERSE);
+  INFO("Init done...\r\n");
 
-  // Start_Motor(MOTOR_C,FORWART);
-  // Start_Motor(MOTOR_C,REVERSE);
+  // HAL_NVIC_SetPriority(USART1_IRQn, 0, 0); //设置中断优先级
+  // HAL_NVIC_EnableIRQ(USART1_IRQn); //使能中断
+  // __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE); //开启接收中断
 
-  // Start_Motor(MOTOR_D,FORWART);
-  // Start_Motor(MOTOR_D,REVERSE);
 
-  MOTOR_A_Control(RUN,REVERSE,5000);
-  MOTOR_B_Control(RUN,REVERSE,5000);
-  MOTOR_C_Control(RUN,REVERSE,5000);
-  MOTOR_D_Control(RUN,REVERSE,5000);
-
-  // Motor_A_SetSpeed(5000);
-  // Motor_B_SetSpeed(5000);
-  // Motor_C_SetSpeed(5000);
-  // Motor_D_SetSpeed(5000);
-
-  char count_str[20];
-  char a =1;
+  // char count_str[20];
+  // char a =1;
 
   /* USER CODE END 2 */
 
@@ -249,7 +239,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    // uart_debug();  //uart debug
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -795,7 +785,7 @@ static void MX_USART1_UART_Init(void)
 
   /* USER CODE END USART1_Init 1 */
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 9600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
@@ -919,6 +909,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
 
 /* USER CODE END 4 */
 

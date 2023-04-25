@@ -4,6 +4,9 @@
         "debug.h": "c",
         "motor_drive.h": "c",
         "communication_serial.h": "c",
-        "main.h": "c"
+        "main.h": "c",
+        "motor_pid.h": "c",
+        "kinematics.h": "c",
+        "stdio.h": "c"
     }
 }

@@ -20,7 +20,7 @@ void Kinematics_Init(int16_t* robot_params)
 {
 
 	linear_correction_factor    = (float)robot_params[0]/1000;
-  angular_correction_factor   = (float)robot_params[1]/1000;
+  	angular_correction_factor   = (float)robot_params[1]/1000;
 	wheel_track_cali = WHEEL_TRACK/angular_correction_factor;
 
 
