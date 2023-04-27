@@ -10,6 +10,9 @@
         "stdio.h": "c",
         "mpu6050.h": "c",
         "inv_mpu.h": "c",
-        "inv_mpu_dmp_motion_driver.h": "c"
-    }
+        "inv_mpu_dmp_motion_driver.h": "c",
+        "main_loop.h": "c"
+    },
+    "search.useGlobalIgnoreFiles": false,
+    "search.useParentIgnoreFiles": false
 }

@@ -32,3 +32,9 @@ stm32_control\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_
 stm32_control\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 stm32_control\stm32f1xx_it.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 stm32_control\stm32f1xx_it.o: ../Inc/stm32f1xx_it.h
+stm32_control\stm32f1xx_it.o: ../Inc/debug_uart.h
+stm32_control\stm32f1xx_it.o: ../Inc/debug.h
+stm32_control\stm32f1xx_it.o: D:\kill 5\ARM\ARMCC\Bin\..\include\stdio.h
+stm32_control\stm32f1xx_it.o: ../Inc/motor_drive.h
+stm32_control\stm32f1xx_it.o: ../Inc/Communication_Serial.h
+stm32_control\stm32f1xx_it.o: ../Inc/Kinematics.h

@@ -22,7 +22,8 @@
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor_Encode",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\PID",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Communication",
-                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\MPU6050\\Src"
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\MPU6050\\Src",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\MainLoop"
             ],
             "defines": [
                 "USE_HAL_DRIVER",

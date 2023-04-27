@@ -569,6 +569,11 @@
               <FileType>1</FileType>
               <FilePath>..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.c</FilePath>
             </File>
+            <File>
+              <FileName>main_loop.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Devices\MainLoop\main_loop.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

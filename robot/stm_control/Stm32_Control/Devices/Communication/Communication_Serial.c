@@ -22,7 +22,7 @@ extern int16_t motor_kd;
 extern int16_t robot_target_speed[3];  // X Y Yaw
 extern int16_t robot_params[2];
 
-DEBUG_SET_LEVEL(DEBUG_LEVEL_ERR);
+DEBUG_SET_LEVEL(DEBUG_LEVEL_DEBUG);
 /*
 *用于与JETSON进行通信的串口
 */
@@ -156,7 +156,7 @@ void USART2_Resolve_Data(uint8_t data)
 {
 	uint8_t Res;
 	
-	//printf("Get_Data =%c\r\n",data);
+	printf("Get_Data =%c\r\n",data);
 	if(1)  //接收中断
 	{
 		  //printf("Get Data!\r\n");
@@ -195,7 +195,7 @@ void USART2_Resolve_Data(uint8_t data)
 				}
 			}
 			else    //==接收数据
-			{
+			{				
 				if(uart2_rx_con < (uart2_rx_buf[2]-1) )
 				{
 					uart2_rx_buf[uart2_rx_con] = Res;
@@ -207,6 +207,7 @@ void USART2_Resolve_Data(uint8_t data)
 					//数据校验
 					if( Res == uart2_rx_checksum )  //校验正确
 					{	
+						printf("ok");
 						//=====此处进行数据解析=========
 						//运动控制帧
 						if(uart2_rx_buf[3] == 0x11)
@@ -222,7 +223,7 @@ void USART2_Resolve_Data(uint8_t data)
 							if(robot_target_speed[1] < (-ROBOT_LINEAR_SPEED_LIMIT)) robot_target_speed[1] = (-ROBOT_LINEAR_SPEED_LIMIT);
 							if(robot_target_speed[2] > ROBOT_ANGULAR_SPEED_LIMIT)    robot_target_speed[2] = ROBOT_ANGULAR_SPEED_LIMIT;
 							if(robot_target_speed[2] < (-ROBOT_ANGULAR_SPEED_LIMIT)) robot_target_speed[2] = (-ROBOT_ANGULAR_SPEED_LIMIT);
-							// DEBUG("Receive ROS Speed(x,y,yaw)=%d,%d,%d\r\n",robot_target_speed[0],robot_target_speed[1],robot_target_speed[2]);
+							DEBUG("Receive ROS Speed(x,y,yaw)=%d,%d,%d\r\n",robot_target_speed[0],robot_target_speed[1],robot_target_speed[2]);
 						}
 						else
 						{

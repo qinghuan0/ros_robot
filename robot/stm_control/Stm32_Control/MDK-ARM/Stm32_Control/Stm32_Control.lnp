@@ -32,6 +32,7 @@
 "stm32_control\mpu6050.o"
 "stm32_control\inv_mpu_dmp_motion_driver.o"
 "stm32_control\inv_mpu.o"
+"stm32_control\main_loop.o"
 --library_type=microlib --strict --scatter "Stm32_Control\Stm32_Control.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

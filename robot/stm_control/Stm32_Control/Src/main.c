@@ -141,9 +141,9 @@ void ROBOT_GetImuData()
 		w_mpu_read_all_raw_data(&mpu_raw_msg);
 		//读取mpu姿态
 		read_dmp(&mpu_pose_msg);
-		DEBUG("Pitch: %f\t ", mpu_pose_msg.pitch);
-		DEBUG("Roll:  %f\t ", mpu_pose_msg.roll);
-		DEBUG("Yaw:   %f\t \r\n", mpu_pose_msg.yaw);
+		// DEBUG("Pitch: %f\t ", mpu_pose_msg.pitch);
+		// DEBUG("Roll:  %f\t ", mpu_pose_msg.roll);
+		// DEBUG("Yaw:   %f\t \r\n", mpu_pose_msg.yaw);
 		//陀螺仪
 		mpu_data[0] = mpu_raw_msg.mpu_gyro[0];
 		mpu_data[1] = mpu_raw_msg.mpu_gyro[1];
@@ -201,10 +201,10 @@ void Robot_Move_Ctrl(void)
 		motor_pwm[2] = PID_MotorVelocityCtlC(encoder_delta_target[2], encoder_delta[2]);
 		motor_pwm[3] = PID_MotorVelocityCtlD(encoder_delta_target[3], encoder_delta[3]);
 		
-		DEBUG("target(%d,%d,%d,%d), encoder_delta(%d,%d,%d,%d),motor_pwm(%d,%d,%d,%d)\r\n",
-						encoder_delta_target[0],encoder_delta_target[1],encoder_delta_target[2],encoder_delta_target[3],
-						encoder_delta[0],encoder_delta[0],encoder_delta[0],encoder_delta[0],
-						motor_pwm[0],motor_pwm[1],motor_pwm[2],motor_pwm[3]);
+		// DEBUG("target(%d,%d,%d,%d), encoder_delta(%d,%d,%d,%d),motor_pwm(%d,%d,%d,%d)\r\n",
+		// 				encoder_delta_target[0],encoder_delta_target[1],encoder_delta_target[2],encoder_delta_target[3],
+		// 				encoder_delta[0],encoder_delta[0],encoder_delta[0],encoder_delta[0],
+		// 				motor_pwm[0],motor_pwm[1],motor_pwm[2],motor_pwm[3]);
 
 		// PID的控制
 		Motor_A_SetSpeed(motor_pwm[0]);
@@ -222,7 +222,7 @@ void Robot_Move_Ctrl(void)
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-
+    uint8_t cnt_50HZ = 1;
   /* USER CODE END 1 */
 
   /* MCU Configuration--------------------------------------------------------*/
@@ -261,16 +261,18 @@ int main(void)
   MPU6050_Init ();
   Motor_Init();
 
-  // MOTOR_A_Control(RUN,FORWART,2000);
-  // MOTOR_B_Control(RUN,REVERSE,2000);
-  // MOTOR_C_Control(RUN,FORWART,2000);
-  // MOTOR_D_Control(RUN,REVERSE,2000);
+  MOTOR_A_Control(RUN,FORWART,2000);
+  MOTOR_B_Control(RUN,FORWART,2000);
+  MOTOR_C_Control(RUN,FORWART,2000);
+  MOTOR_D_Control(RUN,FORWART,2000);
 
   Start_Encode();
   Set_Encode_Count_A(ENCODER_MID_VALUE);
 	Set_Encode_Count_B(ENCODER_MID_VALUE);
 	Set_Encode_Count_C(ENCODER_MID_VALUE);
 	Set_Encode_Count_D(ENCODER_MID_VALUE);
+
+  Start_Main_Loop();
 
   INFO("Init done...\r\n");
 
@@ -288,13 +290,25 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+		if(check_tim6_status() == 1)//10ms-->100MHZ
+		{
+			if(cnt_50HZ % 2 ==0)//50MHZ
+			{
+				//机器人的运动控制<正解、逆解、PID等>
+				// Robot_Move_Ctrl();
+
+				//获取IMU数据
+				ROBOT_GetImuData();
+				
+				//向上位机发送数据
+				ROBOT_SendDataToJetson();
+
+			}
+      cnt_50HZ ++;
+    }
+    // printf_rcv_buffer(&mpu_data,10);
     // uart_debug();  //uart debug
-    Robot_Move_Ctrl();
-    //获取IMU数据
-    ROBOT_GetImuData();
-    
-    //向上位机发送数据
-    // ROBOT_SendDataToJetson();
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

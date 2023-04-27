@@ -132,7 +132,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		{
 			x_speed = GET_NUM(uartRxBuffer[2],uartRxBuffer[3],uartRxBuffer[4],uartRxBuffer[5]);
 			y_speed = GET_NUM(uartRxBuffer[7],uartRxBuffer[8],uartRxBuffer[9],uartRxBuffer[10]);
-			yaw 		= GET_NUM(uartRxBuffer[12],uartRxBuffer[13],uartRxBuffer[14],uartRxBuffer[15]);
+			yaw 	= GET_NUM(uartRxBuffer[12],uartRxBuffer[13],uartRxBuffer[14],uartRxBuffer[15]);
 
 			if(uartRxBuffer[1] == '-') 			x_speed = -x_speed;
 			else if(uartRxBuffer[6] == '-') y_speed = -y_speed;
@@ -167,13 +167,14 @@ void test_inverse(uint32_t x_speed,uint32_t y_speed,uint32_t yaw)
 //串口2
 void uart_debug(void)
 {
-	char count_str[20];
+	// char count_str[20];
     // HAL_StatusTypeDef status;
     // uint8_t data;
 	// int data_int;
 	// uint8_t D_enc;
 
-	// status = HAL_UART_Receive(&huart2, &data, 4, HAL_MAX_DELAY);
+	// status = HAL_UART_Receive(&huart2, &data, 30, HAL_MAX_DELAY);
+
 	
     // //处理接收到的数据
     // if (status == HAL_OK) {
@@ -204,8 +205,8 @@ void uart_debug(void)
     //     }
     // }
 	
-    uint16_t count = Get_Encode_Motor_A();
-    sprintf(count_str, "%d" ,count);
-	UART1_Send(count_str);
+    // uint16_t count = Get_Encode_Motor_A();
+    // sprintf(count_str, "%d" ,count);
+	// UART1_Send(count_str);
 
 }
