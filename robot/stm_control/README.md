@@ -28,9 +28,6 @@
 ##
 
 * PB8:SCL;PB9:SDA------mpu6050
-##
-
-* jetson-8:TX;9:RX
 
 ### 定时器说明
 
