@@ -40,3 +40,7 @@ stm32_control\main.o: ../Inc/Communication_Serial.h
 stm32_control\main.o: ../Inc/Kinematics.h
 stm32_control\main.o: ../Inc/motor_encode.h
 stm32_control\main.o: ../Inc/motor_pid.h
+stm32_control\main.o: ..\Devices\MPU6050\Inc\mpu6050.h
+stm32_control\main.o: ../Inc/i2c.h
+stm32_control\main.o: ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.h
+stm32_control\main.o: ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu_dmp_motion_driver.h

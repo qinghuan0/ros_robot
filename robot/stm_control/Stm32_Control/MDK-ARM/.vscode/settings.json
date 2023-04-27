@@ -7,6 +7,9 @@
         "main.h": "c",
         "motor_pid.h": "c",
         "kinematics.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "mpu6050.h": "c",
+        "inv_mpu.h": "c",
+        "inv_mpu_dmp_motion_driver.h": "c"
     }
 }

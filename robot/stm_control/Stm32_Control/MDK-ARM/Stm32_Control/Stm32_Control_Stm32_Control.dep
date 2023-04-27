@@ -1,7 +1,7 @@
 Dependencies for Project 'Stm32_Control', Target 'Stm32_Control': (DO NOT MODIFY !)
 CompilerVersion: 5050106::V5.05 update 1 (build 106)::ARMCC
 F (startup_stm32f103xe.s)(0x643800A3)(--cpu Cortex-M3 -g --apcs=interwork --pd "__MICROLIB SETA 1"-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"--pd "__UVISION_VERSION SETA 538" --pd "_RTE_ SETA 1" --pd "STM32F10X_HD SETA 1" --pd "_RTE_ SETA 1"--list c:\users\¶÷\documents\startup_stm32f103xe.lst --xref -o stm32_control\startup_stm32f103xe.o --depend stm32_control\startup_stm32f103xe.d)
-F (../Src/main.c)(0x6447A0C2)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\main.o --omf_browse stm32_control\main.crf --depend stm32_control\main.d)
+F (../Src/main.c)(0x6449F8DE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\main.o --omf_browse stm32_control\main.crf --depend stm32_control\main.d)
 I (../Inc/main.h)(0x64381603)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
@@ -42,7 +42,11 @@ I (../Inc/Communication_Serial.h)(0x6426A114)
 I (../Inc/Kinematics.h)(0x6426A114)
 I (../Inc/motor_encode.h)(0x6426A114)
 I (../Inc/motor_pid.h)(0x6426A114)
-F (../Src/stm32f1xx_it.c)(0x643800A1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_it.o --omf_browse stm32_control\stm32f1xx_it.crf --depend stm32_control\stm32f1xx_it.d)
+I (..\Devices\MPU6050\Inc\mpu6050.h)(0x6448DDCC)
+I (../Inc/i2c.h)(0x6426A114)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.h)(0x6448E29C)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu_dmp_motion_driver.h)(0x6426A113)
+F (../Src/stm32f1xx_it.c)(0x643800A1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_it.o --omf_browse stm32_control\stm32f1xx_it.crf --depend stm32_control\stm32f1xx_it.d)
 I (../Inc/main.h)(0x64381603)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
@@ -75,7 +79,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
 I (../Inc/stm32f1xx_it.h)(0x643800A1)
-F (../Src/stm32f1xx_hal_msp.c)(0x643800A1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_msp.o --omf_browse stm32_control\stm32f1xx_hal_msp.crf --depend stm32_control\stm32f1xx_hal_msp.d)
+F (../Src/stm32f1xx_hal_msp.c)(0x643800A1)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_msp.o --omf_browse stm32_control\stm32f1xx_hal_msp.crf --depend stm32_control\stm32f1xx_hal_msp.d)
 I (../Inc/main.h)(0x64381603)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
@@ -107,7 +111,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_gpio_ex.o --omf_browse stm32_control\stm32f1xx_hal_gpio_ex.crf --depend stm32_control\stm32f1xx_hal_gpio_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_gpio_ex.o --omf_browse stm32_control\stm32f1xx_hal_gpio_ex.crf --depend stm32_control\stm32f1xx_hal_gpio_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -138,7 +142,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_adc.o --omf_browse stm32_control\stm32f1xx_hal_adc.crf --depend stm32_control\stm32f1xx_hal_adc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_adc.o --omf_browse stm32_control\stm32f1xx_hal_adc.crf --depend stm32_control\stm32f1xx_hal_adc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -169,7 +173,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_adc_ex.o --omf_browse stm32_control\stm32f1xx_hal_adc_ex.crf --depend stm32_control\stm32f1xx_hal_adc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_adc_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_adc_ex.o --omf_browse stm32_control\stm32f1xx_hal_adc_ex.crf --depend stm32_control\stm32f1xx_hal_adc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -200,7 +204,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal.o --omf_browse stm32_control\stm32f1xx_hal.crf --depend stm32_control\stm32f1xx_hal.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal.o --omf_browse stm32_control\stm32f1xx_hal.crf --depend stm32_control\stm32f1xx_hal.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -231,7 +235,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_rcc.o --omf_browse stm32_control\stm32f1xx_hal_rcc.crf --depend stm32_control\stm32f1xx_hal_rcc.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_rcc.o --omf_browse stm32_control\stm32f1xx_hal_rcc.crf --depend stm32_control\stm32f1xx_hal_rcc.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -262,7 +266,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_rcc_ex.o --omf_browse stm32_control\stm32f1xx_hal_rcc_ex.crf --depend stm32_control\stm32f1xx_hal_rcc_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_rcc_ex.o --omf_browse stm32_control\stm32f1xx_hal_rcc_ex.crf --depend stm32_control\stm32f1xx_hal_rcc_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -293,7 +297,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_gpio.o --omf_browse stm32_control\stm32f1xx_hal_gpio.crf --depend stm32_control\stm32f1xx_hal_gpio.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_gpio.o --omf_browse stm32_control\stm32f1xx_hal_gpio.crf --depend stm32_control\stm32f1xx_hal_gpio.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -324,7 +328,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_dma.o --omf_browse stm32_control\stm32f1xx_hal_dma.crf --depend stm32_control\stm32f1xx_hal_dma.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_dma.o --omf_browse stm32_control\stm32f1xx_hal_dma.crf --depend stm32_control\stm32f1xx_hal_dma.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -355,7 +359,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_cortex.o --omf_browse stm32_control\stm32f1xx_hal_cortex.crf --depend stm32_control\stm32f1xx_hal_cortex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_cortex.o --omf_browse stm32_control\stm32f1xx_hal_cortex.crf --depend stm32_control\stm32f1xx_hal_cortex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -386,7 +390,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_pwr.o --omf_browse stm32_control\stm32f1xx_hal_pwr.crf --depend stm32_control\stm32f1xx_hal_pwr.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_pwr.o --omf_browse stm32_control\stm32f1xx_hal_pwr.crf --depend stm32_control\stm32f1xx_hal_pwr.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -417,7 +421,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_flash.o --omf_browse stm32_control\stm32f1xx_hal_flash.crf --depend stm32_control\stm32f1xx_hal_flash.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_flash.o --omf_browse stm32_control\stm32f1xx_hal_flash.crf --depend stm32_control\stm32f1xx_hal_flash.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -448,7 +452,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_flash_ex.o --omf_browse stm32_control\stm32f1xx_hal_flash_ex.crf --depend stm32_control\stm32f1xx_hal_flash_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_flash_ex.o --omf_browse stm32_control\stm32f1xx_hal_flash_ex.crf --depend stm32_control\stm32f1xx_hal_flash_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -479,7 +483,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_exti.o --omf_browse stm32_control\stm32f1xx_hal_exti.crf --depend stm32_control\stm32f1xx_hal_exti.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_exti.o --omf_browse stm32_control\stm32f1xx_hal_exti.crf --depend stm32_control\stm32f1xx_hal_exti.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -510,7 +514,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_i2c.o --omf_browse stm32_control\stm32f1xx_hal_i2c.crf --depend stm32_control\stm32f1xx_hal_i2c.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_i2c.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_i2c.o --omf_browse stm32_control\stm32f1xx_hal_i2c.crf --depend stm32_control\stm32f1xx_hal_i2c.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -541,7 +545,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_tim.o --omf_browse stm32_control\stm32f1xx_hal_tim.crf --depend stm32_control\stm32f1xx_hal_tim.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_tim.o --omf_browse stm32_control\stm32f1xx_hal_tim.crf --depend stm32_control\stm32f1xx_hal_tim.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -572,7 +576,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_tim_ex.o --omf_browse stm32_control\stm32f1xx_hal_tim_ex.crf --depend stm32_control\stm32f1xx_hal_tim_ex.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_tim_ex.o --omf_browse stm32_control\stm32f1xx_hal_tim_ex.crf --depend stm32_control\stm32f1xx_hal_tim_ex.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -603,7 +607,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\stm32f1xx_hal_uart.o --omf_browse stm32_control\stm32f1xx_hal_uart.crf --depend stm32_control\stm32f1xx_hal_uart.d)
+F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\stm32f1xx_hal_uart.o --omf_browse stm32_control\stm32f1xx_hal_uart.crf --depend stm32_control\stm32f1xx_hal_uart.d)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
 I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
@@ -634,7 +638,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (../Src/system_stm32f1xx.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\system_stm32f1xx.o --omf_browse stm32_control\system_stm32f1xx.crf --depend stm32_control\system_stm32f1xx.d)
+F (../Src/system_stm32f1xx.c)(0x6384B55D)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\system_stm32f1xx.o --omf_browse stm32_control\system_stm32f1xx.crf --depend stm32_control\system_stm32f1xx.d)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6384B55D)
 I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h)(0x6384B55D)
 I (../Drivers/CMSIS/Include/core_cm3.h)(0x6384B547)
@@ -665,7 +669,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
-F (..\Devices\Debug\debug_uart.c)(0x6447988C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\debug_uart.o --omf_browse stm32_control\debug_uart.crf --depend stm32_control\debug_uart.d)
+F (..\Devices\Debug\debug_uart.c)(0x6449F1B4)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\debug_uart.o --omf_browse stm32_control\debug_uart.crf --depend stm32_control\debug_uart.d)
 I (../Inc/debug_uart.h)(0x644767DF)
 I (../Inc/main.h)(0x64381603)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
@@ -705,7 +709,7 @@ I (../Inc/motor_drive.h)(0x643A3A7D)
 I (../Inc/Communication_Serial.h)(0x6426A114)
 I (../Inc/Kinematics.h)(0x6426A114)
 I (../Inc/motor_encode.h)(0x6426A114)
-F (..\Devices\Kinematics\Kinematics.c)(0x6447A168)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\kinematics.o --omf_browse stm32_control\kinematics.crf --depend stm32_control\kinematics.d)
+F (..\Devices\Kinematics\Kinematics.c)(0x6447A168)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\kinematics.o --omf_browse stm32_control\kinematics.crf --depend stm32_control\kinematics.d)
 I (../Inc/Kinematics.h)(0x6426A114)
 I (../Inc/main.h)(0x64381603)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
@@ -742,7 +746,7 @@ I (../Inc/stm32f1xx_it.h)(0x643800A1)
 I (../Inc/debug.h)(0x6447A0C9)
 I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (D:\kill 5\ARM\ARMCC\include\math.h)(0x5475F2FE)
-F (..\Devices\Motor\motor_drive.c)(0x6447A152)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\motor_drive.o --omf_browse stm32_control\motor_drive.crf --depend stm32_control\motor_drive.d)
+F (..\Devices\Motor\motor_drive.c)(0x6447A152)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\motor_drive.o --omf_browse stm32_control\motor_drive.crf --depend stm32_control\motor_drive.d)
 I (../Inc/motor_drive.h)(0x643A3A7D)
 I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (../Inc/main.h)(0x64381603)
@@ -777,7 +781,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
 I (../Inc/debug.h)(0x6447A0C9)
-F (..\Devices\Motor_Encode\motor_encode.c)(0x64476030)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\motor_encode.o --omf_browse stm32_control\motor_encode.crf --depend stm32_control\motor_encode.d)
+F (..\Devices\Motor_Encode\motor_encode.c)(0x64476030)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\motor_encode.o --omf_browse stm32_control\motor_encode.crf --depend stm32_control\motor_encode.d)
 I (../Inc/motor_encode.h)(0x6426A114)
 I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (../Inc/main.h)(0x64381603)
@@ -812,7 +816,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
 I (../Inc/debug.h)(0x6447A0C9)
-F (..\Devices\PID\motor_pid.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\motor_pid.o --omf_browse stm32_control\motor_pid.crf --depend stm32_control\motor_pid.d)
+F (..\Devices\PID\motor_pid.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\motor_pid.o --omf_browse stm32_control\motor_pid.crf --depend stm32_control\motor_pid.d)
 I (../Inc/motor_pid.h)(0x6426A114)
 I (../Inc/main.h)(0x64381603)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
@@ -848,7 +852,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
 I (../Inc/stm32f1xx_it.h)(0x643800A1)
 I (../Inc/debug.h)(0x6447A0C9)
 I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
-F (..\Devices\Communication\Communication_Serial.c)(0x64477F5C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE-o stm32_control\communication_serial.o --omf_browse stm32_control\communication_serial.crf --depend stm32_control\communication_serial.d)
+F (..\Devices\Communication\Communication_Serial.c)(0x64477F5C)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\communication_serial.o --omf_browse stm32_control\communication_serial.crf --depend stm32_control\communication_serial.d)
 I (../Inc/Communication_Serial.h)(0x6426A114)
 I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (../Inc/main.h)(0x64381603)
@@ -885,3 +889,167 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
 I (../Inc/debug.h)(0x6447A0C9)
 I (../Inc/Kinematics.h)(0x6426A114)
 I (../Inc/stm32f1xx_it.h)(0x643800A1)
+F (..\Devices\Delay\ax_delay.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\ax_delay.o --omf_browse stm32_control\ax_delay.crf --depend stm32_control\ax_delay.d)
+I (..\Devices\Delay\ax_delay.h)(0x6426A113)
+I (D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include\stm32f10x.h)(0x528979E6)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6384B547)
+I (D:\kill 5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6384B547)
+I (D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include\system_stm32f10x.h)(0x4F1E2E3C)
+F (..\Devices\MPU6050\Src\mpu6050_i2c.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\mpu6050_i2c.o --omf_browse stm32_control\mpu6050_i2c.crf --depend stm32_control\mpu6050_i2c.d)
+I (..\Devices\MPU6050\Inc\mpu6050_i2c.h)(0x6448DDCC)
+I (../Inc/main.h)(0x64381603)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
+I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h)(0x6384B55D)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6384B547)
+I (D:\kill 5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6384B547)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6384B55D)
+I (D:\kill 5\ARM\ARMCC\include\stddef.h)(0x5475F300)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
+I (../Inc/i2c.h)(0x6426A114)
+F (..\Devices\MPU6050\Src\mpu6050.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\mpu6050.o --omf_browse stm32_control\mpu6050.crf --depend stm32_control\mpu6050.d)
+I (..\Devices\MPU6050\Inc\mpu6050.h)(0x6448DDCC)
+I (../Inc/main.h)(0x64381603)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
+I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h)(0x6384B55D)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6384B547)
+I (D:\kill 5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6384B547)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6384B55D)
+I (D:\kill 5\ARM\ARMCC\include\stddef.h)(0x5475F300)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
+I (../Inc/i2c.h)(0x6426A114)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.h)(0x6448E29C)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu_dmp_motion_driver.h)(0x6426A113)
+I (D:\kill 5\ARM\ARMCC\include\math.h)(0x5475F2FE)
+I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (../Inc/debug.h)(0x6447A0C9)
+F (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu_dmp_motion_driver.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\inv_mpu_dmp_motion_driver.o --omf_browse stm32_control\inv_mpu_dmp_motion_driver.crf --depend stm32_control\inv_mpu_dmp_motion_driver.d)
+I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\string.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\math.h)(0x5475F2FE)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.h)(0x6448E29C)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu_dmp_motion_driver.h)(0x6426A113)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\dmpKey.h)(0x6426A113)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\dmpmap.h)(0x6426A113)
+I (..\Devices\MPU6050\Inc\mpu6050.h)(0x6448DDCC)
+I (../Inc/main.h)(0x64381603)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
+I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h)(0x6384B55D)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6384B547)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6384B55D)
+I (D:\kill 5\ARM\ARMCC\include\stddef.h)(0x5475F300)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
+I (../Inc/i2c.h)(0x6426A114)
+F (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.c)(0x6426A113)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O3 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ..\Devices\MPU6050\Inc -I ..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL -I ..\Devices\Delay -I ..\Devices\MPU6050 -I ..\Devices\Embedded_MotionDriver_5.1-I.\RTE\_Stm32_Control-I"D:\kill 5\ARM\CMSIS\5.9.0\CMSIS\Core\Include"-I"D:\kill 5\Keil\STM32F1xx_DFP\1.0.5\Device\Include"-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F10X_HD -D_RTE_ -DUSE_HAL_DRIVER -DSTM32F103xE -DSTM32F103xC-o stm32_control\inv_mpu.o --omf_browse stm32_control\inv_mpu.crf --depend stm32_control\inv_mpu.d)
+I (D:\kill 5\ARM\ARMCC\include\stdio.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\stdint.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\string.h)(0x5475F300)
+I (D:\kill 5\ARM\ARMCC\include\math.h)(0x5475F2FE)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu.h)(0x6448E29C)
+I (..\Devices\MPU6050\Inc\mpu6050.h)(0x6448DDCC)
+I (../Inc/main.h)(0x64381603)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x6384B55D)
+I (../Inc/stm32f1xx_hal_conf.h)(0x643800A1)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x6384B55D)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h)(0x6384B55D)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_version.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_compiler.h)(0x6384B547)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x6384B547)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h)(0x6384B55D)
+I (D:\kill 5\ARM\ARMCC\include\stddef.h)(0x5475F300)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_adc_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_i2c.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x6384B55D)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x6384B55D)
+I (../Inc/i2c.h)(0x6426A114)
+I (..\Devices\Embedded_MotionDriver_5.1\core\driver\eMPL\inv_mpu_dmp_motion_driver.h)(0x6426A113)

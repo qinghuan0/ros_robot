@@ -8,6 +8,11 @@
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\STM32F1xx_HAL_Driver\\Inc\\Legacy",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\CMSIS\\Device\\ST\\STM32F1xx\\Include",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\CMSIS\\Include",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\MPU6050\\Inc",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Embedded_MotionDriver_5.1\\core\\driver\\eMPL",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Delay",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\MPU6050",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Embedded_MotionDriver_5.1",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\MDK-ARM",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Src",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Drivers\\STM32F1xx_HAL_Driver\\Src",
@@ -16,11 +21,13 @@
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Motor_Encode",
                 "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\PID",
-                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Communication"
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\Communication",
+                "e:\\Project\\CRAIC\\team\\robot\\robot\\stm_control\\Stm32_Control\\Devices\\MPU6050\\Src"
             ],
             "defines": [
                 "USE_HAL_DRIVER",
                 "STM32F103xE",
+                "STM32F103xC",
                 "__CC_ARM",
                 "__arm__",
                 "__align(x)=",

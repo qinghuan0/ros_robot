@@ -22,92 +22,21 @@ Dialog DLL:      TCM.DLL V1.56.4.0
  
 <h2>Project:</h2>
 E:\Project\CRAIC\team\robot\robot\stm_control\Stm32_Control\MDK-ARM\Stm32_Control.uvprojx
-Project File Date:  04/25/2023
+Project File Date:  04/26/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\kill 5\ARM\ARMCC\Bin'
-Rebuild target 'Stm32_Control'
-assembling startup_stm32f103xe.s...
-compiling stm32f1xx_it.c...
-compiling stm32f1xx_hal_gpio_ex.c...
-compiling stm32f1xx_hal_cortex.c...
-compiling stm32f1xx_hal_gpio.c...
-compiling stm32f1xx_hal_flash_ex.c...
-compiling stm32f1xx_hal.c...
-compiling stm32f1xx_hal_adc_ex.c...
-compiling stm32f1xx_hal_flash.c...
-compiling stm32f1xx_hal_msp.c...
+Build target 'Stm32_Control'
 compiling main.c...
 ../Inc/Kinematics.h(31): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Inc/Communication_Serial.h(11): warning:  #1-D: last line of file ends without a newline
   #endif
 ../Src/main.c: 2 warnings, 0 errors
-compiling stm32f1xx_hal_pwr.c...
-compiling stm32f1xx_hal_rcc_ex.c...
-compiling stm32f1xx_hal_dma.c...
-compiling stm32f1xx_hal_rcc.c...
-compiling stm32f1xx_hal_adc.c...
-compiling system_stm32f1xx.c...
-compiling stm32f1xx_hal_exti.c...
-compiling motor_encode.c...
-..\Devices\Motor_Encode\motor_encode.c(2): warning:  #177-D: variable "debug" was declared but never referenced
-  DEBUG_SET_LEVEL(DEBUG_LEVEL_DEBUG);
-..\Devices\Motor_Encode\motor_encode.c: 1 warning, 0 errors
-compiling debug_uart.c...
-../Inc/Kinematics.h(31): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/Communication_Serial.h(11): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Devices\Debug\debug_uart.c(22): warning:  #223-D: function "strlen" declared implicitly
-  	HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
-..\Devices\Debug\debug_uart.c(26): warning:  #223-D: function "strlen" declared implicitly
-  	HAL_UART_Transmit(&huart2, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
-..\Devices\Debug\debug_uart.c(142): warning:  #223-D: function "strstr" declared implicitly
-  		}else if(NULL != strstr(uartRxBuffer,"RESET"))
-..\Devices\Debug\debug_uart.c(149): warning:  #223-D: function "atoi" declared implicitly
-  			DEBUG("Mode=%c,MotorNum=0x%x,Dic=0x%x,pwm=%d\r\n",uartRxBuffer[0],uartRxBuffer[1],uartRxBuffer[2],atoi(&uartRxBuffer[3]));
-..\Devices\Debug\debug_uart.c(150): warning:  #223-D: function "atoi" declared implicitly
-  			test_motor(uartRxBuffer[0],(MOTOR_NUM)(uartRxBuffer[1]-0x30),(DIRECT_MOTOR)(uartRxBuffer[2]-0x30),atoi(&uartRxBuffer[3]));
-..\Devices\Debug\debug_uart.c(211): warning:  #1-D: last line of file ends without a newline
-  }
-..\Devices\Debug\debug_uart.c: 8 warnings, 0 errors
-compiling motor_drive.c...
-..\Devices\Motor\motor_drive.c(41): warning:  #188-D: enumerated type mixed with another type
-  					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,1);//左前电机反转
-..\Devices\Motor\motor_drive.c(45): warning:  #188-D: enumerated type mixed with another type
-  					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_4,0);//左前电机正转
-..\Devices\Motor\motor_drive.c(53): warning:  #188-D: enumerated type mixed with another type
-  					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_12,1);//右前电机反转
-..\Devices\Motor\motor_drive.c(57): warning:  #188-D: enumerated type mixed with another type
-  					HAL_GPIO_WritePin(GPIOC,GPIO_PIN_12,0);//右前电机正转
-..\Devices\Motor\motor_drive.c: 4 warnings, 0 errors
-compiling Communication_Serial.c...
-../Inc/Kinematics.h(31): warning:  #1-D: last line of file ends without a newline
-  #endif
-../Inc/Communication_Serial.h(11): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Devices\Communication\Communication_Serial.c: 2 warnings, 0 errors
-compiling motor_pid.c...
-..\Devices\PID\motor_pid.c(133): warning:  #1-D: last line of file ends without a newline
-  }	
-..\Devices\PID\motor_pid.c(2): warning:  #177-D: variable "debug" was declared but never referenced
-  DEBUG_SET_LEVEL(DEBUG_LEVEL_DEBUG);
-..\Devices\PID\motor_pid.c: 2 warnings, 0 errors
-compiling Kinematics.c...
-../Inc/Kinematics.h(31): warning:  #1-D: last line of file ends without a newline
-  #endif
-..\Devices\Kinematics\Kinematics.c(147): warning:  #1-D: last line of file ends without a newline
-  }
-..\Devices\Kinematics\Kinematics.c: 2 warnings, 0 errors
-compiling stm32f1xx_hal_uart.c...
-compiling stm32f1xx_hal_tim_ex.c...
-compiling stm32f1xx_hal_i2c.c...
-compiling stm32f1xx_hal_tim.c...
 linking...
-Program Size: Code=19924 RO-data=788 RW-data=180 ZI-data=2020  
+Program Size: Code=35864 RO-data=4484 RW-data=252 ZI-data=2084  
 FromELF: creating hex file...
-"Stm32_Control\Stm32_Control.axf" - 0 Error(s), 21 Warning(s).
+"Stm32_Control\Stm32_Control.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -131,7 +60,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:25
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

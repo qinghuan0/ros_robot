@@ -204,7 +204,7 @@ void uart_debug(void)
     //     }
     // }
 	
-    uint16_t count = Get_Encode_Motor_D();
+    uint16_t count = Get_Encode_Motor_A();
     sprintf(count_str, "%d" ,count);
 	UART1_Send(count_str);
 

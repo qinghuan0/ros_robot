@@ -20,12 +20,14 @@
 ##
 
 * PB3 PA15：左前编码器；PB4 PB5：左后编码器；PB6 PB7：右前编码器；PA0 PA1：右后编码器
-##
 
-* PB6 PB7：mpu6050
 ##
 
 * PB0：ADC
+
+##
+
+* PB8:SCL;PB9:SDA------mpu6050
 ##
 
 * jetson-8:TX;9:RX

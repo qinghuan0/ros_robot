@@ -30,6 +30,7 @@
 #include "motor_pid.h"
 #include "Kinematics.h"
 #include "Communication_Serial.h"
+#include "mpu6050.h"
 
 /* USER CODE END Includes */
 
@@ -121,6 +122,58 @@ int fputc(int ch,FILE *f){
 	return 1;
 }
 
+/**
+  * @简  述  MPU6050 DMP获取解算数据，姿态欧拉角
+  * @参  数  无	  
+  * @返回值  无
+  * @全  局
+	mpu_data[0-2] 陀螺仪
+  mpu_data[3-5] 加速度
+  mpu_data[6-8] 欧拉角 横滚，俯仰，航向，实际角度扩大100倍
+  pitch:俯仰角 精度:0.1°   范围:-90.0° <---> +90.0°
+	roll:横滚角  精度:0.1°   范围:-180.0°<---> +180.0°
+	yaw:航向角   精度:0.1°   范围:-180.0°<---> +180.0°
+  */
+
+void ROBOT_GetImuData()
+{
+				//读取mpu所有原始数据
+		w_mpu_read_all_raw_data(&mpu_raw_msg);
+		//读取mpu姿态
+		read_dmp(&mpu_pose_msg);
+		DEBUG("Pitch: %f\t ", mpu_pose_msg.pitch);
+		DEBUG("Roll:  %f\t ", mpu_pose_msg.roll);
+		DEBUG("Yaw:   %f\t \r\n", mpu_pose_msg.yaw);
+		//陀螺仪
+		mpu_data[0] = mpu_raw_msg.mpu_gyro[0];
+		mpu_data[1] = mpu_raw_msg.mpu_gyro[1];
+		mpu_data[2] =	mpu_raw_msg.mpu_gyro[2];
+		//加速度
+		mpu_data[3] = mpu_raw_msg.mpu_acce[0];
+		mpu_data[4] = mpu_raw_msg.mpu_acce[1];
+		mpu_data[5] =	mpu_raw_msg.mpu_acce[2];
+		//姿态-放大了100倍
+		mpu_data[6] = mpu_pose_msg.pitch * 100;
+		mpu_data[7] = mpu_pose_msg.roll  * 100;
+		mpu_data[8] =	mpu_pose_msg.yaw 	 * 100;
+		//DEBUG("angular(%f,%f,%f)\r\n",((float)mpu_data[0]/32768*2000/180*3.1415),((float)mpu_data[1]/32768*2000/180*3.1415),((float)mpu_data[2]/32768*2000/180*3.1415));
+		
+	
+}
+void MPU6050_Init()
+{
+		while(w_mpu_init() != mpu_ok)
+		{
+			ERR("0x%x (ID_ERROR)\r\n", w_mpu_init());
+			HAL_Delay(500);
+		}
+		while(0 != dmp_init())
+		{
+			ERR("Dmp init error \r\n");
+			HAL_Delay(1000);
+		}
+}
+
 void Robot_Move_Ctrl(void)
 {
 		 //每隔一定时间得到编码器的变化值
@@ -154,10 +207,10 @@ void Robot_Move_Ctrl(void)
 						motor_pwm[0],motor_pwm[1],motor_pwm[2],motor_pwm[3]);
 
 		// PID的控制
-		// Motor_A_SetSpeed(motor_pwm[0]);
-		// Motor_B_SetSpeed(motor_pwm[1]);
-		// Motor_C_SetSpeed(motor_pwm[2]);
-		// Motor_D_SetSpeed(motor_pwm[3]);
+		Motor_A_SetSpeed(motor_pwm[0]);
+		Motor_B_SetSpeed(motor_pwm[1]);
+		Motor_C_SetSpeed(motor_pwm[2]);
+		Motor_D_SetSpeed(motor_pwm[3]);
 }
 
 /* USER CODE END 0 */
@@ -202,32 +255,28 @@ int main(void)
   MX_USART2_UART_Init();
   MX_USART3_UART_Init();
   MX_USART1_UART_Init();
-
   Enable_UART_Receive();
 
   /* USER CODE BEGIN 2 */
+  MPU6050_Init ();
   Motor_Init();
 
-  MOTOR_A_Control(RUN,FORWART,2000);
-  MOTOR_B_Control(RUN,FORWART,2000);
-  MOTOR_C_Control(RUN,FORWART,2000);
-  MOTOR_D_Control(RUN,FORWART,2000);
+  // MOTOR_A_Control(RUN,FORWART,2000);
+  // MOTOR_B_Control(RUN,REVERSE,2000);
+  // MOTOR_C_Control(RUN,FORWART,2000);
+  // MOTOR_D_Control(RUN,REVERSE,2000);
 
   Start_Encode();
   Set_Encode_Count_A(ENCODER_MID_VALUE);
 	Set_Encode_Count_B(ENCODER_MID_VALUE);
 	Set_Encode_Count_C(ENCODER_MID_VALUE);
 	Set_Encode_Count_D(ENCODER_MID_VALUE);
-  
-  Robot_Move_Ctrl();
-
 
   INFO("Init done...\r\n");
 
   // HAL_NVIC_SetPriority(USART1_IRQn, 0, 0); //设置中断优先级
   // HAL_NVIC_EnableIRQ(USART1_IRQn); //使能中断
   // __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE); //开启接收中断
-
 
   // char count_str[20];
   // char a =1;
@@ -240,6 +289,12 @@ int main(void)
   {
     /* USER CODE END WHILE */
     // uart_debug();  //uart debug
+    Robot_Move_Ctrl();
+    //获取IMU数据
+    ROBOT_GetImuData();
+    
+    //向上位机发送数据
+    // ROBOT_SendDataToJetson();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
