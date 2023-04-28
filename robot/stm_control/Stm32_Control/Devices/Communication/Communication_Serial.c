@@ -156,7 +156,7 @@ void USART2_Resolve_Data(uint8_t data)
 {
 	uint8_t Res;
 	
-	printf("Get_Data =%c\r\n",data);
+	//printf("Get_Data =%c\r\n",data);
 	if(1)  //接收中断
 	{
 		  //printf("Get Data!\r\n");
@@ -195,7 +195,7 @@ void USART2_Resolve_Data(uint8_t data)
 				}
 			}
 			else    //==接收数据
-			{				
+			{
 				if(uart2_rx_con < (uart2_rx_buf[2]-1) )
 				{
 					uart2_rx_buf[uart2_rx_con] = Res;
@@ -207,7 +207,6 @@ void USART2_Resolve_Data(uint8_t data)
 					//数据校验
 					if( Res == uart2_rx_checksum )  //校验正确
 					{	
-						printf("ok");
 						//=====此处进行数据解析=========
 						//运动控制帧
 						if(uart2_rx_buf[3] == 0x11)
@@ -233,7 +232,7 @@ void USART2_Resolve_Data(uint8_t data)
 								motor_kp = (int16_t)((uart2_rx_buf[4]<<8) | uart2_rx_buf[5]);
 								motor_ki = (int16_t)((uart2_rx_buf[6]<<8) | uart2_rx_buf[7]);
 								motor_kd = (int16_t)((uart2_rx_buf[8]<<8) | uart2_rx_buf[9]);
-								// ERR("Receive ROS PID(P,I,D)=%d,%d,%d\r\n",motor_kp,motor_ki,motor_kd);
+								ERR("Receive ROS PID(P,I,D)=%d,%d,%d\r\n",motor_kp,motor_ki,motor_kd);
 							}
 							
 							//机器人参数

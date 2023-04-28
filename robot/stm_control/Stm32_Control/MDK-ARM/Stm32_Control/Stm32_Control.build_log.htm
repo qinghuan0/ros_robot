@@ -27,6 +27,12 @@ Project File Date:  04/27/2023
 <h2>Output:</h2>
 *** Using Compiler 'V5.05 update 1 (build 106)', folder: 'D:\kill 5\ARM\ARMCC\Bin'
 Build target 'Stm32_Control'
+compiling stm32f1xx_it.c...
+compiling Communication_Serial.c...
+compiling Kinematics.c...
+..\Devices\Kinematics\Kinematics.c(147): warning:  #1-D: last line of file ends without a newline
+  }
+..\Devices\Kinematics\Kinematics.c: 1 warning, 0 errors
 compiling debug_uart.c...
 ..\Devices\Debug\debug_uart.c(22): warning:  #223-D: function "strlen" declared implicitly
   	HAL_UART_Transmit(&huart1, (uint8_t*)str, strlen(str), HAL_MAX_DELAY);
@@ -44,13 +50,13 @@ compiling debug_uart.c...
 compiling main.c...
 ../Src/main.c(275): warning:  #223-D: function "Start_Main_Loop" declared implicitly
     Start_Main_Loop();
-../Src/main.c(293): warning:  #223-D: function "check_tim6_status" declared implicitly
+../Src/main.c(291): warning:  #223-D: function "check_tim6_status" declared implicitly
   		if(check_tim6_status() == 1)//10ms-->100MHZ
 ../Src/main.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=32548 RO-data=4124 RW-data=272 ZI-data=2144  
+Program Size: Code=37072 RO-data=4484 RW-data=272 ZI-data=2264  
 FromELF: creating hex file...
-"Stm32_Control\Stm32_Control.axf" - 0 Error(s), 8 Warning(s).
+"Stm32_Control\Stm32_Control.axf" - 0 Error(s), 9 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -74,7 +80,7 @@ Package Vendor: Keil
 
    * Component: ARM::CMSIS:CORE:5.6.0
       Include file:  CMSIS/Core/Include/tz_context.h
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>

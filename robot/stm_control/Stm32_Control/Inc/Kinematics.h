@@ -11,8 +11,8 @@
 
 
 
-#define CAR_H_HARF_LENGTH       		0.095				//车体长度的一半(95mm)
-#define CAR_W_HARF_LENGTH						0.115				//车体宽度的一半(115mm)
+#define CAR_H_HARF_LENGTH       		0.080				//车体长度的一半(95mm)
+#define CAR_W_HARF_LENGTH						0.065				//车体宽度的一半(115mm)
 
 #define WHEEL_TRACK             (CAR_H_HARF_LENGTH+CAR_W_HARF_LENGTH)
 

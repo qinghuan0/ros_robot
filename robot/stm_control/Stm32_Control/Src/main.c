@@ -261,10 +261,10 @@ int main(void)
   MPU6050_Init ();
   Motor_Init();
 
-  MOTOR_A_Control(RUN,FORWART,2000);
-  MOTOR_B_Control(RUN,FORWART,2000);
-  MOTOR_C_Control(RUN,FORWART,2000);
-  MOTOR_D_Control(RUN,FORWART,2000);
+  // MOTOR_A_Control(RUN,FORWART,2000);
+  // MOTOR_B_Control(RUN,FORWART,2000);
+  // MOTOR_C_Control(RUN,FORWART,2000);
+  // MOTOR_D_Control(RUN,FORWART,2000);
 
   Start_Encode();
   Set_Encode_Count_A(ENCODER_MID_VALUE);
@@ -276,9 +276,7 @@ int main(void)
 
   INFO("Init done...\r\n");
 
-  // HAL_NVIC_SetPriority(USART1_IRQn, 0, 0); //设置中断优先级
-  // HAL_NVIC_EnableIRQ(USART1_IRQn); //使能中断
-  // __HAL_UART_ENABLE_IT(&huart1, UART_IT_RXNE); //开启接收中断
+  Kinematics_Init(robot_params);
 
   // char count_str[20];
   // char a =1;
@@ -295,7 +293,7 @@ int main(void)
 			if(cnt_50HZ % 2 ==0)//50MHZ
 			{
 				//机器人的运动控制<正解、逆解、PID等>
-				// Robot_Move_Ctrl();
+				Robot_Move_Ctrl();
 
 				//获取IMU数据
 				ROBOT_GetImuData();

@@ -54,7 +54,7 @@ void Kinematics_Inverse(int16_t* input, int16_t* output)
 	output[1] = (int16_t)(wheel_velocity[1] * ticks_per_meter/PID_RATE);
 	output[2] = (int16_t)(wheel_velocity[2] * ticks_per_meter/PID_RATE);
 	output[3] = (int16_t)(wheel_velocity[3] * ticks_per_meter/PID_RATE);
-	//DEBUG("Input(%f,%f,%f)Output(%d,%d,%d,%d),ticks_per_meter=%f\r\n",x_speed,y_speed,yaw_speed,output[0],output[1],output[2],output[3],ticks_per_meter);
+	DEBUG("Input(%f,%f,%f)Output(%d,%d,%d,%d),ticks_per_meter=%f\r\n",x_speed,y_speed,yaw_speed,output[0],output[1],output[2],output[3],ticks_per_meter);
 }
 /**
   * @简  述  正向运动学解析，轮子编码值->底盘三轴里程计坐标
@@ -106,7 +106,7 @@ void   Kinematics_Forward(int16_t* input, int16_t* output)
 			else
 				wheel_mult[i]=0;
 	}
-	//	printf("%d %d %d %d\r\n",wheel_mult[0],wheel_mult[1],wheel_mult[2],wheel_mult[3]);
+		// printf("%d %d %d %d\r\n",wheel_mult[0],wheel_mult[1],wheel_mult[2],wheel_mult[3]);
 	//将编码器数值转化为前进的距离，单位m
 	for(int i=0;i<4;i++)
 	{	
