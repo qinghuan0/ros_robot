@@ -15,7 +15,7 @@
   *                        opensource.org/licenses/BSD-3-Clause
   *
   ******************************************************************************
-  */
+  */ 
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -49,7 +49,7 @@ DEBUG_SET_LEVEL(DEBUG_LEVEL_DEBUG);
 /* Private macro -------------------------------------------------------------*/
 /* USER CODE BEGIN PM */
 
-/* USER CODE END PM */
+/* USER CODE END PM */  
 
 /* Private variables ---------------------------------------------------------*/
 ADC_HandleTypeDef hadc2;
@@ -261,10 +261,10 @@ int main(void)
   MPU6050_Init ();
   Motor_Init();
 
-  // MOTOR_A_Control(RUN,FORWART,2000);
-  // MOTOR_B_Control(RUN,FORWART,2000);
-  // MOTOR_C_Control(RUN,FORWART,2000);
-  // MOTOR_D_Control(RUN,FORWART,2000);
+  MOTOR_A_Control(RUN,FORWART,2000);
+  MOTOR_B_Control(RUN,FORWART,2000);
+  MOTOR_C_Control(RUN,FORWART,2000);
+  MOTOR_D_Control(RUN,FORWART,2000);
 
   Start_Encode();
   Set_Encode_Count_A(ENCODER_MID_VALUE);
@@ -293,7 +293,7 @@ int main(void)
 			if(cnt_50HZ % 2 ==0)//50MHZ
 			{
 				//机器人的运动控制<正解、逆解、PID等>
-				Robot_Move_Ctrl();
+				// Robot_Move_Ctrl();
 
 				//获取IMU数据
 				ROBOT_GetImuData();
