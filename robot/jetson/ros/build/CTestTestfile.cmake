@@ -1,6 +1,6 @@
 # CMake generated Testfile for 
-# Source directory: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src
-# Build directory: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build
+# Source directory: /home/nano/ros_car/src
+# Build directory: /home/nano/ros_car/build
 # 
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
@@ -9,21 +9,17 @@ subdirs("third_packages/camera_umd/camera_umd")
 subdirs("third_packages/frontier_exploration/exploration")
 subdirs("third_packages/rbx1/rbx1")
 subdirs("third_packages/world_canvas/world_canvas_tools/rqt_annotation_data")
-subdirs("slam_gmapping/slam_gmapping")
 subdirs("third_packages/frontier_exploration/exploration_msgs")
-subdirs("navigation_msgs/move_base_msgs")
 subdirs("third_packages/world_canvas/world_canvas_msgs")
 subdirs("third_packages/world_canvas/world_canvas_server")
-subdirs("third_packages/rbx1/rbx1_speech")
 subdirs("delta_lidar")
+subdirs("ros_astra_camera")
 subdirs("third_packages/camera_umd/jpeg_streamer")
-subdirs("navigation_msgs/map_msgs")
 subdirs("third_packages/rbx1/rbx1_bringup")
 subdirs("third_packages/rbx1/rbx1_dynamixels")
 subdirs("third_packages/rbx1/rbx1_vision")
 subdirs("robot_ctrl")
-subdirs("ros_astra_camera")
-subdirs("slam_gmapping/gmapping")
+subdirs("third_packages/rbx1/rbx1_speech")
 subdirs("third_packages/rbx1/rbx1_apps")
 subdirs("third_packages/rbx1/rbx1_nav")
 subdirs("robot_driver")

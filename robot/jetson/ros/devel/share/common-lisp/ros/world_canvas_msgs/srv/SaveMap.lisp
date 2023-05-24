@@ -61,10 +61,10 @@
   "25e928a2d4ff388c294895b7af935978")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SaveMap-request>)))
   "Returns full string definition for message of type '<SaveMap-request>"
-  (cl:format cl:nil "# Service used to name the most recent saved map.~%~%string map_name~%~%~%"))
+  (cl:format cl:nil "# Service used to name the most recent saved map.~%~%string map_name~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SaveMap-request)))
   "Returns full string definition for message of type 'SaveMap-request"
-  (cl:format cl:nil "# Service used to name the most recent saved map.~%~%string map_name~%~%~%"))
+  (cl:format cl:nil "# Service used to name the most recent saved map.~%~%string map_name~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SaveMap-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'map_name))

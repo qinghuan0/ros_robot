@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/libpolygon_layer.pdb"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/libpolygon_layer.so"
   "CMakeFiles/polygon_layer.dir/src/polygon_layer.cpp.o"
+  "/home/nano/ros_car/devel/lib/libpolygon_layer.pdb"
+  "/home/nano/ros_car/devel/lib/libpolygon_layer.so"
 )
 
 # Per-language clean rules from dependency scanning.

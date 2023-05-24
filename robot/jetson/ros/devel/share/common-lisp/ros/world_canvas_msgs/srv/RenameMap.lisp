@@ -85,10 +85,10 @@
   "94f4d84fa2d3173899807933af417784")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<RenameMap-request>)))
   "Returns full string definition for message of type '<RenameMap-request>"
-  (cl:format cl:nil "# Service used to rename a given map.~%~%string map_id~%string new_name~%~%~%"))
+  (cl:format cl:nil "# Service used to rename a given map.~%~%string map_id~%string new_name~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'RenameMap-request)))
   "Returns full string definition for message of type 'RenameMap-request"
-  (cl:format cl:nil "# Service used to rename a given map.~%~%string map_id~%string new_name~%~%~%"))
+  (cl:format cl:nil "# Service used to rename a given map.~%~%string map_id~%string new_name~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <RenameMap-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'map_id))

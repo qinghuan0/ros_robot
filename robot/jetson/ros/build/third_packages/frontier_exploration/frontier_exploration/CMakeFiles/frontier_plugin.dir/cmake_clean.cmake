@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/libfrontier_plugin.pdb"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/libfrontier_plugin.so"
   "CMakeFiles/frontier_plugin.dir/src/frontier_plugin.cpp.o"
   "CMakeFiles/frontier_plugin.dir/src/frontier_search.cpp.o"
+  "/home/nano/ros_car/devel/lib/libfrontier_plugin.pdb"
+  "/home/nano/ros_car/devel/lib/libfrontier_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

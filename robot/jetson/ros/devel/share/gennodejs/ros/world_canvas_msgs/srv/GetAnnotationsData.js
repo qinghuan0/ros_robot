@@ -181,7 +181,7 @@ class GetAnnotationsDataResponse {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.message);
+    length += object.message.length;
     object.data.forEach((val) => {
       length += AnnotationData.getMessageSize(val);
     });

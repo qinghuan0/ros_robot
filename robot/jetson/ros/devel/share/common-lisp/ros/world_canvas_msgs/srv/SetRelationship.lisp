@@ -83,10 +83,10 @@
   "c1d8b7af22a1ce2dc6c177d3ab941e79")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetRelationship-request>)))
   "Returns full string definition for message of type '<SetRelationship-request>"
-  (cl:format cl:nil "# Add/remove a specific relationship to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%uuid_msgs/UniqueID relationship~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
+  (cl:format cl:nil "# Add/remove a specific relationship to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%uuid_msgs/UniqueID relationship~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetRelationship-request)))
   "Returns full string definition for message of type 'SetRelationship-request"
-  (cl:format cl:nil "# Add/remove a specific relationship to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%uuid_msgs/UniqueID relationship~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
+  (cl:format cl:nil "# Add/remove a specific relationship to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%uuid_msgs/UniqueID relationship~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetRelationship-request>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'id))
@@ -169,10 +169,10 @@
   "c1d8b7af22a1ce2dc6c177d3ab941e79")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetRelationship-response>)))
   "Returns full string definition for message of type '<SetRelationship-response>"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetRelationship-response)))
   "Returns full string definition for message of type 'SetRelationship-response"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetRelationship-response>))
   (cl:+ 0
      1

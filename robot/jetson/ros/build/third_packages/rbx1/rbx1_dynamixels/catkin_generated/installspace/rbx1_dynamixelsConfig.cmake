@@ -67,14 +67,14 @@ set(rbx1_dynamixels_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(rbx1_dynamixels_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_dynamixels)
-  set(rbx1_dynamixels_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(rbx1_dynamixels_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/rbx1/rbx1_dynamixels)
+  set(rbx1_dynamixels_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(rbx1_dynamixels_INSTALL_PREFIX "")
   set(rbx1_dynamixels_PREFIX ${rbx1_dynamixels_DEVEL_PREFIX})
 else()
   set(rbx1_dynamixels_SOURCE_PREFIX "")
   set(rbx1_dynamixels_DEVEL_PREFIX "")
-  set(rbx1_dynamixels_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(rbx1_dynamixels_INSTALL_PREFIX /home/nano/ros_car/install)
   set(rbx1_dynamixels_PREFIX ${rbx1_dynamixels_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(rbx1_dynamixels_LIBRARIES ${rbx1_dynamixels_LIBRARIES})
 
   _list_append_unique(rbx1_dynamixels_LIBRARY_DIRS ${${rbx1_dynamixels_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(rbx1_dynamixels_EXPORTED_TARGETS ${${rbx1_dynamixels_dep}_EXPORTED_TARGETS})
+  list(APPEND rbx1_dynamixels_EXPORTED_TARGETS ${${rbx1_dynamixels_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

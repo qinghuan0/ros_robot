@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/astra_camera/astra_camera_node"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/astra_camera/astra_camera_node.pdb"
-  "CMakeFiles/astra_camera_node.dir/src/main.cpp.o"
+  "CMakeFiles/astra_camera_node.dir/ros/astra_camera_node.cpp.o"
+  "/home/nano/ros_car/devel/lib/astra_camera/astra_camera_node.pdb"
+  "/home/nano/ros_car/devel/lib/astra_camera/astra_camera_node"
 )
 
 # Per-language clean rules from dependency scanning.

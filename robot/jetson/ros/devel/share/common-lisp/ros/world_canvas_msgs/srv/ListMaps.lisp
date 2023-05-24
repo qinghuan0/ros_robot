@@ -38,10 +38,10 @@
   "ca5a33dd106a2c24cfd54c927d214957")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ListMaps-request>)))
   "Returns full string definition for message of type '<ListMaps-request>"
-  (cl:format cl:nil "# Service used to list the most recent map from every map-making session.~%~%# No arguments at this time.~%~%~%"))
+  (cl:format cl:nil "# Service used to list the most recent map from every map-making session.~%~%# No arguments at this time.~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ListMaps-request)))
   "Returns full string definition for message of type 'ListMaps-request"
-  (cl:format cl:nil "# Service used to list the most recent map from every map-making session.~%~%# No arguments at this time.~%~%~%"))
+  (cl:format cl:nil "# Service used to list the most recent map from every map-making session.~%~%# No arguments at this time.~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ListMaps-request>))
   (cl:+ 0
 ))
@@ -109,10 +109,10 @@
   "ca5a33dd106a2c24cfd54c927d214957")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ListMaps-response>)))
   "Returns full string definition for message of type '<ListMaps-response>"
-  (cl:format cl:nil "MapListEntry[] map_list~%~%~%================================================================================~%MSG: world_canvas_msgs/MapListEntry~%# One entry in a list of maps.~%~%# Naming a map is optional.~%string name~%~%# Maps made by the make-a-map app are given a session ID, which is the~%# time when the map-making session was started, expressed as seconds~%# since the epoch and converted to a string.~%string session_id~%~%# Creation time of this map, in seconds since the epoch.~%int64 date~%~%# Unique ID of this map.~%string map_id~%~%~%"))
+  (cl:format cl:nil "MapListEntry[] map_list~%~%~%================================================================================~%MSG: world_canvas_msgs/MapListEntry~%# One entry in a list of maps.~%~%# Naming a map is optional.~%string name~%~%# Maps made by the make-a-map app are given a session ID, which is the~%# time when the map-making session was started, expressed as seconds~%# since the epoch and converted to a string.~%string session_id~%~%# Creation time of this map, in seconds since the epoch.~%int64 date~%~%# Unique ID of this map.~%string map_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ListMaps-response)))
   "Returns full string definition for message of type 'ListMaps-response"
-  (cl:format cl:nil "MapListEntry[] map_list~%~%~%================================================================================~%MSG: world_canvas_msgs/MapListEntry~%# One entry in a list of maps.~%~%# Naming a map is optional.~%string name~%~%# Maps made by the make-a-map app are given a session ID, which is the~%# time when the map-making session was started, expressed as seconds~%# since the epoch and converted to a string.~%string session_id~%~%# Creation time of this map, in seconds since the epoch.~%int64 date~%~%# Unique ID of this map.~%string map_id~%~%~%"))
+  (cl:format cl:nil "MapListEntry[] map_list~%~%~%================================================================================~%MSG: world_canvas_msgs/MapListEntry~%# One entry in a list of maps.~%~%# Naming a map is optional.~%string name~%~%# Maps made by the make-a-map app are given a session ID, which is the~%# time when the map-making session was started, expressed as seconds~%# since the epoch and converted to a string.~%string session_id~%~%# Creation time of this map, in seconds since the epoch.~%int64 date~%~%# Unique ID of this map.~%string map_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ListMaps-response>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'map_list) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))

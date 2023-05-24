@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD='/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build'
+export PWD='/home/nano/ros_car/build'

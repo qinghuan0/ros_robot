@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/exploration_server/plugin_client"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/exploration_server/plugin_client.pdb"
   "CMakeFiles/plugin_client.dir/src/plugin_client.cpp.o"
+  "/home/nano/ros_car/devel/lib/exploration_server/plugin_client.pdb"
+  "/home/nano/ros_car/devel/lib/exploration_server/plugin_client"
 )
 
 # Per-language clean rules from dependency scanning.

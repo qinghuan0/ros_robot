@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "${prefix}/include;/usr/include".split(';') if
 PROJECT_CATKIN_DEPENDS = "costmap_2d;geometry_msgs".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "-lpolygon_layer".split(';') if "-lpolygon_layer" != "" else []
 PROJECT_NAME = "polygon_layer"
-PROJECT_SPACE_DIR = "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install"
+PROJECT_SPACE_DIR = "/home/nano/ros_car/install"
 PROJECT_VERSION = "0.4.2"

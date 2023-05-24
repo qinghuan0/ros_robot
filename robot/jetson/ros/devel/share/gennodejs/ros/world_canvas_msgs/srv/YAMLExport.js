@@ -51,7 +51,7 @@ class YAMLExportRequest {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.filename);
+    length += object.filename.length;
     return length + 4;
   }
 
@@ -135,7 +135,7 @@ class YAMLExportResponse {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.message);
+    length += object.message.length;
     return length + 5;
   }
 

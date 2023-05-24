@@ -1,4 +1,4 @@
-prefix=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install
+prefix=/home/nano/ros_car/install
 
 Name: polygon_layer
 Description: Description of polygon_layer

@@ -71,7 +71,7 @@ class AnnotationData {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.type);
+    length += object.type.length;
     length += object.data.length;
     return length + 24;
   }

@@ -28,11 +28,11 @@
   (:init
    (&key
     ((:world __world) "")
-    ((:ids __ids) ())
+    ((:ids __ids) (let (r) (dotimes (i 0) (push (instance uuid_msgs::UniqueID :init) r)) r))
     ((:names __names) (let (r) (dotimes (i 0) (push "" r)) r))
     ((:types __types) (let (r) (dotimes (i 0) (push "" r)) r))
     ((:keywords __keywords) (let (r) (dotimes (i 0) (push "" r)) r))
-    ((:relationships __relationships) ())
+    ((:relationships __relationships) (let (r) (dotimes (i 0) (push (instance uuid_msgs::UniqueID :init) r)) r))
     )
    (send-super :init)
    (setq _world (string __world))
@@ -169,7 +169,7 @@
    (&key
     ((:result __result) nil)
     ((:message __message) "")
-    ((:annotations __annotations) ())
+    ((:annotations __annotations) (let (r) (dotimes (i 0) (push (instance world_canvas_msgs::Annotation :init) r)) r))
     )
    (send-super :init)
    (setq _result __result)
@@ -177,8 +177,8 @@
    (setq _annotations __annotations)
    self)
   (:result
-   (&optional (__result :null))
-   (if (not (eq __result :null)) (setq _result __result)) _result)
+   (&optional __result)
+   (if __result (setq _result __result)) _result)
   (:message
    (&optional __message)
    (if __message (setq _message __message)) _message)

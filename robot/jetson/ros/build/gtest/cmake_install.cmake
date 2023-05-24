@@ -2,7 +2,7 @@
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nano/ros_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -39,7 +39,7 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/gtest/googlemock/cmake_install.cmake")
+  include("/home/nano/ros_car/build/gtest/googlemock/cmake_install.cmake")
 
 endif()
 

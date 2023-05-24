@@ -71,7 +71,7 @@ class ExploreGoal {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.strategy_plugin);
+    length += object.strategy_plugin.length;
     length += geometry_msgs.msg.PolygonStamped.getMessageSize(object.boundary);
     length += geometry_msgs.msg.PointStamped.getMessageSize(object.start_point);
     return length + 4;

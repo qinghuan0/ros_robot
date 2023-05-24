@@ -25,7 +25,7 @@
 (defmethod world_canvas_msgs::DeleteAnnotationsRequest
   (:init
    (&key
-    ((:annotations __annotations) ())
+    ((:annotations __annotations) (let (r) (dotimes (i 0) (push (instance world_canvas_msgs::Annotation :init) r)) r))
     )
    (send-super :init)
    (setq _annotations __annotations)
@@ -82,8 +82,8 @@
    (setq _message (string __message))
    self)
   (:result
-   (&optional (__result :null))
-   (if (not (eq __result :null)) (setq _result __result)) _result)
+   (&optional __result)
+   (if __result (setq _result __result)) _result)
   (:message
    (&optional __message)
    (if __message (setq _message __message)) _message)

@@ -38,10 +38,10 @@
   "dc7ae3609524b18034e49294a4ce670e")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ListWorlds-request>)))
   "Returns full string definition for message of type '<ListWorlds-request>"
-  (cl:format cl:nil "# Get a list of all the worlds in database.~%# TODO: following this issue (https://github.com/corot/world_canvas/issues/20) we may~%# enhance this service returning a list of WorldCanvas objects or something similar~%~%~%"))
+  (cl:format cl:nil "# Get a list of all the worlds in database.~%# TODO: following this issue (https://github.com/corot/world_canvas/issues/20) we may~%# enhance this service returning a list of WorldCanvas objects or something similar~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ListWorlds-request)))
   "Returns full string definition for message of type 'ListWorlds-request"
-  (cl:format cl:nil "# Get a list of all the worlds in database.~%# TODO: following this issue (https://github.com/corot/world_canvas/issues/20) we may~%# enhance this service returning a list of WorldCanvas objects or something similar~%~%~%"))
+  (cl:format cl:nil "# Get a list of all the worlds in database.~%# TODO: following this issue (https://github.com/corot/world_canvas/issues/20) we may~%# enhance this service returning a list of WorldCanvas objects or something similar~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ListWorlds-request>))
   (cl:+ 0
 ))

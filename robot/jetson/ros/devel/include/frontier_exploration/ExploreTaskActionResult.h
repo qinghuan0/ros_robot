@@ -102,16 +102,6 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsMessage< ::frontier_exploration::ExploreTaskActionResult_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsMessage< ::frontier_exploration::ExploreTaskActionResult_<ContainerAllocator> const>
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
 struct IsFixedSize< ::frontier_exploration::ExploreTaskActionResult_<ContainerAllocator> >
   : FalseType
   { };
@@ -119,6 +109,16 @@ struct IsFixedSize< ::frontier_exploration::ExploreTaskActionResult_<ContainerAl
 template <class ContainerAllocator>
 struct IsFixedSize< ::frontier_exploration::ExploreTaskActionResult_<ContainerAllocator> const>
   : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::frontier_exploration::ExploreTaskActionResult_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::frontier_exploration::ExploreTaskActionResult_<ContainerAllocator> const>
+  : TrueType
   { };
 
 template <class ContainerAllocator>

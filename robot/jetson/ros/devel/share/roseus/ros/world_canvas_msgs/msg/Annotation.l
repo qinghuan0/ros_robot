@@ -36,7 +36,7 @@
     ((:size __size) (instance geometry_msgs::Vector3 :init))
     ((:pose __pose) (instance geometry_msgs::PoseWithCovarianceStamped :init))
     ((:keywords __keywords) (let (r) (dotimes (i 0) (push "" r)) r))
-    ((:relationships __relationships) ())
+    ((:relationships __relationships) (let (r) (dotimes (i 0) (push (instance uuid_msgs::UniqueID :init) r)) r))
     )
    (send-super :init)
    (setq _timestamp __timestamp)

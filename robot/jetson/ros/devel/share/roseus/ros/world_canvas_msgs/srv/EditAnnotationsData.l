@@ -24,13 +24,6 @@
 (intern "*EDIT*" (find-package "WORLD_CANVAS_MSGS::EDITANNOTATIONSDATAREQUEST"))
 (shadow '*EDIT* (find-package "WORLD_CANVAS_MSGS::EDITANNOTATIONSDATAREQUEST"))
 (defconstant world_canvas_msgs::EditAnnotationsDataRequest::*EDIT* 1)
-
-(defun world_canvas_msgs::EditAnnotationsDataRequest-to-symbol (const)
-  (cond
-        ((= const 0) 'world_canvas_msgs::EditAnnotationsDataRequest::*NEW*)
-        ((= const 1) 'world_canvas_msgs::EditAnnotationsDataRequest::*EDIT*)
-        (t nil)))
-
 (defclass world_canvas_msgs::EditAnnotationsDataRequest
   :super ros::object
   :slots (_action _annotation _data ))
@@ -107,14 +100,6 @@
 (intern "*CANCEL*" (find-package "WORLD_CANVAS_MSGS::EDITANNOTATIONSDATARESPONSE"))
 (shadow '*CANCEL* (find-package "WORLD_CANVAS_MSGS::EDITANNOTATIONSDATARESPONSE"))
 (defconstant world_canvas_msgs::EditAnnotationsDataResponse::*CANCEL* 13)
-
-(defun world_canvas_msgs::EditAnnotationsDataResponse-to-symbol (const)
-  (cond
-        ((= const 10) 'world_canvas_msgs::EditAnnotationsDataResponse::*UPDATE*)
-        ((= const 12) 'world_canvas_msgs::EditAnnotationsDataResponse::*DELETE*)
-        ((= const 13) 'world_canvas_msgs::EditAnnotationsDataResponse::*CANCEL*)
-        (t nil)))
-
 (defclass world_canvas_msgs::EditAnnotationsDataResponse
   :super ros::object
   :slots (_action _data ))

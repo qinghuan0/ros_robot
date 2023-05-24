@@ -27,7 +27,7 @@
 (defmethod world_canvas_msgs::GetAnnotationsDataRequest
   (:init
    (&key
-    ((:annotation_ids __annotation_ids) ())
+    ((:annotation_ids __annotation_ids) (let (r) (dotimes (i 0) (push (instance uuid_msgs::UniqueID :init) r)) r))
     )
    (send-super :init)
    (setq _annotation_ids __annotation_ids)
@@ -78,7 +78,7 @@
    (&key
     ((:result __result) nil)
     ((:message __message) "")
-    ((:data __data) ())
+    ((:data __data) (let (r) (dotimes (i 0) (push (instance world_canvas_msgs::AnnotationData :init) r)) r))
     )
    (send-super :init)
    (setq _result __result)
@@ -86,8 +86,8 @@
    (setq _data __data)
    self)
   (:result
-   (&optional (__result :null))
-   (if (not (eq __result :null)) (setq _result __result)) _result)
+   (&optional __result)
+   (if __result (setq _result __result)) _result)
   (:message
    (&optional __message)
    (if __message (setq _message __message)) _message)

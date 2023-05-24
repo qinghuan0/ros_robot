@@ -51,7 +51,7 @@ class PublishMapRequest {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.map_id);
+    length += object.map_id.length;
     return length + 4;
   }
 

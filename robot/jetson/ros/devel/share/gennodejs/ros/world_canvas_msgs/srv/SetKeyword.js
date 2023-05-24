@@ -74,7 +74,7 @@ class SetKeywordRequest {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.keyword);
+    length += object.keyword.length;
     return length + 21;
   }
 
@@ -193,7 +193,7 @@ class SetKeywordResponse {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.message);
+    length += object.message.length;
     return length + 5;
   }
 

@@ -13,21 +13,21 @@ fi
 
 echo_and_run() { echo "+ $@" ; "$@" ; }
 
-echo_and_run cd "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_vision"
+echo_and_run cd "/home/nano/ros_car/src/third_packages/rbx1/rbx1_vision"
 
 # ensure that Python install destination exists
-echo_and_run mkdir -p "$DESTDIR/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib/python3/dist-packages"
+echo_and_run mkdir -p "$DESTDIR/home/nano/ros_car/install/lib/python2.7/dist-packages"
 
 # Note that PYTHONPATH is pulled from the environment to support installing
 # into one location when some dependencies were installed in another
 # location, #123.
 echo_and_run /usr/bin/env \
-    PYTHONPATH="/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib/python3/dist-packages:/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/lib/python3/dist-packages:$PYTHONPATH" \
-    CATKIN_BINARY_DIR="/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build" \
-    "/usr/bin/python3" \
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_vision/setup.py" \
+    PYTHONPATH="/home/nano/ros_car/install/lib/python2.7/dist-packages:/home/nano/ros_car/build/lib/python2.7/dist-packages:$PYTHONPATH" \
+    CATKIN_BINARY_DIR="/home/nano/ros_car/build" \
+    "/usr/bin/python2" \
+    "/home/nano/ros_car/src/third_packages/rbx1/rbx1_vision/setup.py" \
      \
-    build --build-base "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_vision" \
+    build --build-base "/home/nano/ros_car/build/third_packages/rbx1/rbx1_vision" \
     install \
     --root="${DESTDIR-/}" \
-    --install-layout=deb --prefix="/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install" --install-scripts="/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/bin"
+    --install-layout=deb --prefix="/home/nano/ros_car/install" --install-scripts="/home/nano/ros_car/install/bin"

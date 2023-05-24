@@ -61,10 +61,10 @@
   "dea35f0126973fed4bc2a85823db7aa5")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<YAMLExport-request>)))
   "Returns full string definition for message of type '<YAMLExport-request>"
-  (cl:format cl:nil "string filename~%~%~%"))
+  (cl:format cl:nil "string filename~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'YAMLExport-request)))
   "Returns full string definition for message of type 'YAMLExport-request"
-  (cl:format cl:nil "string filename~%~%~%"))
+  (cl:format cl:nil "string filename~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <YAMLExport-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'filename))
@@ -143,10 +143,10 @@
   "dea35f0126973fed4bc2a85823db7aa5")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<YAMLExport-response>)))
   "Returns full string definition for message of type '<YAMLExport-response>"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'YAMLExport-response)))
   "Returns full string definition for message of type 'YAMLExport-response"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <YAMLExport-response>))
   (cl:+ 0
      1

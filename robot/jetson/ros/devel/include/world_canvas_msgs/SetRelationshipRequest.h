@@ -117,22 +117,22 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsMessage< ::world_canvas_msgs::SetRelationshipRequest_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsMessage< ::world_canvas_msgs::SetRelationshipRequest_<ContainerAllocator> const>
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
 struct IsFixedSize< ::world_canvas_msgs::SetRelationshipRequest_<ContainerAllocator> >
   : TrueType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::world_canvas_msgs::SetRelationshipRequest_<ContainerAllocator> const>
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::world_canvas_msgs::SetRelationshipRequest_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::world_canvas_msgs::SetRelationshipRequest_<ContainerAllocator> const>
   : TrueType
   { };
 

@@ -67,14 +67,14 @@ set(astra_camera_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(astra_camera_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera)
-  set(astra_camera_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(astra_camera_SOURCE_PREFIX /home/nano/ros_car/src/ros_astra_camera)
+  set(astra_camera_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(astra_camera_INSTALL_PREFIX "")
   set(astra_camera_PREFIX ${astra_camera_DEVEL_PREFIX})
 else()
   set(astra_camera_SOURCE_PREFIX "")
   set(astra_camera_DEVEL_PREFIX "")
-  set(astra_camera_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(astra_camera_INSTALL_PREFIX /home/nano/ros_car/install)
   set(astra_camera_PREFIX ${astra_camera_INSTALL_PREFIX})
 endif()
 
@@ -99,7 +99,7 @@ if(NOT "include " STREQUAL " ")
   elseif(NOT " " STREQUAL " ")
     set(_report "Check the website '' for information and consider reporting the problem.")
   else()
-    set(_report "Report the problem to the maintainer 'Mo Cun <mocun@orbbec.com>' and request to fix the problem.")
+    set(_report "Report the problem to the maintainer 'Orbbec3D <nan@orbbec3d.com>' and request to fix the problem.")
   endif()
   foreach(idir ${_include_dirs})
     if(IS_ABSOLUTE ${idir} AND IS_DIRECTORY ${idir})
@@ -116,7 +116,7 @@ if(NOT "include " STREQUAL " ")
   endforeach()
 endif()
 
-set(libraries "astra_camera")
+set(libraries "astra_wrapper")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -185,7 +185,7 @@ foreach(t ${astra_camera_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "cv_bridge;dynamic_reconfigure;image_geometry;image_transport;message_runtime;roscpp;sensor_msgs;tf2;tf2_ros;std_srvs;message_filters;camera_info_manager")
+set(depends "camera_info_manager;dynamic_reconfigure;image_transport;nodelet;sensor_msgs;roscpp;message_runtime")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(astra_camera_LIBRARIES ${astra_camera_LIBRARIES})
 
   _list_append_unique(astra_camera_LIBRARY_DIRS ${${astra_camera_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(astra_camera_EXPORTED_TARGETS ${${astra_camera_dep}_EXPORTED_TARGETS})
+  list(APPEND astra_camera_EXPORTED_TARGETS ${${astra_camera_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "astra_camera-msg-extras.cmake")

@@ -95,10 +95,10 @@
   "65f5117750acdab10204175816f3c48a")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetKeyword-request>)))
   "Returns full string definition for message of type '<SetKeyword-request>"
-  (cl:format cl:nil "# Add/remove a specific keyword to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%string keyword~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
+  (cl:format cl:nil "# Add/remove a specific keyword to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%string keyword~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetKeyword-request)))
   "Returns full string definition for message of type 'SetKeyword-request"
-  (cl:format cl:nil "# Add/remove a specific keyword to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%string keyword~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
+  (cl:format cl:nil "# Add/remove a specific keyword to the specified annotation~%uint8 ADD = 1~%uint8 DEL = 2~%~%uuid_msgs/UniqueID id~%string keyword~%uint8 action~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetKeyword-request>))
   (cl:+ 0
      (roslisp-msg-protocol:serialization-length (cl:slot-value msg 'id))
@@ -181,10 +181,10 @@
   "65f5117750acdab10204175816f3c48a")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<SetKeyword-response>)))
   "Returns full string definition for message of type '<SetKeyword-response>"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'SetKeyword-response)))
   "Returns full string definition for message of type 'SetKeyword-response"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <SetKeyword-response>))
   (cl:+ 0
      1

@@ -139,10 +139,10 @@
   "6d7c521a48d85a2b09f0d0c03fe5f648")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<WorldCanvas>)))
   "Returns full string definition for message of type '<WorldCanvas>"
-  (cl:format cl:nil "# World canvas: a generic descriptor for a world, typically containing one or more geometric maps~%# plus semantic information in the form of annotations.~%#  - timestamp   : Creation/last update time~%#  - name        : World name; it must be unique~%#  - description : Informal description~%#  - geometry    : 2D, 3D (just informative by now)~%~%time timestamp~%string name~%string description~%string geometry~%~%"))
+  (cl:format cl:nil "# World canvas: a generic descriptor for a world, typically containing one or more geometric maps~%# plus semantic information in the form of annotations.~%#  - timestamp   : Creation/last update time~%#  - name        : World name; it must be unique~%#  - description : Informal description~%#  - geometry    : 2D, 3D (just informative by now)~%~%time timestamp~%string name~%string description~%string geometry~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'WorldCanvas)))
   "Returns full string definition for message of type 'WorldCanvas"
-  (cl:format cl:nil "# World canvas: a generic descriptor for a world, typically containing one or more geometric maps~%# plus semantic information in the form of annotations.~%#  - timestamp   : Creation/last update time~%#  - name        : World name; it must be unique~%#  - description : Informal description~%#  - geometry    : 2D, 3D (just informative by now)~%~%time timestamp~%string name~%string description~%string geometry~%~%"))
+  (cl:format cl:nil "# World canvas: a generic descriptor for a world, typically containing one or more geometric maps~%# plus semantic information in the form of annotations.~%#  - timestamp   : Creation/last update time~%#  - name        : World name; it must be unique~%#  - description : Informal description~%#  - geometry    : 2D, 3D (just informative by now)~%~%time timestamp~%string name~%string description~%string geometry~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <WorldCanvas>))
   (cl:+ 0
      8

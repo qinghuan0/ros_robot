@@ -118,10 +118,10 @@
   "b543fbd3518c791be28589b850702201")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<ResetDatabase-response>)))
   "Returns full string definition for message of type '<ResetDatabase-response>"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'ResetDatabase-response)))
   "Returns full string definition for message of type 'ResetDatabase-response"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <ResetDatabase-response>))
   (cl:+ 0
      1

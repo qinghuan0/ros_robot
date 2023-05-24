@@ -1,2 +1,2 @@
-set(astra_camera_MESSAGE_FILES "msg/DeviceInfo.msg;msg/Extrinsics.msg;msg/Metadata.msg")
-set(astra_camera_SERVICE_FILES "srv/GetBool.srv;srv/GetCameraInfo.srv;srv/GetCameraParams.srv;srv/GetDeviceInfo.srv;srv/GetInt32.srv;srv/GetString.srv;srv/SetInt32.srv;srv/SetString.srv")
+set(astra_camera_MESSAGE_FILES "")
+set(astra_camera_SERVICE_FILES "srv/GetSerial.srv;srv/GetDeviceType.srv;srv/GetIRGain.srv;srv/GetCameraInfo.srv;srv/GetUVCExposure.srv;srv/GetIRExposure.srv;srv/GetUVCGain.srv;srv/GetUVCWhiteBalance.srv;srv/SetUVCWhiteBalance.srv;srv/SetUVCGain.srv;srv/SetIRExposure.srv;srv/SetIRGain.srv;srv/SetIRFlood.srv;srv/SetLaser.srv;srv/SetLDP.srv;srv/SetUVCExposure.srv;srv/ResetIRGain.srv;srv/ResetIRExposure.srv;srv/SwitchIRCamera.srv")

@@ -20,7 +20,7 @@
   (:init
    (&key
     ((:map_id __map_id) "")
-    ((:annotations __annotations) ())
+    ((:annotations __annotations) (let (r) (dotimes (i 0) (push (instance world_canvas_msgs::Annotation :init) r)) r))
     )
    (send-super :init)
    (setq _map_id (string __map_id))

@@ -6,8 +6,8 @@ baud_rate: 115200       #通信波特率，固定115200
 base_frame: base_footprint      #底盘坐标系
 imu_frame: base_imu_link        #IMU坐标系
 
-linear_correction_factor: 1.345  #线速度校准系数
-angular_correction_factor: 0.8  #角速度校准系数
+linear_correction_factor: 1  #线速度校准系数
+angular_correction_factor: 1  #角速度校准系数
 
 #publish_odom_transform: True   #是否发布odom->base_footprint坐标变换
 Kp: 53                         #OpenCRP电机控制PID，P参数

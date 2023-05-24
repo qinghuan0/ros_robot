@@ -49,19 +49,15 @@
 
 (defclass astra_camera::GetCameraInfoResponse
   :super ros::object
-  :slots (_info _success _message ))
+  :slots (_info ))
 
 (defmethod astra_camera::GetCameraInfoResponse
   (:init
    (&key
     ((:info __info) (instance sensor_msgs::CameraInfo :init))
-    ((:success __success) nil)
-    ((:message __message) "")
     )
    (send-super :init)
    (setq _info __info)
-   (setq _success __success)
-   (setq _message (string __message))
    self)
   (:info
    (&rest __info)
@@ -70,21 +66,11 @@
      (progn
        (if __info (setq _info (car __info)))
        _info)))
-  (:success
-   (&optional (__success :null))
-   (if (not (eq __success :null)) (setq _success __success)) _success)
-  (:message
-   (&optional __message)
-   (if __message (setq _message __message)) _message)
   (:serialization-length
    ()
    (+
     ;; sensor_msgs/CameraInfo _info
     (send _info :serialization-length)
-    ;; bool _success
-    1
-    ;; string _message
-    4 (length _message)
     ))
   (:serialize
    (&optional strm)
@@ -92,20 +78,12 @@
               (make-string-output-stream (send self :serialization-length)))))
      ;; sensor_msgs/CameraInfo _info
        (send _info :serialize s)
-     ;; bool _success
-       (if _success (write-byte -1 s) (write-byte 0 s))
-     ;; string _message
-       (write-long (length _message) s) (princ _message s)
      ;;
      (if (null strm) (get-output-stream-string s))))
   (:deserialize
    (buf &optional (ptr- 0))
    ;; sensor_msgs/CameraInfo _info
      (send _info :deserialize buf ptr-) (incf ptr- (send _info :serialization-length))
-   ;; bool _success
-     (setq _success (not (= 0 (sys::peek buf ptr- :char)))) (incf ptr- 1)
-   ;; string _message
-     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _message (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
    ;;
    self)
   )
@@ -114,7 +92,7 @@
   :super ros::object
   :slots ())
 
-(setf (get astra_camera::GetCameraInfo :md5sum-) "aacf7dfed1a501be45f34981291a5579")
+(setf (get astra_camera::GetCameraInfo :md5sum-) "1802ea5c04df755ec7e68bc4bf07a06d")
 (setf (get astra_camera::GetCameraInfo :datatype-) "astra_camera/GetCameraInfo")
 (setf (get astra_camera::GetCameraInfo :request) astra_camera::GetCameraInfoRequest)
 (setf (get astra_camera::GetCameraInfo :response) astra_camera::GetCameraInfoResponse)
@@ -122,14 +100,11 @@
 (defmethod astra_camera::GetCameraInfoRequest
   (:response () (instance astra_camera::GetCameraInfoResponse :init)))
 
-(setf (get astra_camera::GetCameraInfoRequest :md5sum-) "aacf7dfed1a501be45f34981291a5579")
+(setf (get astra_camera::GetCameraInfoRequest :md5sum-) "1802ea5c04df755ec7e68bc4bf07a06d")
 (setf (get astra_camera::GetCameraInfoRequest :datatype-) "astra_camera/GetCameraInfoRequest")
 (setf (get astra_camera::GetCameraInfoRequest :definition-)
       "---
 sensor_msgs/CameraInfo info
-bool success
-string message
-
 
 ================================================================================
 MSG: sensor_msgs/CameraInfo
@@ -304,14 +279,11 @@ uint32 width     # Width of ROI
 bool do_rectify
 ")
 
-(setf (get astra_camera::GetCameraInfoResponse :md5sum-) "aacf7dfed1a501be45f34981291a5579")
+(setf (get astra_camera::GetCameraInfoResponse :md5sum-) "1802ea5c04df755ec7e68bc4bf07a06d")
 (setf (get astra_camera::GetCameraInfoResponse :datatype-) "astra_camera/GetCameraInfoResponse")
 (setf (get astra_camera::GetCameraInfoResponse :definition-)
       "---
 sensor_msgs/CameraInfo info
-bool success
-string message
-
 
 ================================================================================
 MSG: sensor_msgs/CameraInfo
@@ -488,6 +460,6 @@ bool do_rectify
 
 
 
-(provide :astra_camera/GetCameraInfo "aacf7dfed1a501be45f34981291a5579")
+(provide :astra_camera/GetCameraInfo "1802ea5c04df755ec7e68bc4bf07a06d")
 
 

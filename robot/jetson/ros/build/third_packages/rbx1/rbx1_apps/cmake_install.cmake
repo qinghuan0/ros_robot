@@ -1,8 +1,8 @@
-# Install script for directory: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_apps
+# Install script for directory: /home/nano/ros_car/src/third_packages/rbx1/rbx1_apps
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nano/ros_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,17 +38,17 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_apps/catkin_generated/installspace/rbx1_apps.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nano/ros_car/build/third_packages/rbx1/rbx1_apps/catkin_generated/installspace/rbx1_apps.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rbx1_apps/cmake" TYPE FILE FILES
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_apps/catkin_generated/installspace/rbx1_appsConfig.cmake"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_apps/catkin_generated/installspace/rbx1_appsConfig-version.cmake"
+    "/home/nano/ros_car/build/third_packages/rbx1/rbx1_apps/catkin_generated/installspace/rbx1_appsConfig.cmake"
+    "/home/nano/ros_car/build/third_packages/rbx1/rbx1_apps/catkin_generated/installspace/rbx1_appsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rbx1_apps" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_apps/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rbx1_apps" TYPE FILE FILES "/home/nano/ros_car/src/third_packages/rbx1/rbx1_apps/package.xml")
 endif()
 

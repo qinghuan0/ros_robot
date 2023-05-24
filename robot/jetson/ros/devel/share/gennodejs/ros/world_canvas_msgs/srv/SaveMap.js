@@ -51,7 +51,7 @@ class SaveMapRequest {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.map_name);
+    length += object.map_name.length;
     return length + 4;
   }
 

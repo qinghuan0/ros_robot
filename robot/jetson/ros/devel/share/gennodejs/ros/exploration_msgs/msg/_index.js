@@ -1,20 +1,20 @@
 
 "use strict";
 
-let ExploreActionGoal = require('./ExploreActionGoal.js');
-let ExploreGoal = require('./ExploreGoal.js');
-let ExploreActionResult = require('./ExploreActionResult.js');
-let ExploreFeedback = require('./ExploreFeedback.js');
 let ExploreActionFeedback = require('./ExploreActionFeedback.js');
+let ExploreActionResult = require('./ExploreActionResult.js');
 let ExploreAction = require('./ExploreAction.js');
 let ExploreResult = require('./ExploreResult.js');
+let ExploreGoal = require('./ExploreGoal.js');
+let ExploreFeedback = require('./ExploreFeedback.js');
+let ExploreActionGoal = require('./ExploreActionGoal.js');
 
 module.exports = {
-  ExploreActionGoal: ExploreActionGoal,
-  ExploreGoal: ExploreGoal,
-  ExploreActionResult: ExploreActionResult,
-  ExploreFeedback: ExploreFeedback,
   ExploreActionFeedback: ExploreActionFeedback,
+  ExploreActionResult: ExploreActionResult,
   ExploreAction: ExploreAction,
   ExploreResult: ExploreResult,
+  ExploreGoal: ExploreGoal,
+  ExploreFeedback: ExploreFeedback,
+  ExploreActionGoal: ExploreActionGoal,
 };

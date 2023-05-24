@@ -40,7 +40,7 @@ template<>
 struct MD5Sum< ::astra_camera::GetCameraInfo > {
   static const char* value()
   {
-    return "aacf7dfed1a501be45f34981291a5579";
+    return "1802ea5c04df755ec7e68bc4bf07a06d";
   }
 
   static const char* value(const ::astra_camera::GetCameraInfo&) { return value(); }

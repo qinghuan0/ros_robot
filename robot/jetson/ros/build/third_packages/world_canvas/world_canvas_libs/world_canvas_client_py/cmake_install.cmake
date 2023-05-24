@@ -1,8 +1,8 @@
-# Install script for directory: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py
+# Install script for directory: /home/nano/ros_car/src/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nano/ros_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,21 +38,21 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/installspace/world_canvas_client_py.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nano/ros_car/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/installspace/world_canvas_client_py.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/world_canvas_client_py/cmake" TYPE FILE FILES
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/installspace/world_canvas_client_pyConfig.cmake"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/installspace/world_canvas_client_pyConfig-version.cmake"
+    "/home/nano/ros_car/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/installspace/world_canvas_client_pyConfig.cmake"
+    "/home/nano/ros_car/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/installspace/world_canvas_client_pyConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/world_canvas_client_py" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/world_canvas_client_py" TYPE FILE FILES "/home/nano/ros_car/src/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/package.xml")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/safe_execute_install.cmake")
+  include("/home/nano/ros_car/build/third_packages/world_canvas/world_canvas_libs/world_canvas_client_py/catkin_generated/safe_execute_install.cmake")
 endif()
 

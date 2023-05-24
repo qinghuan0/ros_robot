@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/setup.sh
+    local-name: /home/nano/ros_car/install/setup.sh

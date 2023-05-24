@@ -67,14 +67,14 @@ set(world_canvas_msgs_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(world_canvas_msgs_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/world_canvas/world_canvas_msgs)
-  set(world_canvas_msgs_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(world_canvas_msgs_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/world_canvas/world_canvas_msgs)
+  set(world_canvas_msgs_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(world_canvas_msgs_INSTALL_PREFIX "")
   set(world_canvas_msgs_PREFIX ${world_canvas_msgs_DEVEL_PREFIX})
 else()
   set(world_canvas_msgs_SOURCE_PREFIX "")
   set(world_canvas_msgs_DEVEL_PREFIX "")
-  set(world_canvas_msgs_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(world_canvas_msgs_INSTALL_PREFIX /home/nano/ros_car/install)
   set(world_canvas_msgs_PREFIX ${world_canvas_msgs_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(world_canvas_msgs_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include " STREQUAL " ")
+if(NOT "/home/nano/ros_car/devel/include " STREQUAL " ")
   set(world_canvas_msgs_INCLUDE_DIRS "")
-  set(_include_dirs "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include")
+  set(_include_dirs "/home/nano/ros_car/devel/include")
   if(NOT "https://github.com/corot/world_canvas_msgs/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/corot/world_canvas_msgs/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/world_canvas_msgs " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include " STREQU
         message(FATAL_ERROR "Project 'world_canvas_msgs' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'world_canvas_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/world_canvas/world_canvas_msgs/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'world_canvas_msgs' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/nano/ros_car/src/third_packages/world_canvas/world_canvas_msgs/${idir}'.  ${_report}")
     endif()
     _list_append_unique(world_canvas_msgs_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/devel/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(world_canvas_msgs_LIBRARIES ${world_canvas_msgs_LIBRARIES})
 
   _list_append_unique(world_canvas_msgs_LIBRARY_DIRS ${${world_canvas_msgs_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(world_canvas_msgs_EXPORTED_TARGETS ${${world_canvas_msgs_dep}_EXPORTED_TARGETS})
+  list(APPEND world_canvas_msgs_EXPORTED_TARGETS ${${world_canvas_msgs_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "world_canvas_msgs-msg-extras.cmake")

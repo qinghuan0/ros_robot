@@ -124,10 +124,10 @@
   "efc54bf1b4a6309b22d598d89ee85d1f")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PubAnnotationsData-request>)))
   "Returns full string definition for message of type '<PubAnnotationsData-request>"
-  (cl:format cl:nil "# Request server to publish annotations' data for a list of annotation identifiers~%# If pub_as_list is true, annotations will be packed in a list before publishing,~%# so topic_type must be an array of the requested annotations. However, if is false,~%# topic_type is just ignored and the published topic type is obtained from one of~%# the annotations in the list~%# NOTE: in both cases, all annotations must be of the same type~%~%uuid_msgs/UniqueID[] annotation_ids~%string topic_name~%string topic_type~%bool pub_as_list~%~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
+  (cl:format cl:nil "# Request server to publish annotations' data for a list of annotation identifiers~%# If pub_as_list is true, annotations will be packed in a list before publishing,~%# so topic_type must be an array of the requested annotations. However, if is false,~%# topic_type is just ignored and the published topic type is obtained from one of~%# the annotations in the list~%# NOTE: in both cases, all annotations must be of the same type~%~%uuid_msgs/UniqueID[] annotation_ids~%string topic_name~%string topic_type~%bool pub_as_list~%~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PubAnnotationsData-request)))
   "Returns full string definition for message of type 'PubAnnotationsData-request"
-  (cl:format cl:nil "# Request server to publish annotations' data for a list of annotation identifiers~%# If pub_as_list is true, annotations will be packed in a list before publishing,~%# so topic_type must be an array of the requested annotations. However, if is false,~%# topic_type is just ignored and the published topic type is obtained from one of~%# the annotations in the list~%# NOTE: in both cases, all annotations must be of the same type~%~%uuid_msgs/UniqueID[] annotation_ids~%string topic_name~%string topic_type~%bool pub_as_list~%~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
+  (cl:format cl:nil "# Request server to publish annotations' data for a list of annotation identifiers~%# If pub_as_list is true, annotations will be packed in a list before publishing,~%# so topic_type must be an array of the requested annotations. However, if is false,~%# topic_type is just ignored and the published topic type is obtained from one of~%# the annotations in the list~%# NOTE: in both cases, all annotations must be of the same type~%~%uuid_msgs/UniqueID[] annotation_ids~%string topic_name~%string topic_type~%bool pub_as_list~%~%~%================================================================================~%MSG: uuid_msgs/UniqueID~%# A universally unique identifier (UUID).~%#~%#  http://en.wikipedia.org/wiki/Universally_unique_identifier~%#  http://tools.ietf.org/html/rfc4122.html~%~%uint8[16] uuid~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PubAnnotationsData-request>))
   (cl:+ 0
      4 (cl:reduce #'cl:+ (cl:slot-value msg 'annotation_ids) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ (roslisp-msg-protocol:serialization-length ele))))
@@ -212,10 +212,10 @@
   "efc54bf1b4a6309b22d598d89ee85d1f")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PubAnnotationsData-response>)))
   "Returns full string definition for message of type '<PubAnnotationsData-response>"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PubAnnotationsData-response)))
   "Returns full string definition for message of type 'PubAnnotationsData-response"
-  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
+  (cl:format cl:nil "# What went wrong, if anything~%bool result~%string message~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PubAnnotationsData-response>))
   (cl:+ 0
      1

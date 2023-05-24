@@ -61,10 +61,10 @@
   "d742ddbd5e3e8937162044ae4b300275")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<PublishMap-request>)))
   "Returns full string definition for message of type '<PublishMap-request>"
-  (cl:format cl:nil "# Service used to publish a given map from the database to the /map topic.~%~%string map_id~%~%~%"))
+  (cl:format cl:nil "# Service used to publish a given map from the database to the /map topic.~%~%string map_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'PublishMap-request)))
   "Returns full string definition for message of type 'PublishMap-request"
-  (cl:format cl:nil "# Service used to publish a given map from the database to the /map topic.~%~%string map_id~%~%~%"))
+  (cl:format cl:nil "# Service used to publish a given map from the database to the /map topic.~%~%string map_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <PublishMap-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'map_id))

@@ -67,14 +67,14 @@ set(exploration_server_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(exploration_server_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/exploration_server)
-  set(exploration_server_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(exploration_server_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/frontier_exploration/exploration_server)
+  set(exploration_server_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(exploration_server_INSTALL_PREFIX "")
   set(exploration_server_PREFIX ${exploration_server_DEVEL_PREFIX})
 else()
   set(exploration_server_SOURCE_PREFIX "")
   set(exploration_server_DEVEL_PREFIX "")
-  set(exploration_server_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(exploration_server_INSTALL_PREFIX /home/nano/ros_car/install)
   set(exploration_server_PREFIX ${exploration_server_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(exploration_server_LIBRARIES ${exploration_server_LIBRARIES})
 
   _list_append_unique(exploration_server_LIBRARY_DIRS ${${exploration_server_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(exploration_server_EXPORTED_TARGETS ${${exploration_server_dep}_EXPORTED_TARGETS})
+  list(APPEND exploration_server_EXPORTED_TARGETS ${${exploration_server_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

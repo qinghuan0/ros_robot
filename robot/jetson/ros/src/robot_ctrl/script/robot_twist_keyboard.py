@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/python
 from __future__ import print_function
 import roslib; roslib.load_manifest('teleop_twist_keyboard')
 import rospy
@@ -14,22 +14,17 @@ Moving around:
    u    i    o         ^
    j    k    l       < v >
    m    ,    .
-
 For Holonomic mode (strafing), hold down the shift key:
 ---------------------------
    U    I    O
    J    K    L
    M    <    >
-
 t : up (+z)
 b : down (-z)
-
 anything else : stop
-
 q/z : increase/decrease max speeds by 10%
 w/x : increase/decrease only linear speed by 10%
 e/c : increase/decrease only angular speed by 10%
-
 CTRL-C to quit
 """
 

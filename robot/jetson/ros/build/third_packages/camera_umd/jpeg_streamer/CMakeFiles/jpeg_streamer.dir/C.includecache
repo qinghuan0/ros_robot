@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/include/mongoose.h
+/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/include/mongoose.h
 
-/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/src/mongoose.c
+/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/src/mongoose.c
 sys/types.h
 -
 sys/stat.h
@@ -78,5 +78,5 @@ dlfcn.h
 pthread.h
 -
 mongoose.h
-/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/src/mongoose.h
+/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/src/mongoose.h
 

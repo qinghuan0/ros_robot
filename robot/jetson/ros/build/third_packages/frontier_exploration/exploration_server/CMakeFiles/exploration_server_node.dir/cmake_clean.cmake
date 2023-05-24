@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/exploration_server/exploration_server_node"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/exploration_server/exploration_server_node.pdb"
   "CMakeFiles/exploration_server_node.dir/src/exploration_server_node.cpp.o"
+  "/home/nano/ros_car/devel/lib/exploration_server/exploration_server_node.pdb"
+  "/home/nano/ros_car/devel/lib/exploration_server/exploration_server_node"
 )
 
 # Per-language clean rules from dependency scanning.

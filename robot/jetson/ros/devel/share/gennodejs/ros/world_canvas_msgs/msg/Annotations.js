@@ -69,7 +69,7 @@ class Annotations {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.map_id);
+    length += object.map_id.length;
     object.annotations.forEach((val) => {
       length += Annotation.getMessageSize(val);
     });

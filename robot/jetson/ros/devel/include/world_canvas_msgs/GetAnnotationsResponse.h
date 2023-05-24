@@ -100,16 +100,6 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsMessage< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsMessage< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAllocator> const>
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
 struct IsFixedSize< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAllocator> >
   : FalseType
   { };
@@ -117,6 +107,16 @@ struct IsFixedSize< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAlloca
 template <class ContainerAllocator>
 struct IsFixedSize< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAllocator> const>
   : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::world_canvas_msgs::GetAnnotationsResponse_<ContainerAllocator> const>
+  : TrueType
   { };
 
 template <class ContainerAllocator>

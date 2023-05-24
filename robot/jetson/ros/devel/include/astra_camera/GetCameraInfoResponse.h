@@ -25,14 +25,10 @@ struct GetCameraInfoResponse_
   typedef GetCameraInfoResponse_<ContainerAllocator> Type;
 
   GetCameraInfoResponse_()
-    : info()
-    , success(false)
-    , message()  {
+    : info()  {
     }
   GetCameraInfoResponse_(const ContainerAllocator& _alloc)
-    : info(_alloc)
-    , success(false)
-    , message(_alloc)  {
+    : info(_alloc)  {
   (void)_alloc;
     }
 
@@ -40,12 +36,6 @@ struct GetCameraInfoResponse_
 
    typedef  ::sensor_msgs::CameraInfo_<ContainerAllocator>  _info_type;
   _info_type info;
-
-   typedef uint8_t _success_type;
-  _success_type success;
-
-   typedef std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>> _message_type;
-  _message_type message;
 
 
 
@@ -76,9 +66,7 @@ return s;
 template<typename ContainerAllocator1, typename ContainerAllocator2>
 bool operator==(const ::astra_camera::GetCameraInfoResponse_<ContainerAllocator1> & lhs, const ::astra_camera::GetCameraInfoResponse_<ContainerAllocator2> & rhs)
 {
-  return lhs.info == rhs.info &&
-    lhs.success == rhs.success &&
-    lhs.message == rhs.message;
+  return lhs.info == rhs.info;
 }
 
 template<typename ContainerAllocator1, typename ContainerAllocator2>
@@ -100,16 +88,6 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsMessage< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsMessage< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> const>
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
 struct IsFixedSize< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
   : FalseType
   { };
@@ -117,6 +95,16 @@ struct IsFixedSize< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsFixedSize< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> const>
   : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> const>
+  : TrueType
   { };
 
 template <class ContainerAllocator>
@@ -135,12 +123,12 @@ struct MD5Sum< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "aacf7dfed1a501be45f34981291a5579";
+    return "1802ea5c04df755ec7e68bc4bf07a06d";
   }
 
   static const char* value(const ::astra_camera::GetCameraInfoResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xaacf7dfed1a501beULL;
-  static const uint64_t static_value2 = 0x45f34981291a5579ULL;
+  static const uint64_t static_value1 = 0x1802ea5c04df755eULL;
+  static const uint64_t static_value2 = 0xc7e68bc4bf07a06dULL;
 };
 
 template<class ContainerAllocator>
@@ -160,9 +148,6 @@ struct Definition< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
   static const char* value()
   {
     return "sensor_msgs/CameraInfo info\n"
-"bool success\n"
-"string message\n"
-"\n"
 "\n"
 "================================================================================\n"
 "MSG: sensor_msgs/CameraInfo\n"
@@ -354,8 +339,6 @@ namespace serialization
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
       stream.next(m.info);
-      stream.next(m.success);
-      stream.next(m.message);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -377,10 +360,6 @@ struct Printer< ::astra_camera::GetCameraInfoResponse_<ContainerAllocator> >
     s << indent << "info: ";
     s << std::endl;
     Printer< ::sensor_msgs::CameraInfo_<ContainerAllocator> >::stream(s, indent + "  ", v.info);
-    s << indent << "success: ";
-    Printer<uint8_t>::stream(s, indent + "  ", v.success);
-    s << indent << "message: ";
-    Printer<std::basic_string<char, std::char_traits<char>, typename std::allocator_traits<ContainerAllocator>::template rebind_alloc<char>>>::stream(s, indent + "  ", v.message);
   }
 };
 

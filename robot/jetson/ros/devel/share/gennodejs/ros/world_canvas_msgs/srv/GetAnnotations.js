@@ -126,16 +126,16 @@ class GetAnnotationsRequest {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.world);
+    length += object.world.length;
     length += 16 * object.ids.length;
     object.names.forEach((val) => {
-      length += 4 + _getByteLength(val);
+      length += 4 + val.length;
     });
     object.types.forEach((val) => {
-      length += 4 + _getByteLength(val);
+      length += 4 + val.length;
     });
     object.keywords.forEach((val) => {
-      length += 4 + _getByteLength(val);
+      length += 4 + val.length;
     });
     length += 16 * object.relationships.length;
     return length + 24;
@@ -299,7 +299,7 @@ class GetAnnotationsResponse {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.message);
+    length += object.message.length;
     object.annotations.forEach((val) => {
       length += Annotation.getMessageSize(val);
     });

@@ -81,9 +81,9 @@ class MapListEntry {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.name);
-    length += _getByteLength(object.session_id);
-    length += _getByteLength(object.map_id);
+    length += object.name.length;
+    length += object.session_id.length;
+    length += object.map_id.length;
     return length + 20;
   }
 

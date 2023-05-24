@@ -75,8 +75,6 @@ class GetCameraInfoResponse {
     if (initObj === null) {
       // initObj === null is a special case for deserialization where we don't initialize fields
       this.info = null;
-      this.success = null;
-      this.message = null;
     }
     else {
       if (initObj.hasOwnProperty('info')) {
@@ -85,18 +83,6 @@ class GetCameraInfoResponse {
       else {
         this.info = new sensor_msgs.msg.CameraInfo();
       }
-      if (initObj.hasOwnProperty('success')) {
-        this.success = initObj.success
-      }
-      else {
-        this.success = false;
-      }
-      if (initObj.hasOwnProperty('message')) {
-        this.message = initObj.message
-      }
-      else {
-        this.message = '';
-      }
     }
   }
 
@@ -104,10 +90,6 @@ class GetCameraInfoResponse {
     // Serializes a message object of type GetCameraInfoResponse
     // Serialize message field [info]
     bufferOffset = sensor_msgs.msg.CameraInfo.serialize(obj.info, buffer, bufferOffset);
-    // Serialize message field [success]
-    bufferOffset = _serializer.bool(obj.success, buffer, bufferOffset);
-    // Serialize message field [message]
-    bufferOffset = _serializer.string(obj.message, buffer, bufferOffset);
     return bufferOffset;
   }
 
@@ -117,18 +99,13 @@ class GetCameraInfoResponse {
     let data = new GetCameraInfoResponse(null);
     // Deserialize message field [info]
     data.info = sensor_msgs.msg.CameraInfo.deserialize(buffer, bufferOffset);
-    // Deserialize message field [success]
-    data.success = _deserializer.bool(buffer, bufferOffset);
-    // Deserialize message field [message]
-    data.message = _deserializer.string(buffer, bufferOffset);
     return data;
   }
 
   static getMessageSize(object) {
     let length = 0;
     length += sensor_msgs.msg.CameraInfo.getMessageSize(object.info);
-    length += _getByteLength(object.message);
-    return length + 5;
+    return length;
   }
 
   static datatype() {
@@ -138,16 +115,13 @@ class GetCameraInfoResponse {
 
   static md5sum() {
     //Returns md5sum for a message object
-    return 'aacf7dfed1a501be45f34981291a5579';
+    return '1802ea5c04df755ec7e68bc4bf07a06d';
   }
 
   static messageDefinition() {
     // Returns full string definition for message
     return `
     sensor_msgs/CameraInfo info
-    bool success
-    string message
-    
     
     ================================================================================
     MSG: sensor_msgs/CameraInfo
@@ -337,20 +311,6 @@ class GetCameraInfoResponse {
       resolved.info = new sensor_msgs.msg.CameraInfo()
     }
 
-    if (msg.success !== undefined) {
-      resolved.success = msg.success;
-    }
-    else {
-      resolved.success = false
-    }
-
-    if (msg.message !== undefined) {
-      resolved.message = msg.message;
-    }
-    else {
-      resolved.message = ''
-    }
-
     return resolved;
     }
 };
@@ -358,6 +318,6 @@ class GetCameraInfoResponse {
 module.exports = {
   Request: GetCameraInfoRequest,
   Response: GetCameraInfoResponse,
-  md5sum() { return 'aacf7dfed1a501be45f34981291a5579'; },
+  md5sum() { return '1802ea5c04df755ec7e68bc4bf07a06d'; },
   datatype() { return 'astra_camera/GetCameraInfo'; }
 };

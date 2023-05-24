@@ -1,8 +1,8 @@
-# Install script for directory: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_nav
+# Install script for directory: /home/nano/ros_car/src/third_packages/rbx1/rbx1_nav
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nano/ros_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,37 +38,37 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_nav/catkin_generated/safe_execute_install.cmake")
+  include("/home/nano/ros_car/build/third_packages/rbx1/rbx1_nav/catkin_generated/safe_execute_install.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/rbx1_nav" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include/rbx1_nav/CalibrateAngularConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/rbx1_nav" TYPE FILE FILES "/home/nano/ros_car/devel/include/rbx1_nav/CalibrateAngularConfig.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/rbx1_nav" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include/rbx1_nav/CalibrateLinearConfig.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/rbx1_nav" TYPE FILE FILES "/home/nano/ros_car/devel/include/rbx1_nav/CalibrateLinearConfig.h")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/rbx1_nav/cfg")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/nano/ros_car/devel/lib/python2.7/dist-packages/rbx1_nav/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages/rbx1_nav" TYPE DIRECTORY FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/rbx1_nav/cfg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages/rbx1_nav" TYPE DIRECTORY FILES "/home/nano/ros_car/devel/lib/python2.7/dist-packages/rbx1_nav/cfg")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_nav/catkin_generated/installspace/rbx1_nav.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nano/ros_car/build/third_packages/rbx1/rbx1_nav/catkin_generated/installspace/rbx1_nav.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rbx1_nav/cmake" TYPE FILE FILES
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_nav/catkin_generated/installspace/rbx1_navConfig.cmake"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/rbx1/rbx1_nav/catkin_generated/installspace/rbx1_navConfig-version.cmake"
+    "/home/nano/ros_car/build/third_packages/rbx1/rbx1_nav/catkin_generated/installspace/rbx1_navConfig.cmake"
+    "/home/nano/ros_car/build/third_packages/rbx1/rbx1_nav/catkin_generated/installspace/rbx1_navConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rbx1_nav" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/rbx1/rbx1_nav/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/rbx1_nav" TYPE FILE FILES "/home/nano/ros_car/src/third_packages/rbx1/rbx1_nav/package.xml")
 endif()
 

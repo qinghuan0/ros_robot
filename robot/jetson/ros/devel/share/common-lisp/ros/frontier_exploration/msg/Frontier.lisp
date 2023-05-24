@@ -96,10 +96,10 @@
   "8e57df42619e81a60a4a5920d716e4b4")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<Frontier>)))
   "Returns full string definition for message of type '<Frontier>"
-  (cl:format cl:nil "uint32 size~%float64 min_distance~%geometry_msgs/Point travel_point~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
+  (cl:format cl:nil "uint32 size~%float64 min_distance~%geometry_msgs/Point travel_point~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'Frontier)))
   "Returns full string definition for message of type 'Frontier"
-  (cl:format cl:nil "uint32 size~%float64 min_distance~%geometry_msgs/Point travel_point~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
+  (cl:format cl:nil "uint32 size~%float64 min_distance~%geometry_msgs/Point travel_point~%~%================================================================================~%MSG: geometry_msgs/Point~%# This contains the position of a point in free space~%float64 x~%float64 y~%float64 z~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <Frontier>))
   (cl:+ 0
      4

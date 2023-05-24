@@ -1,13 +1,13 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskAction.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskActionFeedback.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskActionGoal.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskActionResult.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskFeedback.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskGoal.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskResult.lisp"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/frontier_exploration/msg/Frontier.lisp"
   "CMakeFiles/frontier_exploration_generate_messages_lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskFeedback.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskActionGoal.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskResult.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/Frontier.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskActionResult.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskGoal.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskActionFeedback.lisp"
+  "/home/nano/ros_car/devel/share/common-lisp/ros/frontier_exploration/msg/ExploreTaskAction.lisp"
 )
 
 # Per-language clean rules from dependency scanning.

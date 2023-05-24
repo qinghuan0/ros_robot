@@ -1,8 +1,8 @@
-# Install script for directory: /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/exploration_msgs
+# Install script for directory: /home/nano/ros_car/src/third_packages/frontier_exploration/exploration_msgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/nano/ros_car/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -38,69 +38,69 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/action" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/exploration_msgs/action/Explore.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/action" TYPE FILE FILES "/home/nano/ros_car/src/third_packages/frontier_exploration/exploration_msgs/action/Explore.action")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/msg" TYPE FILE FILES
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreAction.msg"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreActionGoal.msg"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreActionResult.msg"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreActionFeedback.msg"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreGoal.msg"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreResult.msg"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/exploration_msgs/msg/ExploreFeedback.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreAction.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreActionGoal.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreActionResult.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreActionFeedback.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreGoal.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreResult.msg"
+    "/home/nano/ros_car/devel/share/exploration_msgs/msg/ExploreFeedback.msg"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/srv" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/exploration_msgs/srv/SetPolygon.srv")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/srv" TYPE FILE FILES "/home/nano/ros_car/src/third_packages/frontier_exploration/exploration_msgs/srv/SetPolygon.srv")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/cmake" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgs-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/cmake" TYPE FILE FILES "/home/nano/ros_car/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgs-msg-paths.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include/exploration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/nano/ros_car/devel/include/exploration_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/roseus/ros/exploration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/nano/ros_car/devel/share/roseus/ros/exploration_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/common-lisp/ros/exploration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/nano/ros_car/devel/share/common-lisp/ros/exploration_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/share/gennodejs/ros/exploration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/nano/ros_car/devel/share/gennodejs/ros/exploration_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  execute_process(COMMAND "/usr/bin/python3" -m compileall "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/exploration_msgs")
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/nano/ros_car/devel/lib/python2.7/dist-packages/exploration_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3/dist-packages" TYPE DIRECTORY FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/python3/dist-packages/exploration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/nano/ros_car/devel/lib/python2.7/dist-packages/exploration_msgs")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/nano/ros_car/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgs.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/cmake" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgs-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/cmake" TYPE FILE FILES "/home/nano/ros_car/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgs-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs/cmake" TYPE FILE FILES
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgsConfig.cmake"
-    "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgsConfig-version.cmake"
+    "/home/nano/ros_car/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgsConfig.cmake"
+    "/home/nano/ros_car/build/third_packages/frontier_exploration/exploration_msgs/catkin_generated/installspace/exploration_msgsConfig-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs" TYPE FILE FILES "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/exploration_msgs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/exploration_msgs" TYPE FILE FILES "/home/nano/ros_car/src/third_packages/frontier_exploration/exploration_msgs/package.xml")
 endif()
 

@@ -67,14 +67,14 @@ set(robot_ctrl_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(robot_ctrl_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/robot_ctrl)
-  set(robot_ctrl_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(robot_ctrl_SOURCE_PREFIX /home/nano/ros_car/src/robot_ctrl)
+  set(robot_ctrl_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(robot_ctrl_INSTALL_PREFIX "")
   set(robot_ctrl_PREFIX ${robot_ctrl_DEVEL_PREFIX})
 else()
   set(robot_ctrl_SOURCE_PREFIX "")
   set(robot_ctrl_DEVEL_PREFIX "")
-  set(robot_ctrl_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(robot_ctrl_INSTALL_PREFIX /home/nano/ros_car/install)
   set(robot_ctrl_PREFIX ${robot_ctrl_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(robot_ctrl_LIBRARIES ${robot_ctrl_LIBRARIES})
 
   _list_append_unique(robot_ctrl_LIBRARY_DIRS ${${robot_ctrl_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(robot_ctrl_EXPORTED_TARGETS ${${robot_ctrl_dep}_EXPORTED_TARGETS})
+  list(APPEND robot_ctrl_EXPORTED_TARGETS ${${robot_ctrl_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

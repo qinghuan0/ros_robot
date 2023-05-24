@@ -67,14 +67,14 @@ set(frontier_exploration_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(frontier_exploration_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/frontier_exploration)
-  set(frontier_exploration_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(frontier_exploration_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/frontier_exploration/frontier_exploration)
+  set(frontier_exploration_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(frontier_exploration_INSTALL_PREFIX "")
   set(frontier_exploration_PREFIX ${frontier_exploration_DEVEL_PREFIX})
 else()
   set(frontier_exploration_SOURCE_PREFIX "")
   set(frontier_exploration_DEVEL_PREFIX "")
-  set(frontier_exploration_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(frontier_exploration_INSTALL_PREFIX /home/nano/ros_car/install)
   set(frontier_exploration_PREFIX ${frontier_exploration_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(frontier_exploration_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "include;/usr/include/pcl-1.10;/usr/include/eigen3;/usr/include " STREQUAL " ")
+if(NOT "include;/usr/include/pcl-1.8;/usr/include/eigen3;/usr/include " STREQUAL " ")
   set(frontier_exploration_INCLUDE_DIRS "")
-  set(_include_dirs "include;/usr/include/pcl-1.10;/usr/include/eigen3;/usr/include")
+  set(_include_dirs "include;/usr/include/pcl-1.8;/usr/include/eigen3;/usr/include")
   if(NOT "https://github.com/paulbovbel/frontier_exploration/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/paulbovbel/frontier_exploration/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/frontier_exploration " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "include;/usr/include/pcl-1.10;/usr/include/eigen3;/usr/include " STREQUA
   endforeach()
 endif()
 
-set(libraries "frontier_plugin;/usr/lib/x86_64-linux-gnu/libpcl_common.so;/usr/lib/x86_64-linux-gnu/libboost_system.so.1.71.0;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so")
+set(libraries "frontier_plugin;optimized;/usr/lib/aarch64-linux-gnu/libpcl_common.so;debug;/usr/lib/aarch64-linux-gnu/libpcl_common.so;/usr/lib/aarch64-linux-gnu/libboost_system.so;/usr/lib/aarch64-linux-gnu/libboost_filesystem.so;/usr/lib/aarch64-linux-gnu/libboost_thread.so;/usr/lib/aarch64-linux-gnu/libboost_date_time.so;/usr/lib/aarch64-linux-gnu/libboost_iostreams.so;/usr/lib/aarch64-linux-gnu/libboost_serialization.so;/usr/lib/aarch64-linux-gnu/libboost_chrono.so;/usr/lib/aarch64-linux-gnu/libboost_atomic.so;/usr/lib/aarch64-linux-gnu/libboost_regex.so;/usr/lib/aarch64-linux-gnu/libpthread.so")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(frontier_exploration_LIBRARIES ${frontier_exploration_LIBRARIES})
 
   _list_append_unique(frontier_exploration_LIBRARY_DIRS ${${frontier_exploration_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(frontier_exploration_EXPORTED_TARGETS ${${frontier_exploration_dep}_EXPORTED_TARGETS})
+  list(APPEND frontier_exploration_EXPORTED_TARGETS ${${frontier_exploration_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "frontier_exploration-msg-extras.cmake")

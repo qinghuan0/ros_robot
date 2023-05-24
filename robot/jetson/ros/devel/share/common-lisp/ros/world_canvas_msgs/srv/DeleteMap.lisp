@@ -61,10 +61,10 @@
   "d742ddbd5e3e8937162044ae4b300275")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<DeleteMap-request>)))
   "Returns full string definition for message of type '<DeleteMap-request>"
-  (cl:format cl:nil "# Service used to delete a given map~%~%string map_id~%~%~%"))
+  (cl:format cl:nil "# Service used to delete a given map~%~%string map_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'DeleteMap-request)))
   "Returns full string definition for message of type 'DeleteMap-request"
-  (cl:format cl:nil "# Service used to delete a given map~%~%string map_id~%~%~%"))
+  (cl:format cl:nil "# Service used to delete a given map~%~%string map_id~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <DeleteMap-request>))
   (cl:+ 0
      4 (cl:length (cl:slot-value msg 'map_id))

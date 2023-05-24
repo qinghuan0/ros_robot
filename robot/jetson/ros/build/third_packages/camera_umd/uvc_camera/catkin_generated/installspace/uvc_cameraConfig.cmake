@@ -67,14 +67,14 @@ set(uvc_camera_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(uvc_camera_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/uvc_camera)
-  set(uvc_camera_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(uvc_camera_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/camera_umd/uvc_camera)
+  set(uvc_camera_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(uvc_camera_INSTALL_PREFIX "")
   set(uvc_camera_PREFIX ${uvc_camera_DEVEL_PREFIX})
 else()
   set(uvc_camera_SOURCE_PREFIX "")
   set(uvc_camera_DEVEL_PREFIX "")
-  set(uvc_camera_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(uvc_camera_INSTALL_PREFIX /home/nano/ros_car/install)
   set(uvc_camera_PREFIX ${uvc_camera_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(uvc_camera_LIBRARIES ${uvc_camera_LIBRARIES})
 
   _list_append_unique(uvc_camera_LIBRARY_DIRS ${${uvc_camera_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(uvc_camera_EXPORTED_TARGETS ${${uvc_camera_dep}_EXPORTED_TARGETS})
+  list(APPEND uvc_camera_EXPORTED_TARGETS ${${uvc_camera_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

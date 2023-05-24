@@ -67,14 +67,14 @@ set(rqt_annotation_data_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("FALSE" STREQUAL "TRUE")
-  set(rqt_annotation_data_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/world_canvas/world_canvas_tools/rqt_annotation_data)
-  set(rqt_annotation_data_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(rqt_annotation_data_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/world_canvas/world_canvas_tools/rqt_annotation_data)
+  set(rqt_annotation_data_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(rqt_annotation_data_INSTALL_PREFIX "")
   set(rqt_annotation_data_PREFIX ${rqt_annotation_data_DEVEL_PREFIX})
 else()
   set(rqt_annotation_data_SOURCE_PREFIX "")
   set(rqt_annotation_data_DEVEL_PREFIX "")
-  set(rqt_annotation_data_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(rqt_annotation_data_INSTALL_PREFIX /home/nano/ros_car/install)
   set(rqt_annotation_data_PREFIX ${rqt_annotation_data_INSTALL_PREFIX})
 endif()
 
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/install/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(rqt_annotation_data_LIBRARIES ${rqt_annotation_data_LIBRARIES})
 
   _list_append_unique(rqt_annotation_data_LIBRARY_DIRS ${${rqt_annotation_data_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(rqt_annotation_data_EXPORTED_TARGETS ${${rqt_annotation_data_dep}_EXPORTED_TARGETS})
+  list(APPEND rqt_annotation_data_EXPORTED_TARGETS ${${rqt_annotation_data_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

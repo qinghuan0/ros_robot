@@ -62,8 +62,8 @@ class RenameMapRequest {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.map_id);
-    length += _getByteLength(object.new_name);
+    length += object.map_id.length;
+    length += object.new_name.length;
     return length + 8;
   }
 

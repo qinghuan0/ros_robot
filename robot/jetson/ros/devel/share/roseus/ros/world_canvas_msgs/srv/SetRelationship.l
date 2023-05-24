@@ -26,13 +26,6 @@
 (intern "*DEL*" (find-package "WORLD_CANVAS_MSGS::SETRELATIONSHIPREQUEST"))
 (shadow '*DEL* (find-package "WORLD_CANVAS_MSGS::SETRELATIONSHIPREQUEST"))
 (defconstant world_canvas_msgs::SetRelationshipRequest::*DEL* 2)
-
-(defun world_canvas_msgs::SetRelationshipRequest-to-symbol (const)
-  (cond
-        ((= const 1) 'world_canvas_msgs::SetRelationshipRequest::*ADD*)
-        ((= const 2) 'world_canvas_msgs::SetRelationshipRequest::*DEL*)
-        (t nil)))
-
 (defclass world_canvas_msgs::SetRelationshipRequest
   :super ros::object
   :slots (_id _relationship _action ))
@@ -115,8 +108,8 @@
    (setq _message (string __message))
    self)
   (:result
-   (&optional (__result :null))
-   (if (not (eq __result :null)) (setq _result __result)) _result)
+   (&optional __result)
+   (if __result (setq _result __result)) _result)
   (:message
    (&optional __message)
    (if __message (setq _message __message)) _message)

@@ -27,7 +27,7 @@
 (defmethod world_canvas_msgs::PubAnnotationsDataRequest
   (:init
    (&key
-    ((:annotation_ids __annotation_ids) ())
+    ((:annotation_ids __annotation_ids) (let (r) (dotimes (i 0) (push (instance uuid_msgs::UniqueID :init) r)) r))
     ((:topic_name __topic_name) "")
     ((:topic_type __topic_type) "")
     ((:pub_as_list __pub_as_list) nil)
@@ -52,8 +52,8 @@
    (&optional __topic_type)
    (if __topic_type (setq _topic_type __topic_type)) _topic_type)
   (:pub_as_list
-   (&optional (__pub_as_list :null))
-   (if (not (eq __pub_as_list :null)) (setq _pub_as_list __pub_as_list)) _pub_as_list)
+   (&optional __pub_as_list)
+   (if __pub_as_list (setq _pub_as_list __pub_as_list)) _pub_as_list)
   (:serialization-length
    ()
    (+
@@ -117,8 +117,8 @@
    (setq _message (string __message))
    self)
   (:result
-   (&optional (__result :null))
-   (if (not (eq __result :null)) (setq _result __result)) _result)
+   (&optional __result)
+   (if __result (setq _result __result)) _result)
   (:message
    (&optional __message)
    (if __message (setq _message __message)) _message)

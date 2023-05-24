@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/libexample_plugin.pdb"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib/libexample_plugin.so"
   "CMakeFiles/example_plugin.dir/src/example_plugin.cpp.o"
+  "/home/nano/ros_car/devel/lib/libexample_plugin.pdb"
+  "/home/nano/ros_car/devel/lib/libexample_plugin.so"
 )
 
 # Per-language clean rules from dependency scanning.

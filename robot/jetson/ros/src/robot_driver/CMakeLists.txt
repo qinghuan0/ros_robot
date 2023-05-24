@@ -91,11 +91,11 @@ find_package(catkin REQUIRED COMPONENTS
 ##     and list every .cfg file to be processed
 
 ## Generate dynamic reconfigure parameters in the 'cfg' folder
-# generate_dynamic_reconfigure_options(
-#   cfg/DynReconf1.cfg
-#   cfg/DynReconf2.cfg
-# )
-
+generate_dynamic_reconfigure_options(
+  config/cfg/PID_reconfig.cfg
+  config/cfg/CalibrateAngular.cfg
+  config/cfg/CalibrateLinear.cfg
+)
 ###################################
 ## catkin specific configuration ##
 ###################################
@@ -110,6 +110,7 @@ catkin_package(
 #  LIBRARIES robot_driver
 #  CATKIN_DEPENDS dynamic_reconfigure geometry_msgs roscpp rospy tf
 #  DEPENDS system_lib
+  CATKIN_DEPENDS roscpp rospy
 )
 
 ###########
@@ -172,7 +173,8 @@ include_directories(
 # install(TARGETS ${PROJECT_NAME}_node
 #   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 # )
-
+add_executable(robot_driver src/robot_driver.cpp)
+target_link_libraries(robot_driver ${catkin_LIBRARIES} ${Boost_LIBRARIES})
 ## Mark libraries for installation
 ## See http://docs.ros.org/melodic/api/catkin/html/howto/format1/building_libraries.html
 # install(TARGETS ${PROJECT_NAME}

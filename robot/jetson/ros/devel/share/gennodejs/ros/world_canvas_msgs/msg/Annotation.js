@@ -11,9 +11,9 @@ const _deserializer = _ros_msg_utils.Deserialize;
 const _arrayDeserializer = _deserializer.Array;
 const _finder = _ros_msg_utils.Find;
 const _getByteLength = _ros_msg_utils.getByteLength;
-let uuid_msgs = _finder('uuid_msgs');
 let geometry_msgs = _finder('geometry_msgs');
 let std_msgs = _finder('std_msgs');
+let uuid_msgs = _finder('uuid_msgs');
 
 //-----------------------------------------------------------
 
@@ -181,12 +181,12 @@ class Annotation {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.world);
-    length += _getByteLength(object.name);
-    length += _getByteLength(object.type);
+    length += object.world.length;
+    length += object.name.length;
+    length += object.type.length;
     length += geometry_msgs.msg.PoseWithCovarianceStamped.getMessageSize(object.pose);
     object.keywords.forEach((val) => {
-      length += 4 + _getByteLength(val);
+      length += 4 + val.length;
     });
     length += 16 * object.relationships.length;
     return length + 104;

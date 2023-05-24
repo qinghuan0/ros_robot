@@ -52,7 +52,7 @@
 (defmethod world_canvas_msgs::ListMapsResponse
   (:init
    (&key
-    ((:map_list __map_list) ())
+    ((:map_list __map_list) (let (r) (dotimes (i 0) (push (instance world_canvas_msgs::MapListEntry :init) r)) r))
     )
    (send-super :init)
    (setq _map_list __map_list)

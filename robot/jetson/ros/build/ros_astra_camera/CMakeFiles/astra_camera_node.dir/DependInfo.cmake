@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/src/main.cpp" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/ros_astra_camera/CMakeFiles/astra_camera_node.dir/src/main.cpp.o"
+  "/home/nano/ros_car/src/ros_astra_camera/ros/astra_camera_node.cpp" "/home/nano/ros_car/build/ros_astra_camera/CMakeFiles/astra_camera_node.dir/ros/astra_camera_node.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,25 +13,24 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"astra_camera\""
-  "libuvc_VERSION_MAJOR="
-  "libuvc_VERSION_MINOR="
-  "libuvc_VERSION_PATCH="
+  "libuvc_VERSION_MAJOR=0"
+  "libuvc_VERSION_MINOR=0"
+  "libuvc_VERSION_PATCH=6"
   )
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/include"
-  "ros_astra_camera/include"
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/ros_astra_camera/include"
-  "/opt/ros/noetic/include"
-  "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
-  "/usr/include/libusb-1.0"
-  "/usr/include/opencv4"
+  "/home/nano/ros_car/devel/include"
+  "/home/nano/ros_car/src/ros_astra_camera/include"
+  "/opt/ros/melodic/include"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/nano/ros_car/src/ros_astra_camera/include/openni2"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/ros_astra_camera/CMakeFiles/astra_camera.dir/DependInfo.cmake"
+  "/home/nano/ros_car/build/ros_astra_camera/CMakeFiles/astra_driver_lib.dir/DependInfo.cmake"
+  "/home/nano/ros_car/build/ros_astra_camera/CMakeFiles/astra_wrapper.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -42,7 +42,7 @@ void RobotDriver::main_loop()
     ros::NodeHandle nh_p_("~");
 
     /*从配置文件中获取机器人参数*/
-    nh_p_.param<std::string>("port_name",port_name_,std::string("/dev/ttyUSB0"));
+    nh_p_.param<std::string>("port_name",port_name_,std::string("/dev/ttyUSB2"));
     nh_p_.param<std::string>("odom_frame",odom_frame_,std::string("odom"));
     nh_p_.param<std::string>("base_frame",base_frame_,std::string("base_footprint"));
     nh_p_.param<std::string>("imu_frame",imu_frame_,std::string("base_imu_link"));
@@ -300,7 +300,7 @@ void RobotDriver::handle_base_data(const uint8_t* buffer_data)
         transformStamped_.transform.rotation.z = q.z();
         transformStamped_.transform.rotation.w = q.w();
         if(publish_odom_transform_){
-            //ROS_INFO("test odom_list_[0~2]=(%f,%f,%f)",odom_list_[0],odom_list_[1],odom_list_[2]);
+            ROS_INFO("test odom_list_[0~2]=(%f,%f,%f)",odom_list_[0],odom_list_[1],odom_list_[2]);
             br_.sendTransform(transformStamped_);
         }
         odom_.header.frame_id = odom_frame_;

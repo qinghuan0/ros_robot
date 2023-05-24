@@ -5,16 +5,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/src/mongoose.c" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/src/mongoose.c.o"
+  "/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/src/mongoose.c" "/home/nano/ros_car/build/third_packages/camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/src/mongoose.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_C
-  "BOOST_ALL_NO_LIB"
-  "BOOST_ATOMIC_DYN_LINK"
-  "BOOST_SYSTEM_DYN_LINK"
-  "BOOST_THREAD_DYN_LINK"
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"jpeg_streamer\""
@@ -22,21 +18,17 @@ set(CMAKE_TARGET_DEFINITIONS_C
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/include"
-  "/opt/ros/noetic/include"
-  "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/include"
+  "/opt/ros/melodic/include"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/src/jpeg_streamer.cpp" "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/build/third_packages/camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/src/jpeg_streamer.cpp.o"
+  "/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/src/jpeg_streamer.cpp" "/home/nano/ros_car/build/third_packages/camera_umd/jpeg_streamer/CMakeFiles/jpeg_streamer.dir/src/jpeg_streamer.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
 set(CMAKE_TARGET_DEFINITIONS_CXX
-  "BOOST_ALL_NO_LIB"
-  "BOOST_ATOMIC_DYN_LINK"
-  "BOOST_SYSTEM_DYN_LINK"
-  "BOOST_THREAD_DYN_LINK"
   "ROSCONSOLE_BACKEND_LOG4CXX"
   "ROS_BUILD_SHARED_LIBS=1"
   "ROS_PACKAGE_NAME=\"jpeg_streamer\""
@@ -44,9 +36,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
-  "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/camera_umd/jpeg_streamer/include"
-  "/opt/ros/noetic/include"
-  "/opt/ros/noetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
+  "/home/nano/ros_car/src/third_packages/camera_umd/jpeg_streamer/include"
+  "/opt/ros/melodic/include"
+  "/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp"
   )
 
 # Targets to which this target links.

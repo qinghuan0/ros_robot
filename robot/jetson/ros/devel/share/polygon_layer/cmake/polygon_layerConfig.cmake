@@ -67,14 +67,14 @@ set(polygon_layer_CONFIG_INCLUDED TRUE)
 
 # set variables for source/devel/install prefixes
 if("TRUE" STREQUAL "TRUE")
-  set(polygon_layer_SOURCE_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/polygon_layer)
-  set(polygon_layer_DEVEL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel)
+  set(polygon_layer_SOURCE_PREFIX /home/nano/ros_car/src/third_packages/frontier_exploration/polygon_layer)
+  set(polygon_layer_DEVEL_PREFIX /home/nano/ros_car/devel)
   set(polygon_layer_INSTALL_PREFIX "")
   set(polygon_layer_PREFIX ${polygon_layer_DEVEL_PREFIX})
 else()
   set(polygon_layer_SOURCE_PREFIX "")
   set(polygon_layer_DEVEL_PREFIX "")
-  set(polygon_layer_INSTALL_PREFIX /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install)
+  set(polygon_layer_INSTALL_PREFIX /home/nano/ros_car/install)
   set(polygon_layer_PREFIX ${polygon_layer_INSTALL_PREFIX})
 endif()
 
@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(polygon_layer_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/polygon_layer/include;/usr/include " STREQUAL " ")
+if(NOT "/home/nano/ros_car/src/third_packages/frontier_exploration/polygon_layer/include;/usr/include " STREQUAL " ")
   set(polygon_layer_INCLUDE_DIRS "")
-  set(_include_dirs "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/polygon_layer/include;/usr/include")
+  set(_include_dirs "/home/nano/ros_car/src/third_packages/frontier_exploration/polygon_layer/include;/usr/include")
   if(NOT "https://github.com/paulbovbel/frontier_exploration/issues " STREQUAL " ")
     set(_report "Check the issue tracker 'https://github.com/paulbovbel/frontier_exploration/issues' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://ros.org/wiki/polygon_layer " STREQUAL " ")
@@ -110,7 +110,7 @@ if(NOT "/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/fro
         message(FATAL_ERROR "Project 'polygon_layer' specifies '${idir}' as an include dir, which is not found.  It does not exist in '${include}'.  ${_report}")
       endif()
     else()
-      message(FATAL_ERROR "Project 'polygon_layer' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/src/third_packages/frontier_exploration/polygon_layer/${idir}'.  ${_report}")
+      message(FATAL_ERROR "Project 'polygon_layer' specifies '${idir}' as an include dir, which is not found.  It does neither exist as an absolute directory nor in '/home/nano/ros_car/src/third_packages/frontier_exploration/polygon_layer/${idir}'.  ${_report}")
     endif()
     _list_append_unique(polygon_layer_INCLUDE_DIRS ${include})
   endforeach()
@@ -154,7 +154,7 @@ foreach(library ${libraries})
     set(lib_path "")
     set(lib "${library}-NOTFOUND")
     # since the path where the library is found is returned we have to iterate over the paths manually
-    foreach(path /home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/devel/lib;/home/qinghuan/qh_ros/slam/devel/lib;/home/qinghuan/qh_ros/roslearn/devel/lib;/opt/ros/noetic/lib)
+    foreach(path /home/nano/ros_car/devel/lib;/home/nano/ros_car/devel/lib;/home/nano/catkin_ws/devel/lib;/opt/ros/melodic/lib)
       find_library(lib ${library}
         PATHS ${path}
         NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
@@ -211,7 +211,7 @@ foreach(depend ${depends})
   _unpack_libraries_with_build_configuration(polygon_layer_LIBRARIES ${polygon_layer_LIBRARIES})
 
   _list_append_unique(polygon_layer_LIBRARY_DIRS ${${polygon_layer_dep}_LIBRARY_DIRS})
-  _list_append_deduplicate(polygon_layer_EXPORTED_TARGETS ${${polygon_layer_dep}_EXPORTED_TARGETS})
+  list(APPEND polygon_layer_EXPORTED_TARGETS ${${polygon_layer_dep}_EXPORTED_TARGETS})
 endforeach()
 
 set(pkg_cfg_extras "")

@@ -1,8 +1,8 @@
-prefix=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install
+prefix=/home/nano/ros_car/install
 
 Name: astra_camera
 Description: Description of astra_camera
-Version: 1.2.3
+Version: 0.3.0
 Cflags: -I${prefix}/include
-Libs: -L${prefix}/lib -lastra_camera
-Requires: cv_bridge dynamic_reconfigure image_geometry image_transport message_runtime roscpp sensor_msgs tf2 tf2_ros std_srvs message_filters camera_info_manager
+Libs: -L${prefix}/lib -lastra_wrapper
+Requires: camera_info_manager dynamic_reconfigure image_transport nodelet sensor_msgs roscpp message_runtime

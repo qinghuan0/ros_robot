@@ -95,8 +95,8 @@ class PubAnnotationsDataRequest {
   static getMessageSize(object) {
     let length = 0;
     length += 16 * object.annotation_ids.length;
-    length += _getByteLength(object.topic_name);
-    length += _getByteLength(object.topic_type);
+    length += object.topic_name.length;
+    length += object.topic_type.length;
     return length + 13;
   }
 
@@ -224,7 +224,7 @@ class PubAnnotationsDataResponse {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.message);
+    length += object.message.length;
     return length + 5;
   }
 

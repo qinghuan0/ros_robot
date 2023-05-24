@@ -81,9 +81,9 @@ class WorldCanvas {
 
   static getMessageSize(object) {
     let length = 0;
-    length += _getByteLength(object.name);
-    length += _getByteLength(object.description);
-    length += _getByteLength(object.geometry);
+    length += object.name.length;
+    length += object.description.length;
+    length += object.geometry.length;
     return length + 20;
   }
 

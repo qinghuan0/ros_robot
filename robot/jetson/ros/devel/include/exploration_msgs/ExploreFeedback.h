@@ -95,16 +95,6 @@ namespace message_traits
 
 
 template <class ContainerAllocator>
-struct IsMessage< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> >
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
-struct IsMessage< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> const>
-  : TrueType
-  { };
-
-template <class ContainerAllocator>
 struct IsFixedSize< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> >
   : FalseType
   { };
@@ -112,6 +102,16 @@ struct IsFixedSize< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> >
 template <class ContainerAllocator>
 struct IsFixedSize< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> const>
   : FalseType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> >
+  : TrueType
+  { };
+
+template <class ContainerAllocator>
+struct IsMessage< ::exploration_msgs::ExploreFeedback_<ContainerAllocator> const>
+  : TrueType
   { };
 
 template <class ContainerAllocator>

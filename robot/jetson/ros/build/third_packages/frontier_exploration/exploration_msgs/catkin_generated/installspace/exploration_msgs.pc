@@ -1,4 +1,4 @@
-prefix=/home/qinghuan/qh_ros/Team/robot/robot/jetson/ros/install
+prefix=/home/nano/ros_car/install
 
 Name: exploration_msgs
 Description: Description of exploration_msgs
